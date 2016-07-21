@@ -1,0 +1,21 @@
+{
+  "name": "ks_ostrovia",
+  "author": "mgromek",
+  "version": "0.0.1",
+  "license": "GPL-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "*",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-csscomb": "latest",
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "gulp-uglifycss": "latest"
+  }
+}

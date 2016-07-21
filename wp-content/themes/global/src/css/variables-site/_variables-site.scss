@@ -1,0 +1,43 @@
+@import "colors";
+@import "typography";
+@import "structure";
+
+                    /* VARIABLES
+--------------------------------------------------------------------------
+========================================================================*/
+
+$headers: "h1", "h2", "h3", "h4", "h5", "h6", ".h1", ".h2", ".h3", ".h4", ".h5", ".h6", "figcaption", "legend";
+
+/* Actions types
+------------------------------------------------------------------------*/
+
+$actions-types: "&:hover", "&:focus";
+
+// '&:active';
+
+/* Inputs types
+------------------------------------------------------------------------*/
+
+$inputs-types: "select", "textarea", 'input[type="email"]', 'input[type="number"]', 'input[type="password"]', 'input[type="search"]', 'input[type="tel"]', 'input[type="text"]', 'input[type="url"]', 'input[type="color"]', 'input[type="date"]', 'input[type="datetime"]', 'input[type="datetime-local"]', 'input[type="month"]', 'input[type="time"]', 'input[type="week"]';
+
+/* Sizes
+------------------------------------------------------------------------*/
+
+$base-height: 44px;
+
+/* Other
+------------------------------------------------------------------------*/
+
+$js-path: "../js/";
+$img-path: "../images";
+$icon-svg-path: "../images/components/icon-images/svg";
+$icon-png-path: "../images/components/icon-images/png";
+
+/* Fonts
+------------------------------------------------------------------------*/
+
+$roboto-thin: "Roboto Thin";
+$roboto-light: "Roboto Light";
+$roboto-regular: "Roboto Regular";
+$roboto-medium: "Roboto Medium";
+$roboto-bold: "Roboto Bold";
