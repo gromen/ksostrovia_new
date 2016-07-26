@@ -17,6 +17,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<?php if(is_search()): ?>
+	<meta name="robots" content="noindex, nofollow">
+<?php endif; ?>
+
 <?php wp_head(); ?>
 </head>
 

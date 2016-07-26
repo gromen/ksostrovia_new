@@ -93,10 +93,10 @@ gulp.task('styles', function () {
         .pipe( gulp.dest( styleDestination ) )
         .pipe(reload({stream: true}))
 
-        .pipe( rename( { suffix: '.min' } ) )
-        .pipe( minifycss( {
-            maxLineLen: 10
-        }))
+//        .pipe( rename( { suffix: '.min' } ) )
+//      .pipe( minifycss( {
+//            maxLineLen: 10
+//        }))
         .pipe( gulp.dest( styleDestination ) )
         .pipe( notify( { message: 'TASK: "styles" Completed!', onLast: true } ) )
 });
@@ -157,8 +157,7 @@ gulp.task('serve', ['styles'], function() {
     });
 
 
-    gulp.watch('./src/css/**/*.scss', ['styles']);
-    gulp.watch('./*.php').on('change', reload);
+
 });
 /**
   * Watch Tasks.
@@ -167,6 +166,8 @@ gulp.task('serve', ['styles'], function() {
   */
 
  gulp.task( 'default', [ 'styles', 'vendorsJs', 'customJS','serve' ], function () {
+    gulp.watch('./src/css/**/*.scss', ['styles']);
+    gulp.watch('./*.php').on('change', reload);
     gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
     gulp.watch( './src/js/custom/*.js', [ 'customJS' ] );
  });

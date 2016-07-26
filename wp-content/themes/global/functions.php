@@ -6,7 +6,6 @@
  *
  * @package global
  */
-
 if ( ! function_exists( 'global_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -114,6 +113,13 @@ function global_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'global_scripts' );
 
+/**
+* Generate Favicons
+*/
+function generate_favicon(){
+	echo '<link rel="shortcut icon" type="image/x-icon" href="http://localhost:8080/ksostrovia/favicon.ico" />' . "\n";
+}
+add_action('wp_head','generate_favicon');
 /**
  * Implement the Custom Header feature.
  */

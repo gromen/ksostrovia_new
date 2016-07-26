@@ -17,9 +17,13 @@ get_header(); ?>
 	<div class="row">
 
 	<?php if ( is_active_sidebar('sidebar-1')) :?>
+
 		<div class="small-8 column">
+
 	<?php else: ?>
+
 		<div class="small-12 column">
+
 	<?php endif; ?>
 
 			<div id="primary" class="content-area">
