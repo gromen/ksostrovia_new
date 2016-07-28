@@ -67,8 +67,4 @@ get_header(); ?>
 
 		<?php get_sidebar(); ?>
 
-	</div>
-
-<div class="row">
-	<div class="class-12 column"><?php get_footer(); ?></div>
-</div>
+<?php get_footer(); ?>

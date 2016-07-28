@@ -25,30 +25,52 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="row site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'global' ); ?></a>
+			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'global' ); ?></a>
 
-	<header id="masthead" class="small-12 site-header column" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+			<header class="c-header" role="banner">
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+				<!-- searchbar -->
+				<div class="c-header__searchbar hide-for-small-only">
+					<div class="row align-right align-middle full-height">
+						<div class="small-12 medium-5 column">
+							<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+								<div><input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" />
+								<input type="submit" id="searchsubmit" value="Search" class="hide btn" />
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'global' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+				<!-- Logobar -->
+				<div class="row hide-for-small-only">
+					<div class="c-header__logo">
+						<a href="<?php bloginfo('url'); ?>" class="logo"><img src="<?php bloginfo('template_directory') ?>/src/images/logo.png" alt="Ks ostrovia klub sportowy piłka nożna"></a>
+					</div>
+				</div>
 
-	<div id="content" class="small-12 site-content column">
+				<!-- navbar -->
+				<div class="c-header__navbar">
+					<div class="row align-bottom">
+
+
+						<div class="column">
+							<div class="row align-right">
+								<div class="medium-shrink column"><nav id="site-navigation" class="main-navigation" role="navigation">
+										<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '|||', 'global' ); ?></button>
+										<?php wp_nav_menu( array(
+											'theme_location' => 'primary',
+											'menu_id' => 'primary-menu'
+										) ); ?>
+									</nav><!-- #site-navigation -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</header>
+
+			<div id="content" class="site-content">
+

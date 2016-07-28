@@ -35,6 +35,9 @@ var customJSWatchFiles  = './src/js/custom/*.js'; // Path to all custom JS files
  */
 var gulp         = require('gulp'); // Gulp of-course
 
+//Format CSS coding style
+var csscomb = require('gulp-csscomb');
+
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 // CSS related plugins.
@@ -90,13 +93,14 @@ gulp.task('styles', function () {
             'android 4' ) )
 
         .pipe( sourcemaps.write ( styleDestination ) )
+        .pipe(csscomb())
         .pipe( gulp.dest( styleDestination ) )
         .pipe(reload({stream: true}))
 
-//        .pipe( rename( { suffix: '.min' } ) )
-//      .pipe( minifycss( {
-//            maxLineLen: 10
-//        }))
+        .pipe( rename( { suffix: '.min' } ) )
+      .pipe( minifycss( {
+            maxLineLen: 10
+        }))
         .pipe( gulp.dest( styleDestination ) )
         .pipe( notify( { message: 'TASK: "styles" Completed!', onLast: true } ) )
 });

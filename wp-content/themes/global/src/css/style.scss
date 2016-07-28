@@ -43,19 +43,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   ## Galleries
 
 
---------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Foundation
+----*/
+
 @import "vendor/foundation/foundation";
 
-$global-flexbox: true;
-
-@include foundation-flex-grid;
-
-@include foundation-flex-classes;
+@include foundation-everything(true);
 
 /*--------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "common/fonts";
+@import "common/foundation-settings";
 @import "mixins/mixins-master";
+
+@import "layout/header";
 
 /*--------------------------------------------------------------
 # Normalize

@@ -9,7 +9,7 @@
     "gulp": "*",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
-    "gulp-csscomb": "latest",
+    "gulp-csscomb": "^3.0.7",
     "gulp-notify": "latest",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
