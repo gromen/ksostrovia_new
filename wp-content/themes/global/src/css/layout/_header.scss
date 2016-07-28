@@ -1,0 +1,18 @@
+.c-header {
+  background-color: $white;
+  position: relative;
+
+  &__searchbar {
+    background-color: $white;
+    height: 91px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0;
+  }
+
+  &__navbar {
+    background-color: $green_base;
+  }
+}
