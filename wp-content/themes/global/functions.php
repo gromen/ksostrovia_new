@@ -41,6 +41,12 @@ function global_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	/* Custom image sizes*/
+	add_image_size('img700x250',700,250,true);
+	add_image_size('img250x250',250,250, true);
+
+	add_filter( 'image_size_names_choose', 'custom_image_sizes_choose' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'global' ),
@@ -66,6 +72,15 @@ function global_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'global_setup' );
+
+function custom_image_sizes_choose( $sizes ) {
+    $custom_sizes = array(
+        'img700x250' => 'img700x250',
+        'img250x250' => 'img250x250'
+
+    );
+    return array_merge( $sizes, $custom_sizes );
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

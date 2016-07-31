@@ -12,6 +12,7 @@ if ( !is_dynamic_sidebar() ) {
 }
 ?>
   <table class="table table-upcoming-matches hover">
+    <h3>Najbliższe mecze KS Ostrowi</h3>
     <tr>
       <th class="text-left">Data</th>
       <th class="text-left">Godzina</th>

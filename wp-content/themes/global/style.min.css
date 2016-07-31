@@ -906,7 +906,7 @@ li>ul,li>ol{margin-bottom:0;margin-left:1.5em}
 dt{font-weight:bold}
 dd{margin:0 1.5em 1.5em}
 img{height:auto;max-width:100%}
-.table{margin:0 0 1.5em;width:100%;font-size:12px;color:#000}
+.table{margin:0 0 3em;width:100%;font-size:12px;color:#000}
 .table .pkt{color:#fff}
 .table tbody{border:0}
 .table tr,.table th,.table td{background-color:#fff}
@@ -967,6 +967,9 @@ footer.site-footer ul .page_item{-ms-flex:1 1 0;flex:1 1 0;padding-left:.625rem;
 .single .byline,.group-blog .byline{display:inline}
 .page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
 .page-links{clear:both;margin:0 0 1.5em}
+.news-post{margin-bottom:30px}
+.news-post__image img{min-height:250px}
+.news-post__body{font-size:14px}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

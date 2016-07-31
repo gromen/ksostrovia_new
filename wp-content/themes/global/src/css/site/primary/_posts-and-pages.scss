@@ -30,3 +30,18 @@
   clear: both;
   margin: 0 0 1.5em;
 }
+
+/* #News post */
+.news-post {
+  margin-bottom: 30px;
+
+  &__image {
+    img {
+      min-height: 250px;
+    }
+  }
+
+  &__body {
+    font-size: 14px;
+  }
+}

@@ -20,28 +20,35 @@
       <div class="row">
         <div class="small-12 column">
 
-            <!-- article post -->
-            <article class="news-post clearfix<?php if($count === 1): ?> first<?php endif; ?>">
-              <div class="news-post__content">
-                <?php if ( has_post_thumbnail() && $count === 1 ) ://display image size 700x250px for first Post ?>
-                    <figure class="news-post__image"> <?php the_post_thumbnail('img750x250'); ?>
+          <!-- article post -->
+          <article class="news-post clearfix">
+            <div class="row align-middle">
+
+              <div class="small-12 medium-shrink column">
+                <!-- display image size 700x250px for first Post -->
+                <?php if ( has_post_thumbnail() && $count === 1 ) : ?>
+                    <figure class="news-post__image"> <?php the_post_thumbnail('img700x250'); ?>
                     </figure>
 
-                <?php else : //if is not first post, display 250x250px image size?>
+                <!-- if is not first post, display 250x250px image size -->
+                <?php else : ?>
                     <figure class="news-post__image"> <?php the_post_thumbnail('img250x250'); ?>
                     </figure>
                 <?php endif; ?>
+              </div>
 
-                  <!-- if not first post,  -->
-                  <div class="news-post__text-container <?php if(!has_post_thumbnail()) : ?>news-post__text-container--full-width<?php endif; ?>">
-
-
+              <!-- if not first post -->
+              <div class="small-12 <?php if( has_post_thumbnail() && $count >= 2 ) : ?>medium-7<?php endif; ?> column">
+                <div class="news-post__text-container <?php if(!has_post_thumbnail()) : ?>news-post__text-container--full-width<?php endif; ?>">
                   <h3 class="news-post__title h4"><a href="<?php the_permalink() ?>" title="Read more <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
                   <span class="news-post__published-date"><?php the_date(); ?></span>
                   <p class="news-post__body"><?php echo get_the_excerpt(); ?></p>
                 </div>
               </div>
-            </article>
+
+            </div><!-- .row  -->
+          </article>
+
       </div>
     </div>
 
