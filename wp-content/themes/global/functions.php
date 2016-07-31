@@ -85,6 +85,7 @@ add_action( 'after_setup_theme', 'global_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function global_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'global' ),
 		'id'            => 'sidebar-1',
@@ -96,8 +97,18 @@ function global_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Custom sidebar', 'global' ),
+		'name'          => esc_html__( 'League table', 'global' ),
 		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'global' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Upcoming matches', 'global' ),
+		'id'            => 'sidebar-3',
 		'description'   => esc_html__( 'Add widgets here.', 'global' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

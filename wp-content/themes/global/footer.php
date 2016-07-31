@@ -11,7 +11,12 @@
 
 ?>
 
+            </div>
 
+            <?php get_sidebar('league_table'); ?>
+            <?php get_sidebar('upcoming_matches'); ?>
+
+        </div><!-- .row -->
       </main><!-- #content -->
 
       <footer class="site-footer" role="contentinfo">

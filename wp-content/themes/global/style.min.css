@@ -906,13 +906,14 @@ li>ul,li>ol{margin-bottom:0;margin-left:1.5em}
 dt{font-weight:bold}
 dd{margin:0 1.5em 1.5em}
 img{height:auto;max-width:100%}
-.table{margin:0 0 1.5em;width:100%}
+.table{margin:0 0 1.5em;width:100%;font-size:12px;color:#000}
+.table .pkt{color:#fff}
 .table tbody{border:0}
-.table.table-league{font-size:12px;color:#000}
+.table tr,.table th,.table td{background-color:#fff}
+.table tr{font-family:"Roboto Bold";border-bottom:1px solid #ccc}
+.table th{text-transform:uppercase;color:#00923f}
 .table.table-league .pkt{background-color:#00923f;color:#fff;border-bottom:1px solid #00923f}
-.table.table-league tr,.table.table-league th,.table.table-league td{background-color:#fff}
-.table.table-league tr{font-family:"Roboto Bold";border-bottom:1px solid #ccc}
-.table.table-league th{text-transform:uppercase;color:#00923f}
+.table.table-upcoming-matches .pkt{background-color:#000;border-bottom:1px solid #000}
 button,input[type="button"],input[type="reset"],input[type="submit"]{border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;background:#e6e6e6;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 15px 17px rgba(255,255,255,.5),inset 0 -5px 12px rgba(0,0,0,.05);color:rgba(0,0,0,.8);font-size:12px;font-size:.75rem;line-height:1;padding:.6em 1em .4em;text-shadow:0 1px 0 rgba(255,255,255,.8)}
 button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{border-color:#ccc #bbb #aaa;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 15px 17px rgba(255,255,255,.8),inset 0 -5px 12px rgba(0,0,0,.02)}
 button:active,button:focus,input[type="button"]:active,input[type="button"]:focus,input[type="reset"]:active,input[type="reset"]:focus,input[type="submit"]:active,input[type="submit"]:focus{border-color:#aaa #bbb #bbb;box-shadow:inset 0 -1px 0 rgba(255,255,255,.5),inset 0 2px 5px rgba(0,0,0,.15)}
