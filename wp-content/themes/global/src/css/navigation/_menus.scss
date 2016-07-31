@@ -127,3 +127,21 @@
     width: 50%;
   }
 }
+
+//--------------------
+//---- footer menu ----
+//---------------------
+footer.site-footer {
+  background-color: $footer_bg;
+
+  ul {
+    @include flex;
+    @include flex-grid-row()
+    margin: 0;
+
+    .page_item {
+      @include flex-grid-column
+    flex-direction: column;
+    }
+  }
+}

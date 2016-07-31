@@ -1,4 +1,33 @@
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
+.table {
+  margin: 0 0 1.5em;
+  width: 100%;
+
+  tbody {
+    border: none;
+  }
+
+  &.table-league {
+    font-size: 12px;
+    color: $black;
+
+    .pkt {
+      background-color: $green_base;
+      color: $white;
+      border-bottom: 1px solid $green_base;
+    }
+
+    tr, th, td {
+      background-color: $white;
+    }
+
+    tr {
+      font-family: $roboto-bold;
+      border-bottom: 1px solid $table_border_color;
+    }
+
+    th {
+      text-transform: uppercase;
+      color: $green_base;
+    }
+  }
 }
