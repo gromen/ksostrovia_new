@@ -43,7 +43,7 @@ function global_setup() {
 
 	/* Custom image sizes*/
 	add_image_size('img700x250',700,250,true);
-	add_image_size('img250x250',250,250, true);
+	add_image_size('img250x250',250,250, array('left','top' ));
 
 	add_filter( 'image_size_names_choose', 'custom_image_sizes_choose' );
 

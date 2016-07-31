@@ -33,6 +33,7 @@
 
 /* #News post */
 .news-post {
+  border: 1px solid $table_border_color;
   margin-bottom: 30px;
 
   &__image {

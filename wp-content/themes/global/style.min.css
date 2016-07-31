@@ -967,7 +967,7 @@ footer.site-footer ul .page_item{-ms-flex:1 1 0;flex:1 1 0;padding-left:.625rem;
 .single .byline,.group-blog .byline{display:inline}
 .page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
 .page-links{clear:both;margin:0 0 1.5em}
-.news-post{margin-bottom:30px}
+.news-post{border:1px solid #ccc;margin-bottom:30px}
 .news-post__image img{min-height:250px}
 .news-post__body{font-size:14px}
 .comment-content a{word-wrap:break-word}

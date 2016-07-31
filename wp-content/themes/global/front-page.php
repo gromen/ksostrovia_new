@@ -39,8 +39,8 @@
 
               <!-- if not first post -->
               <div class="small-12 <?php if( has_post_thumbnail() && $count >= 2 ) : ?>medium-7<?php endif; ?> column">
-                <div class="news-post__text-container <?php if(!has_post_thumbnail()) : ?>news-post__text-container--full-width<?php endif; ?>">
-                  <h3 class="news-post__title h4"><a href="<?php the_permalink() ?>" title="Read more <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+                <div class="news-post__content <?php if(!has_post_thumbnail()) : ?>news-post__text-container--full-width<?php endif; ?>">
+                  <h3 class="h4"><a href="<?php the_permalink() ?>" title="Read more <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
                   <span class="news-post__published-date"><?php the_date(); ?></span>
                   <p class="news-post__body"><?php echo get_the_excerpt(); ?></p>
                 </div>
