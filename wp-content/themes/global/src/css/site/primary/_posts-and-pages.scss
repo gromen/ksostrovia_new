@@ -36,6 +36,25 @@
   border: 1px solid $table_border_color;
   margin-bottom: 30px;
 
+  small {
+    font-size: 55%;
+    line-height: 1.5;
+  }
+
+  &.first {
+    .news-post__content {
+      padding: 20px;
+
+      .h4 {
+        margin-top: 0;
+      }
+
+      .news-post__body {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &__image {
     img {
       min-height: 250px;

@@ -21,7 +21,7 @@
         <div class="small-12 column">
 
           <!-- article post -->
-          <article class="news-post clearfix">
+          <article class="news-post <?php if($count === 1) : ?>first<?php endif; ?> clearfix">
             <div class="row align-middle">
 
               <div class="small-12 medium-shrink column">
@@ -39,9 +39,11 @@
 
               <!-- if not first post -->
               <div class="small-12 <?php if( has_post_thumbnail() && $count >= 2 ) : ?>medium-7<?php endif; ?> column">
-                <div class="news-post__content <?php if(!has_post_thumbnail()) : ?>news-post__text-container--full-width<?php endif; ?>">
-                  <h3 class="h4"><a href="<?php the_permalink() ?>" title="Read more <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-                  <span class="news-post__published-date"><?php the_date(); ?></span>
+                <div class="news-post__content">
+                  <h3 class="h4">
+                    <a href="<?php the_permalink() ?>" title="Read more <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                    <small class="news-post__published-date block"><?php the_date(); ?></small>
+                  </h3>
                   <p class="news-post__body"><?php echo get_the_excerpt(); ?></p>
                 </div>
               </div>

@@ -11,10 +11,16 @@
 
 ?>
 
-            </div>
+            </div>   <!-- news post column -->
 
-            <?php get_sidebar('league_table'); ?>
-            <?php get_sidebar('upcoming_matches'); ?>
+            <!-- Sidebar -->
+            <div class="small-12 medium-5 column">
+
+              <?php get_sidebar('league_table'); ?>
+              <?php get_sidebar('upcoming_matches'); ?>
+
+            </div><!-- Sidebar -->
+
 
         </div><!-- .row -->
       </main><!-- #content -->

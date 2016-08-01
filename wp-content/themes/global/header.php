@@ -74,12 +74,6 @@
 
 			<main id="content" class="site-content">
 				<div class="row">
-					<?php if ( is_active_sidebar('sidebar-2')) :?>
-
 			      <div class="small-12 medium-7 column">
 
-			    <?php else: ?>
 
-			      <div class="small-12 medium-12 column">
-
-			    <?php endif; ?>

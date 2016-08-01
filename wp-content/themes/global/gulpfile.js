@@ -69,40 +69,39 @@ var plumber      = require('gulp-plumber');
  *      6. Minifies the CSS file and generates style.min.css
  */
 gulp.task('styles', function () {
-    gulp.src( styleSRC )
-        .pipe(plumber())
-        .pipe( sourcemaps.init() )
-        .pipe( sass( {
-            errLogToConsole: true,
-            outputStyle: 'compact',
-            //outputStyle: 'compressed',
-            // outputStyle: 'nested',
-            // outputStyle: 'expanded',
-            precision: 10
-        } ) )
-        .pipe( sourcemaps.write( { includeContent: false } ) )
-        .pipe( sourcemaps.init( { loadMaps: true } ) )
-        .pipe( autoprefixer(
-            'last 2 version',
-            '> 1%',
-            'safari 5',
-            'ie 8',
-            'ie 9',
-            'opera 12.1',
-            'ios 6',
-            'android 4' ) )
+  gulp.src( styleSRC )
+    .pipe(plumber())
+    .pipe( sourcemaps.init() )
+    .pipe( sass( {
+      errLogToConsole: true,
+      outputStyle: 'compact',
+      //outputStyle: 'compressed',
+      // outputStyle: 'nested',
+      // outputStyle: 'expanded',
+      precision: 10
+    } ) )
+    .pipe( sourcemaps.write( { includeContent: false } ) )
+    .pipe( sourcemaps.init( { loadMaps: true } ) )
+    .pipe( autoprefixer(
+      'last 2 version',
+      '> 1%',
+      'safari 5',
+      'ie 8',
+      'ie 9',
+      'opera 12.1',
+      'ios 6',
+      'android 4' ) )
 
-        .pipe( sourcemaps.write ( styleDestination ) )
-        .pipe(csscomb())
-        .pipe( gulp.dest( styleDestination ) )
-        .pipe(reload({stream: true}))
+    .pipe( sourcemaps.write ( styleDestination ) )
+    .pipe(csscomb())
+    .pipe( gulp.dest( styleDestination ) )
+    .pipe(reload({stream: true}))
 
-        .pipe( rename( { suffix: '.min' } ) )
-      .pipe( minifycss( {
-            maxLineLen: 10
-        }))
-        .pipe( gulp.dest( styleDestination ) )
-        .pipe( notify( { message: 'TASK: "styles" Completed!', onLast: true } ) )
+//       .pipe( rename( { suffix: '.min' } ) )
+//      .pipe( minifycss( {
+//            maxLineLen: 10
+//        }))
+    .pipe( gulp.dest( styleDestination ) )
 });
 /**
  * Task: vendorJS
@@ -116,16 +115,10 @@ gulp.task('styles', function () {
  *      4. Uglifes/Minifies the JS file and generates vendors.min.js
  */
 gulp.task( 'vendorsJs', function() {
-    gulp.src( jsVendorSRC )
-        .pipe( concat( jsVendorFile + '.js' ) )
-        .pipe( gulp.dest( jsVendorDestination ) )
-        .pipe( rename( {
-            basename: jsVendorFile,
-            suffix: '.min'
-        }))
-        .pipe( uglify() )
-        .pipe( gulp.dest( jsVendorDestination ) )
-        .pipe( notify( { message: 'TASK: "vendorsJs" Completed!', onLast: true } ) );
+  gulp.src( jsVendorSRC )
+    .pipe( concat( jsVendorFile + '.js' ) )
+    .pipe( gulp.dest( jsVendorDestination ) )
+
 });
 /**
  * Task: customJS
@@ -139,26 +132,26 @@ gulp.task( 'vendorsJs', function() {
  *      4. Uglifes/Minifies the JS file and generates custom.min.js
  */
 gulp.task( 'customJS', function() {
-    gulp.src( jsCustomSRC )
-        .pipe( concat( jsCustomFile + '.js' ) )
-        .pipe( gulp.dest( jsCustomDestination ) )
-        .pipe( rename( {
-            basename: jsCustomFile,
-            suffix: '.min'
-        }))
-        .pipe( uglify() )
-        .pipe( gulp.dest( jsCustomDestination ) )
-        .pipe( notify( { message: 'TASK: "customJs" Completed!', onLast: true } ) );
+  gulp.src( jsCustomSRC )
+    .pipe( concat( jsCustomFile + '.js' ) )
+    .pipe( gulp.dest( jsCustomDestination ) )
+    .pipe( rename( {
+      basename: jsCustomFile,
+      suffix: '.min'
+    }))
+    .pipe( uglify() )
+    .pipe( gulp.dest( jsCustomDestination ) )
+
 });
 // Static Server + watching scss/html files
 gulp.task('serve', ['styles'], function() {
 
-    //initialize browsersync
-    browserSync.init({
-    //browsersync with a php server
-    proxy: "localhost:8080/ksostrovia",
-    notify: false
-    });
+  //initialize browsersync
+  browserSync.init({
+  //browsersync with a php server
+  proxy: "localhost:8080/ksostrovia",
+  notify: false
+  });
 
 
 
@@ -169,9 +162,14 @@ gulp.task('serve', ['styles'], function() {
   * Watches for file changes and runs specific tasks.
   */
 
- gulp.task( 'default', [ 'styles', 'vendorsJs', 'customJS','serve' ], function () {
-    gulp.watch('./src/css/**/*.scss', ['styles']);
-    gulp.watch('./*.php').on('change', reload);
-    gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
-    gulp.watch( './src/js/custom/*.js', [ 'customJS' ] );
+ gulp.task( 'default', [ 'vendorsJs', 'customJS','serve' ], function () {
+  gulp.watch([
+    './src/css/**/*.scss',
+    './*.php'
+    ],[
+    'styles'
+    ]);
+  //gulp.watch().on('change', reload);
+  gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
+  gulp.watch( './src/js/custom/*.js', [ 'customJS' ] );
  });
