@@ -12,7 +12,7 @@ sitemap.xml.gz
 /wp-content/plugins/
 /wp-content/wp-cache-config.php
 /wp-content/themes/*/node_modules
-style.css.map
-style.css.min.map
+*.css.map
+*.css.min.map
 
 
