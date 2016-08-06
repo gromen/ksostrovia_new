@@ -34,6 +34,7 @@
 /* #News post */
 .news-post {
   border: 1px solid $table_border_color;
+  border-top: 3px solid $border_top_news;
   margin-bottom: 30px;
 
   small {

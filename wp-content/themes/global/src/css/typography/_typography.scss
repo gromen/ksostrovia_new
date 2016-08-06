@@ -32,6 +32,12 @@ textarea {
   color: $green_base;
 }
 
+/* Text Colors
+------------------------------------------------------------------------*/
+.bg-gray {
+  background-color: $bg_gray;
+}
+
 /* Headers
 ------------------------------------------------------------------------*/
 
@@ -168,4 +174,14 @@ h6, .h6 {
   h6, .h6 {
     font-size: 18px;
   }
+}
+
+/* Uppercase, lowercase
+------------------------------------------------------------------------*/
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }

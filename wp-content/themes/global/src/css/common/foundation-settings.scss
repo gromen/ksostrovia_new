@@ -66,6 +66,13 @@
   }
 }
 
+@media #{$small-only} {
+
+  .row.small-align-center {
+    justify-content: center !important;
+  }
+}
+
 /* Custom utilities
 ------------------------------------------------------------------------*/
 

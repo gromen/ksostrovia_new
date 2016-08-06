@@ -165,7 +165,7 @@ gulp.task('serve', ['styles'], function() {
  gulp.task( 'default', [ 'vendorsJs', 'customJS','serve' ], function () {
   gulp.watch([
     './src/css/**/*.scss',
-    './*/*.php'
+    './*.php'
     ],[
     'styles'
     ]);

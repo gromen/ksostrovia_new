@@ -13,7 +13,17 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
+
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#00923f">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#00923f">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -33,8 +43,9 @@
 				<div class="c-header__searchbar hide-for-small-only">
 					<div class="row align-right align-middle full-height">
 						<div class="small-12 medium-5 column">
-							<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-								<div><input type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" />
+							<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+								<div>
+								<input class="no-margin" type="text" size="18" value="<?php echo esc_html($s, 1); ?>" name="s" id="s" />
 								<input type="submit" id="searchsubmit" value="Search" class="hide btn" />
 								</div>
 							</form>
@@ -74,6 +85,6 @@
 
 			<main id="content" class="site-content">
 				<div class="row">
-			      <div class="small-12 medium-7 column">
+			      <div class="medium-12 large-7 column">
 
 

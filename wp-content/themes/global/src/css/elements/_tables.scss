@@ -10,6 +10,12 @@
 
   tbody {
     border: none;
+
+    td {
+      @media #{$small-only} {
+        padding: 10px 4px;
+      }
+    }
   }
 
   tr, th, td {

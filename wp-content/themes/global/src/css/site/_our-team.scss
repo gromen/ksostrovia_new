@@ -1,0 +1,35 @@
+.player {
+  margin-top: 50px;
+
+  &__body {
+    &:hover {
+      .player__position--border {
+        border-bottom-color: $green_base;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    font-family: $roboto-bold;
+    margin-bottom: 30px;
+  }
+
+  &__position {
+    transition: border 0.2s $transition-bezier;
+    padding: 0 0 15px;
+    width: 50%;
+    margin: 0 auto 20px;
+
+    @media #{$medium-up} {
+      width: 100%;
+    }
+
+    &--border {
+      border-bottom: 4px solid $black;
+    }
+  }
+}
