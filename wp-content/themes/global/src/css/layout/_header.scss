@@ -14,5 +14,29 @@
 
   &__navbar {
     background-color: $green_base;
+
+    .toggled {
+      .menu {
+        margin-top: 40px;
+
+        @media #{$medium-up} {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .menu-toggle {
+      box-shadow: none;
+      background-color: $green_base;
+      padding: 10px 15px;
+      color: $white;
+      border-color: $white;
+    }
+
+    .logo {
+      width: 54px;
+      position: absolute;
+      left: 15px;
+    }
   }
 }

@@ -1,4 +1,8 @@
 .main-navigation {
+  padding: 10px;
+  @media #{$medium-up} {
+    padding: 0;
+  }
   .nav-menu {
     display: none;
     list-style: none;
@@ -94,6 +98,8 @@
 .menu-toggle,
 .main-navigation.toggled ul {
   @include flex;
+  float: right;
+
 
   flex-direction: column-reverse;
 }

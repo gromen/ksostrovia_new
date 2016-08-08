@@ -12,7 +12,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta charset="utf-8">
 
 <!-- Chrome, Firefox OS and Opera -->
 <meta name="theme-color" content="#00923f">
@@ -62,6 +62,7 @@
 
 				<!-- navbar -->
 				<div class="c-header__navbar">
+				<a href="<?php bloginfo('url'); ?>" class="show-for-small-only logo"><img src="<?php bloginfo('template_directory') ?>/src/images/logo.png" alt="Ks ostrovia klub sportowy piłka nożna"></a>
 					<div class="row align-bottom">
 
 
