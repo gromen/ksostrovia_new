@@ -14,11 +14,18 @@
 
 
 
-      <footer class="site-footer" role="contentinfo">
-        <?php wp_nav_menu( array(
-          'theme_location' => 'footer',
-          'menu_id' => 'footer-menu'
-        ) ); ?>
+      <footer class="site-footer">
+        <div class="row">
+          <div class="small-12 column">
+
+            <?php wp_nav_menu( array(
+                'theme_location' => 'secondary',
+                'menu_class' => 'footer-menu',
+                'container' => 'nav'
+              ) ); ?>
+
+          </div>
+        </div>
       </footer><!-- footer -->
       <?php wp_footer(); ?>
 </body>
