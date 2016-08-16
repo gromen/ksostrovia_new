@@ -68,8 +68,12 @@
 
 @media #{$small-only} {
 
-  .row.small-align-center {
-    justify-content: center !important;
+  .row{
+
+    > .small-align-center {
+      @include justify-content(center) !important;
+    }
+
   }
 }
 
