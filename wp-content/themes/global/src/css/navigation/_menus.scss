@@ -139,8 +139,9 @@
 //---- #footer menu ----
 //---------------------
 footer.site-footer {
-  background-color: $footer_bg;
 
+  background-color: $footer_bg;
+  width: 100%;
   nav {
     margin: 0;
     padding: 10px 0;
