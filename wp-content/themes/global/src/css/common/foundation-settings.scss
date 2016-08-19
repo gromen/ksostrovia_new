@@ -70,7 +70,7 @@
 
   .row{
 
-    > .small-align-center {
+    & > .small-align-center {
       @include justify-content(center) !important;
     }
 
