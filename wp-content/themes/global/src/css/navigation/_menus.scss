@@ -75,7 +75,14 @@
   }
 
   .menu {
-    ul {
+    .menu-item{
+      .sub-menu{
+        top: 38px;
+        background-color: $green_base;
+        margin-left: 0;
+      }
+    }
+    > ul {
       @include breakpoint(medium up) {
         @include flex-grid-row;
 
@@ -93,6 +100,47 @@
         }
       }
     }
+    > .menu-item {
+      &.menu-item-has-children {
+        > a {
+          position: relative;
+          &:after{
+            font-family: $font-awesome;
+            content: '\f0dd';
+            position: absolute;
+            top: 8px;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            }
+          }
+        // 2nd menu level
+        > .sub-menu {
+            .menu-item {
+              list-style-type: none;
+              padding-left: 15px;
+              &.menu-item-has-children {
+                position: relative;
+              > a {
+                &:after {
+                  font-family: $font-awesome;
+                  content: '\f0da';
+                  position: absolute;
+                  top: 5px;
+                  right: 0;
+                  width: 10px;
+                  height: 10px;
+                }
+              }
+            }
+          }
+          // 3rd menu level
+          .sub-menu {
+            top: 0;
+          }
+        }
+        }
+      }
   }
 }
 
@@ -102,7 +150,11 @@
   @include flex;
 
   float: right;
-  flex-direction: column-reverse;
+  flex-direction: column;
+}
+.menu-toggle{
+  border: 0;
+  @include hamburger($yellow_base, $yellow_base, 30px);
 }
 
 @media screen and (min-width: 37.5em) {

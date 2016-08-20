@@ -70,7 +70,7 @@
 							<div class="row align-right">
 								<div class="medium-shrink column">
 									<nav id="site-navigation" class="main-navigation">
-										<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '|||', 'global' ); ?></button>
+										<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
 										<?php wp_nav_menu( array(
 											'theme_location' => 'primary',
 											'menu_id' => 'primary-menu'
@@ -87,6 +87,7 @@
 
 			<main id="content" class="site-content">
 				<div class="row">
+				<?php if(is_front_page()): ?>
 			      <div class="medium-12 large-7 column">
-
+				<?php endif; ?>
 

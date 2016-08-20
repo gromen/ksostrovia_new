@@ -50,6 +50,7 @@ $count++;
               <div class="small-12 <?php if( has_post_thumbnail() && $count >= 2 ) : ?>medium-7<?php endif; ?> column">
                 <div class="news-post__content">
                   <h3 class="h4">
+
                     <a href="<?php the_permalink() ?>" title="Read more <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                     <small class="news-post__published-date block"><?php the_date(); ?></small>
                   </h3>

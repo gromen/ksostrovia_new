@@ -47,6 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Foundation
 ----*/
 
+
 @import "vendor/foundation/foundation";
 
 @include foundation-everything(true);
@@ -119,3 +120,4 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+@import "../icons/font-awesome-4.6.3/scss/font-awesome.scss";
