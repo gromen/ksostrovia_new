@@ -1,0 +1,10 @@
+form[class^="wpcf7-"] {
+  #{$inputs-types} {
+    border-radius: 7px;
+
+  }
+
+  label{
+    font-family: $roboto-regular;
+  }
+}
