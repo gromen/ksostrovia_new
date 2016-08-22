@@ -1,7 +1,9 @@
 .main-navigation {
-  padding: 10px;
+  height: 54px;
+  padding: 20px 10px;
 
   @media #{$medium-up} {
+    height: auto;
     padding: 0;
   }
 
@@ -11,18 +13,14 @@
     margin: 0;
     padding-left: 0;
 
-    ul {
+    .sub-menu {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
       top: 1.5em;
-      left: -999em;
+      opacity: 0;
       z-index: 99999;
-
-      ul {
-        left: -999em;
-        top: 0;
-      }
+      transition: opacity .3s $transition-bezier;
 
       li {
         &:hover > ul,
@@ -34,17 +32,11 @@
       a {
         width: 200px;
       }
-
-      :hover > a,
-      .focus > a {}
-
-      a:hover,
-      a.focus {}
     }
 
     li:hover > ul,
     li.focus > ul {
-      left: auto;
+      opacity: 1;
     }
   }
 
@@ -54,17 +46,17 @@
 
     &:hover > a,
     &.focus > a {
-      color: yellow;
+      color: $yellow_base;
     }
   }
 
   a {
-    text-transform: uppercase;
-    font-family: $roboto-medium;
-    display: block;
     color: $white;
-    text-decoration: none;
+    display: block;
+    font-family: $roboto-medium;
     padding: 5px 0;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   .current_page_item > a,
@@ -75,11 +67,14 @@
   }
 
   .menu {
-    .menu-item{
-      .sub-menu{
-        top: 38px;
+    .menu-item {
+      .sub-menu {
         background-color: $green_base;
-        margin-left: 0;
+
+        @media #{$medium-up} {
+          margin-left: 0;
+          top: 38px;
+        }
       }
     }
     > ul {
@@ -104,6 +99,7 @@
       &.menu-item-has-children {
         > a {
           position: relative;
+
           &:after{
             font-family: $font-awesome;
             content: '\f0dd';
@@ -116,12 +112,15 @@
           }
         // 2nd menu level
         > .sub-menu {
+
             .menu-item {
               list-style-type: none;
               padding-left: 15px;
               &.menu-item-has-children {
                 position: relative;
+
               > a {
+
                 &:after {
                   font-family: $font-awesome;
                   content: '\f0da';
@@ -144,17 +143,24 @@
   }
 }
 
-/* Small menu. */
+// Small menu.
 .menu-toggle,
 .main-navigation.toggled ul {
-  @include flex;
-
+  display: block;
   float: right;
-  flex-direction: column;
+  li{
+    float: none;
+    display: block;
+    a{
+      display: block;
+      text-align: center;
+    }
+  }
 }
-.menu-toggle{
-  border: 0;
+
+.menu-toggle {
   @include hamburger($yellow_base, $yellow_base, 30px);
+  border: 0;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -190,23 +196,26 @@
 //--------------------
 //---- #footer menu ----
 //---------------------
-footer.site-footer {
+.site-footer {
 
   background-color: $footer_bg;
   width: 100%;
+
   nav {
     margin: 0;
     padding: 10px 0;
 
     ul {
-      list-style-type: none;
-      margin-bottom: 0;
-
       @include flex-grid-row;
 
       @include flex-align(left, middle);
 
       @include flex-grid-layout(2, li);
+
+      list-style-type: none;
+      margin-bottom: 0;
+
+
 
       @media #{$medium-up} {
         @include flex-grid-layout(6, li);
