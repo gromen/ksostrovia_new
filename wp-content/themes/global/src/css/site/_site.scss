@@ -3,10 +3,8 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-@import "primary/posts-and-pages";
+@import 'posts-and-pages';
 
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-@import "primary/comments";
-@import "our-team";
+@import 'our-team';
+@import 'widgets';
+@import 'contact-form';

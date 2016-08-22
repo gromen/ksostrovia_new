@@ -18,8 +18,8 @@ textarea {
 // h1 , h2, h3, etc...
 #{$headers} {
   font-family: $roboto-medium;
-  line-height: 1.1;
   font-style: normal;
+  line-height: 1.1;
 
   small {
     font-size: 70%;
@@ -43,31 +43,37 @@ textarea {
 
 @media #{$small-only} {
 
-  h4, .h4, h5, .h5 {
+  h4,
+  .h4,
+  h5,
+  .h5 {
     font-family: $roboto-light;
   }
 }
 
 /* Header h1 */
-h1, .h1 {
+h1,
+.h1 {
+  font-size: 28px;
   line-height: 1;
   margin-bottom: 15px;
-  font-size: 28px;
 }
 
 @media #{$medium-up} {
 
-  h1, .h1 {
-    margin-bottom: 20px;
+  h1,
+  .h1 {
     font-size: 32px;
+    margin-bottom: 20px;
   }
 }
 
 @media #{$large-up} {
 
-  h1, .h1 {
-    margin-bottom: 25px;
+  h1,
+  .h1 {
     font-size: 38px;
+    margin-bottom: 25px;
 
     &.landing-header {
       font-size: 48px;
@@ -75,88 +81,101 @@ h1, .h1 {
   }
 }
 
-/* Header h2 */
-h2, .h2 {
+// Header h2
+h2,
+.h2 {
   margin: 30px 0 15px;
   font-size: 28px;
 }
 
 @media #{$medium-up} {
 
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 30px;
   }
 }
 
 @media #{$large-up} {
 
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 32px;
   }
 }
 
-/* Header h3 */
-h3, .h3 {
+// Header h3
+h3,
+.h3 {
   margin: 25px 0 15px;
   font-size: 24px;
 }
 
 @media #{$medium-up} {
 
-  h3, .h3 {
+  h3,
+  .h3 {
     font-size: 26px;
   }
 }
 
 @media #{$large-up} {
 
-  h3, .h3 {
+  h3,
+  .h3 {
     font-size: 28px;
   }
 }
 
 /* Header h4 */
-h4, .h4 {
+h4,
+.h4 {
   margin: 25px 0 15px;
   font-size: 22px;
 }
 
 @media #{$medium-up} {
 
-  h4, .h4 {
+  h4,
+  .h4 {
     font-size: 24px;
   }
 }
 
 @media #{$large-up} {
 
-  h4, .h4 {
+  h4,
+  .h4 {
     font-size: 26px;
   }
 }
 
 /* Header h5 */
-h5, .h5 {
+h5,
+.h5 {
   margin: 25px 0 15px;
   font-size: 20px;
 }
 
 @media #{$medium-up} {
 
-  h5, .h5 {
+  h5,
+  .h5 {
     font-size: 22px;
   }
 }
 
 @media #{$large-up} {
 
-  h5, .h5 {
+  h5,
+  .h5 {
     font-size: 24px;
   }
 }
 
 /* Header h6 */
-h6, .h6 {
+h6,
+.h6 {
   margin-bottom: 15px;
   font-size: 18px;
   font-family: $roboto-light;
@@ -164,14 +183,16 @@ h6, .h6 {
 
 @media #{$medium-up} {
 
-  h6, .h6 {
+  h6,
+  .h6 {
     font-size: 20px;
   }
 }
 
 @media #{$large-up} {
 
-  h6, .h6 {
+  h6,
+  .h6 {
     font-size: 18px;
   }
 }

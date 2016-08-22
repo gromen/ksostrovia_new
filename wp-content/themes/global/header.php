@@ -88,6 +88,8 @@
 			<main id="content" class="site-content">
 				<div class="row">
 				<?php if(is_front_page()): ?>
-			      <div class="medium-12 large-7 column">
+					<div class="medium-12 large-7 column">
+				<?php else: ?>
+					<div class="small-12 column">
 				<?php endif; ?>
 
