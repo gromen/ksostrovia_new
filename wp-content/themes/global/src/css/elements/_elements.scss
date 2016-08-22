@@ -46,3 +46,6 @@ img {
   /* Adhere to container width. */
 }
 
+a:focus {
+  outline: $green_base solid medium;
+}

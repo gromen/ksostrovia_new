@@ -3,16 +3,24 @@
   border: 1px solid $color__border-input;
   border-radius: 3px;
   padding: 3px;
-
-  &:focus {
-    color: $color__text-input-focus;
-  }
 }
 
 select {
   border: 1px solid $color__border-input;
 }
 
+label {
+  font-family: $roboto-light;
+}
+
 textarea {
   width: 100%;
+}
+// inputs foucus & hover
+#{$inputs-types} {
+  border-radius: 5px;
+
+  #{$actions-types} {
+    border: 1px solid $green_base;
+  }
 }

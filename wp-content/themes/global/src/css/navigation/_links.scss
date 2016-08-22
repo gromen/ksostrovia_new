@@ -1,3 +1,19 @@
+.menu-item {
+  a {
+    &:focus {
+      outline-color: $yellow_base;
+    }
+  }
+}
+
+.footer-menu {
+  a {
+    &:focus {
+      outline-color: $white;
+    }
+  }
+}
+
 a {
   color: $green_base;
 
@@ -8,7 +24,7 @@ a {
   }
 
   &:focus {
-    outline: thin dotted;
+    outline: $green_base medium solid;
   }
 
   &:hover,
@@ -16,3 +32,4 @@ a {
     outline: 0;
   }
 }
+
