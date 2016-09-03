@@ -3,8 +3,8 @@ Contributors: webdorado
 Donate link: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
 Tags: album, image gallery, gallery, image, images, lightbox, photo, photo gallery, photos, responsive, thumbnail, widget
 Requires at least: 3.4
-Tested up to: 4.5 
-Stable tag: 1.3.6    
+Tested up to: 4.6 
+Stable tag: 1.3.7    
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,10 +189,9 @@ After downloading the ZIP file,
 == Screenshots ==
 1.  Photo Gallery - Popup View   
 2.  Photo Gallery - Thumbnails View   
-3.  Photo Gallery - Masonry View   
-4.  Photo Gallery - Create Shortcode   
-5.  Photo Gallery - Edit Global Options   
-6.  Photo Gallery - Edit Watermark   
+3.  Photo Gallery - Create Shortcode   
+4.  Photo Gallery - Edit Global Options   
+5.  Photo Gallery - Edit Watermark   
 
 == Frequently Asked Questions ==
 
@@ -224,6 +223,12 @@ We recommend to use images with the width of 1200px to 1600px. In order to speed
 To enable the feature of adding Media Library images, go to Photo Gallery > Options > Global Options and set Import from Media Library option to Yes. After that you will be able to import photos from Media Library to Photo Gallery.     
 
 == Changelog ==
+
+= 1.3.7 =
+* Fixed: White spaces after image title.   
+* Fixed: Masonry/mosaic galleries load in compact album view.   
+* Fixed: Loading in filemanager.   
+* Fixed: Back in Japan.   
 
 = 1.3.6 =
 * Added: Bulk edit images title, description and redirect url.    

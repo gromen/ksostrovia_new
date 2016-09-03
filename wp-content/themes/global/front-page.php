@@ -99,10 +99,13 @@ $count++;
           </div>
         </div>
         <div class="row small-align-center align-justify align-middle">
+
           <div class="shrink column">
             <img src="<?php bloginfo('template_directory') ?>/src/images/logo.png" alt="Ks ostrovia klub sportowy piłka nożna">
           </div>
+
           <div class="small-12 medium-shrink column">
+
             <div class="score">
               <div class="row align-middle align-center">
                 <div class="shrink column"><span class="score--number-big"><b>5</b></span></div>
@@ -120,7 +123,9 @@ $count++;
                 <div class="shrink column"><span class="score--number-big"><b>0</b></span></div>
               </div>
             </div>
+
           </div>
+
           <div class="shrink column">
             <img src="<?php bloginfo('template_directory') ?>/src/images/logo.png" alt="Ks ostrovia klub sportowy piłka nożna">
           </div>

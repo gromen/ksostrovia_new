@@ -34,7 +34,6 @@ var customJSWatchFiles  = './src/js/custom/*.js'; // Path to all custom JS files
  * Load gulp plugins and assing them semantic names.
  */
 var gulp         = require('gulp'); // Gulp of-course
-
 //Format CSS coding style
 var csscomb = require('gulp-csscomb');
 
@@ -68,6 +67,7 @@ var plumber      = require('gulp-plumber');
  *      5. Renames the CSS file with suffix .min.css
  *      6. Minifies the CSS file and generates style.min.css
  */
+
 gulp.task('styles', function () {
   gulp.src( styleSRC )
     .pipe(plumber())
@@ -162,13 +162,11 @@ gulp.task('serve', ['styles'], function() {
   * Watches for file changes and runs specific tasks.
   */
 
- gulp.task( 'default', [ 'vendorsJs', 'customJS','serve' ], function () {
+ gulp.task( 'default', [ 'vendorsJs', 'customJS', 'serve' ], function () {
   gulp.watch([
     './src/css/**/*.scss',
     './*.php'
-    ],[
-    'styles'
-    ]);
+    ],['styles']);
   //gulp.watch().on('change', reload);
   gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
   gulp.watch( './src/js/custom/*.js', [ 'customJS' ] );
