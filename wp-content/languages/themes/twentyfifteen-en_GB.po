@@ -1,18 +1,18 @@
-# Translation of Twenty Fifteen in Polish
+# Translation of Twenty Fifteen in English (UK)
 # This file is distributed under the same license as the Twenty Fifteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-08-18 16:52:11+0000\n"
+"PO-Revision-Date: 2015-08-18 16:52:12+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.1.0-alpha\n"
 "Project-Id-Version: Twenty Fifteen\n"
 
 #. Description of the plugin/theme
 msgid "Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer."
-msgstr "Nasz domyślny motyw (2015) jest schludny i przejrzysty, zorientowany na blogowanie. Motyw Twenty Fifteen posiada prostą i klarowną typografię, dzięki czemu jest czytelny na urządzeniach o różnych rozmiarach ekranów. Jest także przystosowany do wielu języków. Projektując motyw, kierowaliśmy się tzw. podejściem mobile-first, co oznacza, że najbardziej widoczna ma być zawsze treść, niezależnie od tego, czy odwiedzający używają do przeglądania smartfona, tabletu, laptopa, czy też komputera stacjonarnego."
+msgstr "Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes centere-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer."
 
 #. Theme Name of the plugin/theme
 msgid "Twenty Fifteen"
@@ -21,42 +21,42 @@ msgstr "Twenty Fifteen"
 #. translators: %s: post title
 #: inc/template-tags.php:123
 msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr "Dodaj komentarz<span class=\"screen-reader-text\"> do %s</span>"
+msgstr "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
 
 #: single.php:37
 msgid "Previous post:"
-msgstr "Poprzedni wpis:"
+msgstr "Previous post:"
 
 #: single.php:36
 msgid "Previous"
-msgstr "Poprzednie"
+msgstr "Previous"
 
 #: single.php:34
 msgid "Next post:"
-msgstr "Następny wpis:"
+msgstr "Next post:"
 
 #: single.php:33
 msgid "Next"
-msgstr "Dalej"
+msgstr "Next"
 
 #: search.php:18
 msgid "Search Results for: %s"
-msgstr "Wyniki wyszukiwania dla zapytania &#8222;%s&#8221;"
+msgstr "Search Results for: %s"
 
 #: inc/template-tags.php:113
 msgctxt "Used before full size attachment link."
 msgid "Full size"
-msgstr "Pełny rozmiar"
+msgstr "Full size"
 
 #: inc/template-tags.php:102
 msgctxt "Used before tag names."
 msgid "Tags"
-msgstr "Tagi"
+msgstr "Tags"
 
 #: inc/template-tags.php:94
 msgctxt "Used before category names."
 msgid "Categories"
-msgstr "Kategorie"
+msgstr "Categories"
 
 #: inc/template-tags.php:91 inc/template-tags.php:99
 msgctxt "Used between list items, there is a space after the comma."
@@ -66,106 +66,106 @@ msgstr ", "
 #: inc/template-tags.php:85
 msgctxt "Used before post author name."
 msgid "Author"
-msgstr "Autor"
+msgstr "Author"
 
 #: inc/template-tags.php:76
 msgctxt "Used before publish date."
 msgid "Posted on"
-msgstr "Opublikowano"
+msgstr "Posted on"
 
 #: inc/template-tags.php:55
 msgctxt "Used before post format."
 msgid "Format"
-msgstr "Format wpisu"
+msgstr "Format"
 
 #: inc/template-tags.php:49
 msgid "Featured"
-msgstr "Polecany"
+msgstr "Featured"
 
 #: inc/template-tags.php:30
 msgid "Newer Comments"
-msgstr "Nowsze komentarze"
+msgstr "Newer Comments"
 
 #: inc/template-tags.php:26
 msgid "Older Comments"
-msgstr "Starsze komentarze"
+msgstr "Older Comments"
 
 #: inc/template-tags.php:23
 msgid "Comment navigation"
-msgstr "Nawigacja po komentarzach"
+msgstr "Comment navigation"
 
 #: inc/customizer.php:205
 msgid "Blue"
-msgstr "Niebieski"
+msgstr "Blue"
 
 #: inc/customizer.php:194
 msgid "Purple"
-msgstr "Fioletowy"
+msgstr "Purple"
 
 #: inc/customizer.php:183
 msgid "Pink"
-msgstr "Różowy"
+msgstr "Pink"
 
 #: inc/customizer.php:172
 msgid "Yellow"
-msgstr "Żółty"
+msgstr "Yellow"
 
 #: inc/customizer.php:161
 msgid "Dark"
-msgstr "Ciemny"
+msgstr "Dark"
 
 #: inc/customizer.php:150
 msgid "Default"
-msgstr "Domyślny"
+msgstr "Default"
 
 #: inc/customizer.php:75
 msgid "Header and Sidebar Background Color"
-msgstr "Kolor tła nagłówka i panelu bocznego"
+msgstr "Header and Sidebar Background Color"
 
 #: inc/customizer.php:60 inc/customizer.php:76 inc/customizer.php:81
 msgid "Applied to the header on small screens and the sidebar on wide screens."
-msgstr "Stosuje się do nagłówka na małych ekranach i panelu bocznego na szerokich ekranach."
+msgstr "Applied to the header on small screens and the sidebar on wide screens."
 
 #: inc/customizer.php:59
 msgid "Header and Sidebar Text Color"
-msgstr "Kolor tekstu w nagłówku i panelu bocznym"
+msgstr "Header and Sidebar Text Color"
 
 #: inc/customizer.php:44
 msgid "Base Color Scheme"
-msgstr "Podstawowy zestaw kolorów"
+msgstr "Base Color Scheme"
 
 #: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
 msgid "Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again."
-msgstr "Motyw Twenty Fifteen wymaga WordPressa w wersji 4.1 lub nowszej. Obecnie używasz WordPressa w wersji %s. Zaktualizuj system i spróbuj ponownie."
+msgstr "Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again."
 
 #: image.php:84
 msgctxt "Parent post link"
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
-msgstr "<span class=\"meta-nav\">Opublikowano w </span><span class=\"post-title\">%title</span>"
+msgstr "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
 
 #: image.php:24
 msgid "Next Image"
-msgstr "Następny obrazek"
+msgstr "Next Image"
 
 #: image.php:24
 msgid "Previous Image"
-msgstr "Poprzedni obrazek"
+msgstr "Previous Image"
 
 #: header.php:45
 msgid "Menu and widgets"
-msgstr "Menu i widgety"
+msgstr "Menu and widgets"
 
 #: header.php:26
 msgid "Skip to content"
-msgstr "Przeskocz do treści"
+msgstr "Skip to content"
 
 #: functions.php:270
 msgid "collapse child menu"
-msgstr "zwiń menu potomne"
+msgstr "collapse child menu"
 
 #: functions.php:269
 msgid "expand child menu"
-msgstr "rozwiń menu potomne"
+msgstr "expand child menu"
 
 #. Translators: To add an additional character subset specific to your
 #. language, translate this to 'greek', 'cyrillic', 'devanagari' or
@@ -181,7 +181,7 @@ msgstr "no-subset"
 #: functions.php:191
 msgctxt "Inconsolata font: on or off"
 msgid "on"
-msgstr "włącz"
+msgstr "on"
 
 #. Translators: If there are characters in your language that are not supported
 #. by Noto Serif, translate this to 'off'. Do not translate into your own
@@ -189,7 +189,7 @@ msgstr "włącz"
 #: functions.php:183
 msgctxt "Noto Serif font: on or off"
 msgid "on"
-msgstr "włącz"
+msgstr "on"
 
 #. Translators: If there are characters in your language that are not supported
 #. by Noto Sans, translate this to 'off'. Do not translate into your own
@@ -197,108 +197,107 @@ msgstr "włącz"
 #: functions.php:175
 msgctxt "Noto Sans font: on or off"
 msgid "on"
-msgstr "włącz"
+msgstr "on"
 
 #: functions.php:149
 msgid "Add widgets here to appear in your sidebar."
-msgstr "Dodaj widgety, żeby pojawiły się w panelu bocznym."
+msgstr "Add widgets here to appear in your sidebar."
 
 #: functions.php:147
 msgid "Widget Area"
-msgstr "Panel boczny"
+msgstr "Widget Area"
 
 #: functions.php:86
 msgid "Social Links Menu"
-msgstr "Menu odnośników serwisów społecznościowych"
+msgstr "Social Links Menu"
 
 #: functions.php:85
 msgid "Primary Menu"
-msgstr "Menu główne"
+msgstr "Primary Menu"
 
 #: footer.php:25
 msgid "Proudly powered by %s"
-msgstr "Dumnie wspierane przez WordPressa"
+msgstr "Proudly powered by %s"
 
 #. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 1.6)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:25
 msgid "https://wordpress.org/"
-msgstr "https://pl.wordpress.org/"
+msgstr "https://wordpress.org/"
 
 #: content-none.php:31
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Nie udało się znaleźć tego, czego szukasz. Być może wyszukiwanie przyniesie lepsze rezultaty."
+msgstr "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 
 #: content-none.php:26
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Brak wyników wyszukiwania. Proszę spróbować ponownie z innymi słowami."
+msgstr "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 
 #: content-none.php:22
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Gotów, by opublikować pierwszy post? <a href=\"%1$s\">Zacznij tutaj</a>. "
+msgstr "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 
 #: content-none.php:15
 msgid "Nothing Found"
-msgstr "Niczego nie znaleziono"
+msgstr "Nothing Found"
 
 #: content-link.php:56 content-page.php:35 content-search.php:28
 #: content-search.php:33 content.php:57 image.php:71
 msgid "Edit"
-msgstr "Edytuj"
+msgstr "Edit"
 
 #: content-link.php:36 content-page.php:25 content.php:38 image.php:59
 msgid "Pages:"
-msgstr "Strony:"
+msgstr "Pages:"
 
 #. translators: %s: Name of current post
 #: content-link.php:31 content.php:33 inc/template-tags.php:238
 msgid "Continue reading %s"
-msgstr "Czytaj dalej %s"
+msgstr "Continue reading %s"
 
 #: comments.php:53
 msgid "Comments are closed."
-msgstr "Możliwość komentowania jest wyłączona."
+msgstr "Comments are closed."
 
 #: comments.php:28
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Jedno przemyślenie nt. &bdquo;%2$s&rdquo;"
-msgstr[1] "%1$s przemyślenia nt. &bdquo;%2$s&rdquo;"
-msgstr[2] "%1$s przemyśleń nt. &bdquo;%2$s&rdquo;"
+msgstr[0] "One thought on &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
 
 #: author-bio.php:34
 msgid "View all posts by %s"
-msgstr "Zobacz wszystkie wpisy, których autorem jest %s"
+msgstr "View all posts by %s"
 
 #: author-bio.php:12
 msgid "Published by"
-msgstr "Autor"
+msgstr "Published by"
 
 #: archive.php:51 content-link.php:40 content-page.php:29 content.php:42
 #: image.php:63 index.php:48 search.php:40
 msgid "Page"
-msgstr "Strona"
+msgstr "Page"
 
 #: archive.php:50 index.php:47 search.php:39
 msgid "Next page"
-msgstr "Następna strona"
+msgstr "Next page"
 
 #: archive.php:49 index.php:46 search.php:38
 msgid "Previous page"
-msgstr "Poprzednia strona"
+msgstr "Previous page"
 
 #: 404.php:21
 msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "Wygląda na to, że w tym miejscu niczego nie ma. Może warto spróbować coś wyszukać?"
+msgstr "It looks like nothing was found at this location. Maybe try a search?"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ups! Nie udało się znaleźć pożądanej strony."
+msgstr "Oops! That page can&rsquo;t be found."
 
 #. Author of the plugin/theme
 msgid "the WordPress team"
-msgstr "zespół WordPressa"
+msgstr "the WordPress team"
 
 #. Theme URI of the plugin/theme
 msgid "https://wordpress.org/themes/twentyfifteen/"
