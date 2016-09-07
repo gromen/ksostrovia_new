@@ -29,13 +29,42 @@ function global_post_types() {
     'hierarchical' => false,
     'query_var' => true,
     'supports' => array(
-      'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats'
+      'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats'
     ),
     'has_archive' => true
   );
 
   register_post_type( 'aktualnosci', $news_args );
 
+}
+
+add_action('init', 'global_init_taxonomies');
+
+function global_init_taxonomies() {
+
+  register_taxonomy( 'druzyny', array('aktualnosci'),
+    array (
+      'hierarchical' => false,
+      'labels' => array (
+        'name' => 'Drużyny',
+        'singular_name' => 'Drużyny',
+        'search_items' => 'Wyszukaj drużyny',
+        'popular_items' => 'Popularne drużyny',
+        'all_items' => 'Wszystkie drużyny',
+        'edit_item' => 'Edytuj drużynę',
+        'update_item' => 'Aktualizuj drużynę',
+        'add_new_item' => 'Dodaj nową drużynę',
+        'new_item_name' => 'Nazwa nowej drużyny',
+        'separate_items_with_commas' => 'Oddziel drużyny przecinkiem',
+        'choose_from_most_used' => 'Wybierz sposród najczęciej używanych drużyn',
+        'menu_name' => 'Drużyny'
+        ),
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array ('slug' => 'druzyna'),
+    )
+
+   );
 }
 
 

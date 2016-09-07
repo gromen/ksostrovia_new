@@ -1,9 +1,11 @@
-.btn,
-#{$button-inputs} {
-  background-color: $green-button;
+.btn {
   border: 0;
   color: $white;
   padding: 10px 20px;
   text-transform: uppercase;
 
+  &-green {
+    @extend .btn;
+      background-color: $green_base;
+  }
 }

@@ -17,7 +17,6 @@
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
-      top: 1.5em;
       opacity: 0;
       z-index: 99999;
       transition: opacity .3s $transition-bezier;
@@ -25,8 +24,7 @@
       a {
         font-family: $roboto-light;
         text-transform: capitalize;
-        width: 200px;
-
+        width: 250px;
       }
 
       li {
@@ -37,9 +35,15 @@
       }
     }
 
+    li > ul {
+      top: -300px;
+
+    }
+
     li:hover > ul,
     li.focus > ul {
       opacity: 1;
+      top: 38px;
     }
   }
 
@@ -79,7 +83,6 @@
 
         @media #{$medium-up} {
           margin-left: 0;
-          top: 38px;
         }
       }
     }
