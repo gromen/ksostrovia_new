@@ -14,13 +14,13 @@ var styleDestination    = './'; // Path to place the compiled CSS file
 
 
 var jsVendorSRC         = './src/js/vendors/*.js'; // Path to JS vendors folder
-var jsVendorDestination = './src/js/'; // Path to place the compiled JS vendors file
+var jsVendorDestination = './src/js/vendors/'; // Path to place the compiled JS vendors file
 var jsVendorFile        = 'vendors'; // Compiled JS vendors file name
 // Default set to vendors i.e. vendors.js
 
 
 var jsCustomSRC         = './src/js/custom/*.js'; // Path to JS custom scripts folder
-var jsCustomDestination = './src/js/'; // Path to place the compiled JS custom scripts file
+var jsCustomDestination = './src/js/custom/'; // Path to place the compiled JS custom scripts file
 var jsCustomFile        = 'custom'; // Compiled JS custom file name
 // Default set to custom i.e. custom.js
 
@@ -131,16 +131,20 @@ gulp.task( 'vendorsJs', function() {
  *      3. Renames the JS file with suffix .min.js
  *      4. Uglifes/Minifies the JS file and generates custom.min.js
  */
-gulp.task( 'customJS', function() {
-  gulp.src( jsCustomSRC )
+gulp.task( 'js', function() {
+  gulp.src([
+    jsCustomSRC,
+    './js/navigation.js',
+    './js/skip-link-focus-fix.js'
+    ])
     .pipe( concat( jsCustomFile + '.js' ) )
     .pipe( gulp.dest( jsCustomDestination ) )
-    .pipe( rename( {
-      basename: jsCustomFile,
-      suffix: '.min'
-    }))
-    .pipe( uglify() )
-    .pipe( gulp.dest( jsCustomDestination ) )
+    //.pipe( rename( {
+      //basename: jsCustomFile,
+      //suffix: '.min'
+   // }))
+    //.pipe( uglify() )
+    //.pipe( gulp.dest( jsCustomDestination ) )
 
 });
 // Static Server + watching scss/html files
@@ -162,12 +166,13 @@ gulp.task('serve', ['styles'], function() {
   * Watches for file changes and runs specific tasks.
   */
 
- gulp.task( 'default', [ 'vendorsJs', 'customJS', 'serve' ], function () {
+ gulp.task( 'default', [ 'vendorsJs', 'js', 'serve' ], function () {
   gulp.watch([
     './src/css/**/*.scss',
-    './*.php'
+    './*.php',
+    './**/*.php'
     ],['styles']);
   //gulp.watch().on('change', reload);
-  gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
-  gulp.watch( './src/js/custom/*.js', [ 'customJS' ] );
+  //gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
+  //gulp.watch( './src/js/custom/*.js', [ 'js' ] );
  });

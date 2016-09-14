@@ -44,7 +44,11 @@
 
   &.first {
     .news-post__content {
-      padding: 20px;
+      padding: 10px;
+
+        @media #{$medium-up} {
+          padding: 20px;
+        }
 
       .h4 {
         margin-top: 0;
@@ -56,9 +60,18 @@
     }
   }
 
+  &__content {
+    padding: 10px;
+
+    @media #{$medium-up} {
+      padding: 0;
+    }
+  }
+
   &__image {
     img {
       min-height: 250px;
+      width: 100%;
     }
   }
 

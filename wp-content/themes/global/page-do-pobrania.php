@@ -27,8 +27,6 @@ get_header(); ?>
 			<tr><a href=""></a></tr>
 		</tbody>
 	</table>
-
-
 </div>
 
 <?php get_footer(); ?>

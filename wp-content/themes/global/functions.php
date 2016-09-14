@@ -141,6 +141,12 @@ add_action( 'widgets_init', 'global_widgets_init' );
 function global_scripts() {
 	wp_enqueue_style( 'global-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/src/css/swiper.min.css' );
+
+	wp_enqueue_script( 'vendor-scripts', get_template_directory_uri() . '/src/js/vendors/vendors.js', array(), '20160907', true );
+
+	wp_enqueue_script( 'global-scripts', get_template_directory_uri() . '/src/js/custom.js', array(), '20160907', true );
+
 	wp_enqueue_script( 'global-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'global-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -158,6 +164,68 @@ function generate_favicon(){
 	echo '<link rel="shortcut icon" type="image/x-icon" href="http://localhost:8080/ksostrovia/favicon.ico" />' . "\n";
 }
 add_action('wp_head','generate_favicon');
+
+
+
+add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ */
+function cmb2_sample_metaboxes() {
+
+    // Start with an underscore to hide fields from custom fields list
+    $prefix = '_global_';
+
+    /**
+     * Initiate the metabox
+     */
+    $cmb = new_cmb2_box( array(
+        'id'            => 'test_metabox',
+        'title'         => __( 'Test Metabox', 'cmb2' ),
+        'object_types'  => array( 'page', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+		$group_field_id = $cmb->add_field( array(
+		    'id'          => 'wiki_test_repeat_group',
+		    'type'        => 'group',
+		    'description' => __( 'Generates reusable form entries', 'cmb2' ),
+		    // 'repeatable'  => false, // use false if you want non-repeatable group
+		    'options'     => array(
+		        'group_title'   => __( 'Entry {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+		        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+		        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+		        'sortable'      => true, // beta
+		        // 'closed'     => true, // true to have the groups closed by default
+		    ),
+		) );
+
+		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+		$cmb->add_group_field( $group_field_id, array(
+		    'name' => 'Imię i nazwisko',
+		    'id'   => 'title',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$cmb->add_group_field( $group_field_id, array(
+		    'name'    => 'Pozycja',
+		    'desc'    => 'field description (optional)',
+		    'id'      => 'wiki_test_textsmall',
+		    'type'    => 'text_small'
+		) );
+		$cmb->add_group_field( $group_field_id, array(
+		    'name' => 'Zdjęcie',
+		    'id'   => 'image',
+		    'type' => 'file',
+		) );
+    // Add other metaboxes as needed
+
+}
 /**
  * Implement the Custom Header feature.
  */
