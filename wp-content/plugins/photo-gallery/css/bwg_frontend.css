@@ -225,6 +225,10 @@ div[id^="bwg_container"] div[id^="bwg_container"] .bwg_img_clear {
   z-index: 11;
 }
 
+.bwg_image_rate {
+  z-index: 999 !important;
+}
+
 @media screen and (max-width: 465px) {
   .bwg_ctrl_btn {
     margin-bottom:0 !important;
@@ -234,4 +238,3 @@ div[id^="bwg_container"] div[id^="bwg_container"] .bwg_img_clear {
     height:auto !important;
   }
 }
-
