@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 4.6.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-08-24 11:05:25+0000\n"
+"PO-Revision-Date: 2016-09-20 07:54:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -303,7 +303,7 @@ msgstr "Włącz w sieci"
 msgid "Edit Menu"
 msgstr "Edytuj Menu"
 
-#: wp-includes/wp-db.php:1792 wp-includes/wp-db.php:1798
+#: wp-includes/wp-db.php:1797 wp-includes/wp-db.php:1803
 msgid "Unable to retrieve the error message from MySQL"
 msgstr "Brak możliwości pokazania błędów z MySQL"
 
@@ -947,66 +947,66 @@ msgstr "Język witryny:"
 msgid "Author:"
 msgstr "Autor:"
 
-#: wp-includes/wp-db.php:1585
+#: wp-includes/wp-db.php:1590
 msgid "Are you sure that you have typed the correct hostname?"
 msgstr "Czy jesteś pewien, że poprawnie wpisałeś adres serwera bazy danych?"
 
-#: wp-includes/wp-db.php:1586 wp-includes/wp-db.php:1689
+#: wp-includes/wp-db.php:1591 wp-includes/wp-db.php:1694
 msgid "Are you sure that the database server is running?"
 msgstr "Czy jesteś pewien, że serwer bazy danych działa?"
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1591 wp-includes/wp-db.php:1695
+#: wp-includes/wp-db.php:1596 wp-includes/wp-db.php:1700
 msgid "If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Jeśli nie jesteś pewien, co oznaczają te zwroty, zapewne skontaktuj się ze swoim dostawcą hostingu. Jeśli wciąż będziesz potrzebować pomocy, odwiedź <a href=\"%s\">Forum Pomocy WordPressa</a>."
 
-#: wp-includes/wp-db.php:1680
+#: wp-includes/wp-db.php:1685
 msgid "Error reconnecting to the database"
 msgstr "Wystąpił błąd podczas ponownego łączenia się z bazą danych"
 
 #. translators: %s: database host
-#: wp-includes/wp-db.php:1684
+#: wp-includes/wp-db.php:1689
 msgid "This means that we lost contact with the database server at %s. This could mean your host&#8217;s database server is down."
 msgstr "Oznacza to, że straciliśmy połączenie z bazą danych na serwerze %s. Możliwe, że serwer bazy danych przestał działać."
 
-#: wp-includes/wp-db.php:1690
+#: wp-includes/wp-db.php:1695
 msgid "Are you sure that the database server is not under particularly heavy load?"
 msgstr "Czy jesteś pewien, że serwer bazy danych nie jest obecnie wyjątkowo przeciążony?"
 
 #. translators: 1: wp-config.php. 2: database host
-#: wp-includes/wp-db.php:1578
+#: wp-includes/wp-db.php:1583
 msgid "This either means that the username and password information in your %1$s file is incorrect or we can&#8217;t contact the database server at %2$s. This could mean your host&#8217;s database server is down."
 msgstr "Oznacza to, że nazwa użytkownika lub hasło podane w pliku %1$s nie jest poprawne, bądź też nie możemy połączyć się z serwerem bazy danych pod adresem %2$s. Możliwe, że serwer bazy danych przestał działać."
 
-#: wp-includes/wp-db.php:1584
+#: wp-includes/wp-db.php:1589
 msgid "Are you sure you have the correct username and password?"
 msgstr "Czy jesteś pewien, że posiadasz poprawną nazwę użytkownika i hasło?"
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1123
+#: wp-includes/wp-db.php:1128
 msgid "If you don&#8217;t know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Jeśli nie wiesz, jak ustawić bazę danych, <strong>skontaktuj się ze swoim dostawcą hostingu</strong>. Jeśli wszystkie próby zawiodą, spróbuj znaleźć wsparcie na <a href=\"%s\">Forum Pomocy WordPressa</a>."
 
-#: wp-includes/wp-db.php:1095
+#: wp-includes/wp-db.php:1100
 msgid "Can&#8217;t select database"
 msgstr "Nie można wybrać bazy danych"
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1099
+#: wp-includes/wp-db.php:1104
 msgid "We were able to connect to the database server (which means your username and password is okay) but not able to select the %s database."
 msgstr "Udało nam się połączyć z serwerem bazy danych (co oznacza, że nazwa użytkownika i hasło są poprawne), ale nie mogliśmy wybrać bazy danych %s."
 
-#: wp-includes/wp-db.php:1104
+#: wp-includes/wp-db.php:1109
 msgid "Are you sure it exists?"
 msgstr "Czy jesteś pewien, że ona istnieje?"
 
 #. translators: 1: database user, 2: database name
-#: wp-includes/wp-db.php:1108
+#: wp-includes/wp-db.php:1113
 msgid "Does the user %1$s have permission to use the %2$s database?"
 msgstr "Czy użytkownik %1$s ma uprawnienia do używania bazy %2$s?"
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1115
+#: wp-includes/wp-db.php:1120
 msgid "On some systems the name of your database is prefixed with your username, so it would be like <code>username_%1$s</code>. Could that be the problem?"
 msgstr "Na niektórych systemach nazwa bazy danych jest poprzedzana nazwą użytkownika, np. <code>nazwa_użytkownika_%1$s</code>. Może na tym polega problem?"
 
@@ -1545,7 +1545,7 @@ msgstr "Dodaj do menu: %1$s (%2$s)"
 msgid "When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo."
 msgstr "Jeśli rozpoczniesz nowy akapit tekstu od jednego z tych skrótów formatowania, a za nim umieścisz spację i właściwy tekst, automatycznie zostanie włączone odpowiednie formatowanie. Wciśnij klawisz Backspace lub Escape, by cofnąć zmianę."
 
-#: wp-includes/wp-db.php:1376 wp-includes/wp-db.php:1393
+#: wp-includes/wp-db.php:1381 wp-includes/wp-db.php:1398
 msgid "WordPress database error:"
 msgstr "Błąd bazy danych WordPressa:"
 
@@ -2216,10 +2216,6 @@ msgstr "Instalowanie..."
 msgid "Installed!"
 msgstr "Zainstalowano!"
 
-#: wp-includes/script-loader.php:637
-msgid "Install Now"
-msgstr "Instaluj Teraz"
-
 #: wp-includes/script-loader.php:657
 msgid "Installing... please wait."
 msgstr "Instalowanie... proszę czekać."
@@ -2227,6 +2223,10 @@ msgstr "Instalowanie... proszę czekać."
 #: wp-includes/script-loader.php:658
 msgid "Installation completed successfully."
 msgstr "Instalacja zakończona sukcesem."
+
+#: wp-includes/script-loader.php:637
+msgid "Install Now"
+msgstr "Zainstaluj teraz"
 
 #. translators: revision date format, see https://secure.php.net/date
 #: wp-includes/post-template.php:1635 wp-includes/post-template.php:1671
@@ -2467,7 +2467,7 @@ msgstr "Należy przekazać tablicę typów."
 
 #. translators: %s: database access abstraction class, usually wpdb or a class
 #. extending wpdb
-#: wp-includes/wp-db.php:1175
+#: wp-includes/wp-db.php:1180
 msgid "%s must set a database connection for use with escaping."
 msgstr "%s musi mieć ustawione połączenie z bazą danych, by można było używać eskejpowania."
 
@@ -3547,7 +3547,7 @@ msgstr "Przeciągnij i upuść, aby zmienić kolejność utworów."
 msgid "Drag and drop to reorder videos."
 msgstr "Przeciągnij i upuść, aby zmienić kolejność filmów."
 
-#: wp-includes/wp-db.php:1291
+#: wp-includes/wp-db.php:1296
 msgid "The query argument of %s must have a placeholder."
 msgstr "Argument zapytania %s musi zawierać placeholder."
 
@@ -3658,8 +3658,8 @@ msgstr "Alternatywne źródło"
 msgid "https://wordpress.org/"
 msgstr "https://pl.wordpress.org/"
 
-#: wp-includes/admin-bar.php:147 wp-includes/wp-db.php:1124
-#: wp-includes/wp-db.php:1592 wp-includes/wp-db.php:1696 wp-login.php:801
+#: wp-includes/admin-bar.php:147 wp-includes/wp-db.php:1129
+#: wp-includes/wp-db.php:1597 wp-includes/wp-db.php:1701 wp-login.php:801
 msgid "https://wordpress.org/support/"
 msgstr "http://pl.forums.wordpress.org/"
 
@@ -5238,7 +5238,7 @@ msgid "Database Error"
 msgstr "Błąd połączenia z bazą danych"
 
 #: wp-includes/functions.php:3647 wp-includes/ms-load.php:471
-#: wp-includes/wp-db.php:1574
+#: wp-includes/wp-db.php:1579
 msgid "Error establishing a database connection"
 msgstr "Błąd łączenia się z bazą danych"
 
@@ -6365,11 +6365,11 @@ msgstr "Źródłowy adres URL nie zawiera odnośnika do docelowego adresu URL, w
 msgid "The specified target URL does not exist."
 msgstr "Podany docelowy adres URL nie istnieje."
 
-#: wp-includes/wp-db.php:1362
+#: wp-includes/wp-db.php:1367
 msgid "WordPress database error %1$s for query %2$s made by %3$s"
 msgstr "Błąd %1$s bazy danych WordPressa podczas wykonywania zapytania %2$s wysłanego przez %3$s"
 
-#: wp-includes/wp-db.php:1364
+#: wp-includes/wp-db.php:1369
 msgid "WordPress database error %1$s for query %2$s"
 msgstr "Błąd %1$s bazy danych WordPressa podczas wykonywania zapytania %2$s"
 
@@ -7601,7 +7601,7 @@ msgstr[0] "Oczekujące na przegląd <span class=\"count\">(%s)</span>"
 msgstr[1] "Oczekujące na przegląd <span class=\"count\">(%s)</span>"
 msgstr[2] "Oczekujące na przegląd <span class=\"count\">(%s)</span>"
 
-#: wp-includes/wp-db.php:3207
+#: wp-includes/wp-db.php:3212
 msgid "<strong>ERROR</strong>: WordPress %1$s requires MySQL %2$s or higher"
 msgstr "<strong>BŁĄD</strong>: WordPress %1$s wymaga MySQL-a w wersji %2$s lub nowszej"
 
