@@ -148,6 +148,20 @@
 		$( "input[name='dbaction']").click(Duplicator.showDeleteWarning);
 		Duplicator.acceptWarning();
 		Duplicator.showDeleteWarning();		
+		
+		//MySQL Mode
+		$("input[name=dbmysqlmode]").click(function() {
+			if ($(this).val() == 'CUSTOM') {
+				$('#dbmysqlmode_3_view').show();
+			} else {
+				$('#dbmysqlmode_3_view').hide();
+			}
+		});
+		
+		if ($("input[name=dbmysqlmode]:checked").val() == 'CUSTOM') {
+			$('#dbmysqlmode_3_view').show();
+		}
+		
 	});
 </script>
 
@@ -189,9 +203,9 @@ VIEW: STEP 1- INPUT -->
     		    
     	<div style="line-height:28px; font-size:14px; padding:0px 0px 0px 30px; font-weight:normal">
     	    <b>Helpful Resources:</b><br/>
-    	    &raquo; <a href="http://lifeinthegrid.com/duplicator-faq" target="_blank">Common FAQs</a> <br/>
-    	    &raquo; <a href="http://lifeinthegrid.com/duplicator-guide" target="_blank">User Guide</a> <br/>
-    	    &raquo; <a href="http://lifeinthegrid.com/duplicator-hosts" target="_blank">Approved Hosts</a> <br/>
+    	    &raquo; <a href="https://snapcreek.com/duplicator/docs/faqs-tech/" target="_blank">Common FAQs</a> <br/>
+    	    &raquo; <a href="https://snapcreek.com/duplicator/docs/guide/" target="_blank">User Guide</a> <br/>
+    	    &raquo; <a href="https://snapcreek.com/duplicator/docs/faqs-tech/#faq-resource-040-q" target="_blank">Approved Hosts</a> <br/>
     	</div><br/>
 	
 	<!-- CHECKS: PASS -->
@@ -268,12 +282,12 @@ VIEW: STEP 1- INPUT -->
 
     	<!-- !!DO NOT CHANGE/EDIT OR REMOVE THIS SECTION!!
     	If your interested in Private Label Rights please contact us at the URL below to discuss
-    	customizations to product labeling: http://lifeinthegrid.com	-->
+    	customizations to product labeling: http://snapcreek.com	-->
     	<a href="javascript:void(0)" onclick="$('#dup-step1-cpanel').toggle(250)"><b>Need Setup Help...</b></a>
     	<div id='dup-step1-cpanel' style="display:none">
     	    <div style="padding:10px 0px 0px 10px;line-height:22px">
-    		&raquo; Check out the <a href="http://lifeinthegrid.com/duplicator-tutorials" target="_blank">video tutorials &amp; guides</a> <br/>
-    		&raquo; Get help from our <a href="http://lifeinthegrid.com/labs/duplicator/resources/" target="_blank">resources page</a>
+    		&raquo; Check out the <a href="https://snapcreek.com/duplicator/docs/faqs-tech/#faq-resource-070-q" target="_blank">video tutorials &amp; guides</a> <br/>
+    		&raquo; Get help from our <a href="https://snapcreek.com/duplicator/docs/faqs-tech/#faq-resource" target="_blank">resources section</a>
     	    </div>
     	</div><br/><br/>
     		    
@@ -282,7 +296,6 @@ VIEW: STEP 1- INPUT -->
 			<table class="s1-opts">
 				<tr><td><input type="checkbox" name="zip_manual"  id="zip_manual" value="1" /> <label for="zip_manual">Manual package extraction</label></td></tr>
 				<tr><td><input type="checkbox" name="dbnbsp" id="dbnbsp" value="1" /> <label for="dbnbsp">Fix non-breaking space characters</label></td></tr>
-				<tr><td><input type="checkbox" name="dbmysqlmode" id="dbmysqlmode" value="1" /> <label for="dbmysqlmode">Run this session with MySQL sql_mode disabled</label></td></tr>
 			</table>
 			
 			
@@ -304,7 +317,20 @@ VIEW: STEP 1- INPUT -->
 					<td>Config SSL</td>
 					<td><input type="checkbox" name="ssl_admin" id="ssl_admin" <?php echo ($GLOBALS['FW_SSL_ADMIN']) ? "checked='checked'" : ""; ?> /> <label for="ssl_admin">Enforce on Admin</label></td>
 					<td><input type="checkbox" name="ssl_login" id="ssl_login" <?php echo ($GLOBALS['FW_SSL_LOGIN']) ? "checked='checked'" : ""; ?> /> <label for="ssl_login">Enforce on Login</label></td>
-				</tr>				
+				</tr>		
+				<tr>
+					<td style="vertical-align:top">MySQL Mode</td>
+					<td colspan="2">
+						<input type="radio" name="dbmysqlmode" id="dbmysqlmode_1" checked="true" value="DEFAULT"/> <label for="dbmysqlmode_1">Default</label> &nbsp;
+						<input type="radio" name="dbmysqlmode" id="dbmysqlmode_2" value="DISABLE"/> <label for="dbmysqlmode_2">Disable</label> &nbsp;
+						<input type="radio" name="dbmysqlmode" id="dbmysqlmode_3" value="CUSTOM"/> <label for="dbmysqlmode_3">Custom</label> &nbsp;
+						<div id="dbmysqlmode_3_view" style="display:none; padding:5px">
+							<input type="text" name="dbmysqlmode_opts" value="" /><br/>
+							<small>Separate additional <a href="?help#help-mysql-mode" target="_blank">sql modes</a> with commas &amp; no spaces.<br/>
+								Example: <i>NO_ENGINE_SUBSTITUTION,NO_ZERO_IN_DATE,...</i>.</small>
+						</div>
+					</td>
+				</tr>					
     	    </table>
 			
 			<table class="s1-opts s1-advopts">
@@ -312,7 +338,6 @@ VIEW: STEP 1- INPUT -->
 				<tr><td>MySQL Collation </td><td><input type="text" name="dbcollate" id="dbcollate" value="<?php echo $_POST['dbcollate'] ?>" /> </tr>
     	    </table>
 			<small><i>For an overview of these settings see the <a href="?help=1" target="_blank">help page</a></i></small><br/>
-			
     	</div>
 		
 		
@@ -403,7 +428,7 @@ Auto Posts to view.step2.php  -->
 			<div id="ajaxerr-data">An unknown issue has occurred with the file and database setup process.  Please see the installer-log.txt file for more details.</div>
 			<div style="text-align:center; margin:10px auto 0px auto">
 				<input type="button" onclick='Duplicator.hideErrorResult()' value="&laquo; Try Again" /><br/><br/>
-				<i style='font-size:11px'>See online help for more details at <a href='http://lifeinthegrid.com/support' target='_blank'>support.lifeinthegrid.com</a></i>
+				<i style='font-size:11px'>See online help for more details at <a href='https://snapcreek.com/ticket' target='_blank'>snapcreek.com</a></i>
 			</div>
 	    </div>
 	</div>
@@ -521,7 +546,7 @@ PANEL: SERVER CHECKS  -->
 	<b>PHP ZIP Archive:</b> <?php echo class_exists('ZipArchive') ? 'Is Installed' : 'Not Installed'; ?> <br/>
 	<b>CDN Accessible:</b> <?php echo ( DUPX_Util::is_url_active("ajax.aspnetcdn.com", 443) && DUPX_Util::is_url_active("ajax.googleapis.com", 443)) ? 'Yes' : 'No'; ?> 
 	<br/><br/>
-	Need an <a href='http://lifeinthegrid.com/duplicator-hosts' target='_blank'>approved</a> Duplicator hosting provider?
+	Need an <a href='https://snapcreek.com/duplicator/docs/faqs-tech/#faq-resource-040-q' target='_blank'>approved</a> Duplicator hosting provider?
 
 </div>
 </div>

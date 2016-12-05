@@ -129,7 +129,7 @@ VIEW: STEP 3- INPUT -->
 				setting to handle larger payloads. <br/>
 				
 				<b>Unknown collation:</b> The MySQL Version is too old see: 
-				<a href="https://lifeinthegrid.com/duplicator-faq" target="_blank">What is Compatibility mode & 'Unknown collation' errors?</a> 
+				<a href="https://snapcreek.com/duplicator/docs/faqs-tech/#faq-installer-110-q" target="_blank">What is Compatibility mode & 'Unknown collation' errors?</a> 
 				<br/>
 			</div>
 		</div>
@@ -205,7 +205,7 @@ VIEW: STEP 3- INPUT -->
 		switch ($num) {
 			case 1: 
 				$key = 'free_inst_s3btn1';
-				$txt = 'Considered Going Pro?';
+				$txt = 'Want More Power?';
 				break;
 			case 2: 
 				$key = 'free_inst_s3btn2';
@@ -218,21 +218,21 @@ VIEW: STEP 3- INPUT -->
 	?>
 	
 	<div class="s3-gopro-btn">
-		<a href="https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_campaign=duplicator_pro&utm_content="<?php echo $key;?>" target="_blank"> <?php echo $txt;?></a> 
+		<a href="https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_campaign=duplicator_pro&utm_content=<?php echo $key;?>" target="_blank"> <?php echo $txt;?></a> 
 	</div>
 	<br/><br/>
 		
 	<div class='s3-connect'>
 		<a href="installer.php?help=1#troubleshoot" target="_blank">Troubleshoot</a> | 
-		<a href='http://support.lifeinthegrid.com/knowledgebase.php' target='_blank'>FAQs</a> | 
-		<a href='http://lifeinthegrid.com/labs/duplicator/resources/' target='_blank'>Support</a>
+		<a href='https://snapcreek.com/duplicator/docs/faqs-tech/' target='_blank'>FAQs</a> | 
+		<a href='https://snapcreek.com/ticket' target='_blank'>Support</a>
 	</div><br/>
 </form>
 
 <script type="text/javascript">
 	MyViewModel = function() { 
 		this.status = <?php echo urldecode($_POST['json']); ?>;
-		var errorCount =  this.status.step2.query_errs || 0;
+		var errorCount =  this.status.step1.query_errs || 0;
 		(errorCount >= 1 )
 			? $('#dup-step3-install-report-count').css('color', '#BE2323')
 			: $('#dup-step3-install-report-count').css('color', '#197713')

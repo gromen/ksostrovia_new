@@ -33,9 +33,9 @@ TOOL BAR: STEPS -->
 		<td style="white-space: nowrap">
 			<div id="dup-wiz">
 				<div id="dup-wiz-steps">
-					<div class="completed-step"><a><span>1</span> <?php _e('Setup', 'duplicator'); ?></a></div>
-					<div class="completed-step"><a><span>2</span> <?php _e('Scan', 'duplicator'); ?> </a></div>
-					<div class="active-step"><a><span>3</span> <?php _e('Build', 'duplicator'); ?> </a></div>
+					<div class="completed-step"><a>1-<?php _e('Setup', 'duplicator'); ?></a></div>
+					<div class="completed-step"><a>2-<?php _e('Scan', 'duplicator'); ?> </a></div>
+					<div class="active-step"><a>3-<?php _e('Build', 'duplicator'); ?> </a></div>
 				</div>
 				<div id="dup-wiz-title">
 					<?php _e('Step 3: Build Package', 'duplicator'); ?>
@@ -90,7 +90,8 @@ TOOL BAR: STEPS -->
 					<small><i><?php _e("click buttons to download", 'duplicator') ?></i></small>
 				</div>
 				<div class="dup-msg-success-links">
-					<?php printf("<a href='?page=duplicator'>[ %s ]</a>", 	__('All Packages', 'duplicator'));?> 
+					<?php printf("<a href='?page=duplicator'>[ %s ]</a>", 	__('All Packages', 'duplicator'));?>  &nbsp;
+					<?php printf("<a href='?page=duplicator&tab=new1'>[ %s ]</a>", 	__('Create New', 'duplicator'));?> 
 				</div><br/>
 				
 				<!-- Used for iMacros testing do not remove -->
@@ -105,7 +106,7 @@ TOOL BAR: STEPS -->
 			
 				<i><?php _e('Please try the process again.', 'duplicator'); ?></i><br/><br/>
 				  
-				<input type="button" style="margin-right:10px;" class="button" value="<?php _e('Diagnose', 'duplicator'); ?>" onclick="window.open('http://lifeinthegrid.com/support/knowledgebase.php?article=12#faq-trouble-timeout', '_blank');return false;" />
+				<input type="button" style="margin-right:10px;" class="button" value="<?php _e('Diagnose', 'duplicator'); ?>" onclick="window.open('https://snapcreek.com/duplicator/docs/faqs-tech/#faq-trouble-100-q', '_blank');return false;" />
                 <input type="button" class="button" value="<?php _e('Try Again', 'duplicator'); ?>" onclick="window.location = 'admin.php?page=duplicator&tab=new1'" />                                
 				<fieldset>
 					<legend><b><i class="fa fa-exclamation"></i> <?php _e('Details', 'duplicator'); ?></b></legend>

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: photo-gallery\n"
 "POT-Creation-Date: 2016-03-23 19:29+0400\n"
-"PO-Revision-Date: 2016-10-01 17:29+0200\n"
-"Last-Translator: admin < asd@mail.ru >\n"
+"PO-Revision-Date: 2016-10-11 12:56+0400\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -212,29 +212,34 @@ msgstr "Lire la suite dans le manuel de l&rsquo;utilisateur"
 msgid "Albums"
 msgstr "Albums"
 
-#: admin/views/BWGViewAlbums_bwg.php:48 admin/views/BWGViewGalleries_bwg.php:48
+#: admin/views/BWGViewAlbums_bwg.php:48
+#: admin/views/BWGViewGalleries_bwg.php:48
 #: admin/views/BWGViewThemes_bwg.php:47
 msgid "Add new"
 msgstr "Ajouter un nouveau"
 
-#: admin/views/BWGViewAlbums_bwg.php:50 admin/views/BWGViewGalleries_bwg.php:50
+#: admin/views/BWGViewAlbums_bwg.php:50
+#: admin/views/BWGViewGalleries_bwg.php:50
 msgid "Changes made in this table should be saved."
 msgstr ""
 "Les modifications apport&eacute;es dans ce tableau doivent &ecirc;tre "
 "enregistr&eacute;es."
 
-#: admin/views/BWGViewAlbums_bwg.php:54 admin/views/BWGViewGalleries_bwg.php:54
+#: admin/views/BWGViewAlbums_bwg.php:54
+#: admin/views/BWGViewGalleries_bwg.php:54
 #: admin/views/BWGViewGalleries_bwg.php:773 filemanager/view.php:271
 #: filemanager/view.php:356
 msgid "Select All"
 msgstr "Tout s&eacute;lectionner"
 
-#: admin/views/BWGViewAlbums_bwg.php:56 admin/views/BWGViewGalleries_bwg.php:56
+#: admin/views/BWGViewAlbums_bwg.php:56
+#: admin/views/BWGViewGalleries_bwg.php:56
 #: admin/views/BWGViewGalleries_bwg.php:775 photo-gallery.php:2241
 msgid "Hide order column"
-msgstr "Masquer la colonne \"tri\""
+msgstr "Masquer la colonne'tri"
 
-#: admin/views/BWGViewAlbums_bwg.php:57 admin/views/BWGViewGalleries_bwg.php:57
+#: admin/views/BWGViewAlbums_bwg.php:57
+#: admin/views/BWGViewGalleries_bwg.php:57
 msgid "Save Order"
 msgstr "Enregistrer le tri"
 
@@ -252,14 +257,16 @@ msgstr "D&eacute;publier"
 
 #: admin/views/BWGViewAlbums_bwg.php:60 admin/views/BWGViewComments_bwg.php:53
 #: admin/views/BWGViewGalleries_bwg.php:60
-#: admin/views/BWGViewGalleries_bwg.php:795 admin/views/BWGViewRates_bwg.php:50
-#: admin/views/BWGViewTags_bwg.php:56 admin/views/BWGViewThemes_bwg.php:50
+#: admin/views/BWGViewGalleries_bwg.php:795
+#: admin/views/BWGViewRates_bwg.php:50 admin/views/BWGViewTags_bwg.php:56
+#: admin/views/BWGViewThemes_bwg.php:50
 msgid "Do you want to delete selected items?"
 msgstr ""
 "Voulez-vous supprimer les &eacute;l&eacute;ments s&eacute;lectionn&eacute;s?"
 
 #: admin/views/BWGViewAlbums_bwg.php:64 admin/views/BWGViewAlbums_bwg.php:126
-#: admin/views/BWGViewAlbums_bwg.php:161 admin/views/BWGViewComments_bwg.php:57
+#: admin/views/BWGViewAlbums_bwg.php:161
+#: admin/views/BWGViewComments_bwg.php:57
 #: admin/views/BWGViewComments_bwg.php:124
 #: admin/views/BWGViewComments_bwg.php:160
 #: admin/views/BWGViewGalleries_bwg.php:64
@@ -481,7 +488,8 @@ msgstr "Publi&eacute; :"
 #: admin/views/BWGViewOptions_bwg.php:1757
 #: admin/views/BWGViewOptions_bwg.php:1767
 #: admin/views/BWGViewThemes_bwg.php:342 admin/views/BWGViewThemes_bwg.php:583
-#: admin/views/BWGViewThemes_bwg.php:733 admin/views/BWGViewThemes_bwg.php:1501
+#: admin/views/BWGViewThemes_bwg.php:733
+#: admin/views/BWGViewThemes_bwg.php:1501
 #: admin/views/BWGViewThemes_bwg.php:1733
 #: admin/views/BWGViewThemes_bwg.php:2241
 #: admin/views/BWGViewThemes_bwg.php:3670
@@ -603,7 +611,8 @@ msgstr "Non"
 #: admin/views/BWGViewOptions_bwg.php:1756
 #: admin/views/BWGViewOptions_bwg.php:1766
 #: admin/views/BWGViewThemes_bwg.php:340 admin/views/BWGViewThemes_bwg.php:581
-#: admin/views/BWGViewThemes_bwg.php:731 admin/views/BWGViewThemes_bwg.php:1499
+#: admin/views/BWGViewThemes_bwg.php:731
+#: admin/views/BWGViewThemes_bwg.php:1499
 #: admin/views/BWGViewThemes_bwg.php:1731
 #: admin/views/BWGViewThemes_bwg.php:2239
 #: admin/views/BWGViewThemes_bwg.php:3668
@@ -641,8 +650,8 @@ msgstr "Ajouter des Albums / Galeries"
 #: admin/views/BWGViewBWGShortcode.php:34
 #: admin/views/BWGViewBWGShortcode.php:1059
 #: admin/views/BWGViewOptions_bwg.php:352
-#: admin/views/BWGViewOptions_bwg.php:505 admin/views/BWGViewThemes_bwg.php:163
-#: admin/views/BWGViewThemes_bwg.php:196
+#: admin/views/BWGViewOptions_bwg.php:505
+#: admin/views/BWGViewThemes_bwg.php:163 admin/views/BWGViewThemes_bwg.php:196
 msgid "None"
 msgstr "Aucun"
 
@@ -738,7 +747,8 @@ msgid "Mosaic"
 msgstr "Mosaïque"
 
 #: admin/views/BWGViewBWGShortcode.php:130
-#: admin/views/BWGViewOptions_bwg.php:118 admin/views/BWGViewThemes_bwg.php:237
+#: admin/views/BWGViewOptions_bwg.php:118
+#: admin/views/BWGViewThemes_bwg.php:237
 msgid "Slideshow"
 msgstr "Diaporama"
 
@@ -768,7 +778,8 @@ msgid "Blog Style"
 msgstr "Style blog"
 
 #: admin/views/BWGViewBWGShortcode.php:154
-#: admin/views/BWGViewOptions_bwg.php:122 admin/views/BWGViewThemes_bwg.php:245
+#: admin/views/BWGViewOptions_bwg.php:122
+#: admin/views/BWGViewThemes_bwg.php:245
 msgid "Carousel"
 msgstr "Carrousel"
 
@@ -807,11 +818,13 @@ msgstr "S&eacute;lectionner l&rsquo;album"
 msgid "Sort images by:"
 msgstr "Trier les images par :"
 
-#: admin/views/BWGViewBWGShortcode.php:212 admin/views/BWGViewThemes_bwg.php:58
+#: admin/views/BWGViewBWGShortcode.php:212
+#: admin/views/BWGViewThemes_bwg.php:58
 msgid "Title"
 msgstr "Titre"
 
-#: admin/views/BWGViewBWGShortcode.php:213 admin/views/BWGViewRates_bwg.php:104
+#: admin/views/BWGViewBWGShortcode.php:213
+#: admin/views/BWGViewRates_bwg.php:104
 msgid "Date"
 msgstr "Date"
 
@@ -1508,7 +1521,8 @@ msgstr "Type publicit&eacute; :"
 #: admin/views/BWGViewBWGShortcode.php:1060
 #: admin/views/BWGViewOptions_bwg.php:354
 #: admin/views/BWGViewOptions_bwg.php:507
-#: admin/views/BWGViewThemes_bwg.php:3722 admin/views/BWGViewWidgetTags.php:118
+#: admin/views/BWGViewThemes_bwg.php:3722
+#: admin/views/BWGViewWidgetTags.php:118
 msgid "Text"
 msgstr "Texte"
 
@@ -1571,11 +1585,12 @@ msgid "Advertisement color:"
 msgstr "Couleur publicit&eacute; :"
 
 #: admin/views/BWGViewBWGShortcode.php:1120
-#: admin/views/BWGViewOptions_bwg.php:604 admin/views/BWGViewThemes_bwg.php:363
-#: admin/views/BWGViewThemes_bwg.php:376 admin/views/BWGViewThemes_bwg.php:520
-#: admin/views/BWGViewThemes_bwg.php:533 admin/views/BWGViewThemes_bwg.php:670
-#: admin/views/BWGViewThemes_bwg.php:683 admin/views/BWGViewThemes_bwg.php:826
-#: admin/views/BWGViewThemes_bwg.php:981 admin/views/BWGViewThemes_bwg.php:1067
+#: admin/views/BWGViewOptions_bwg.php:604
+#: admin/views/BWGViewThemes_bwg.php:363 admin/views/BWGViewThemes_bwg.php:376
+#: admin/views/BWGViewThemes_bwg.php:520 admin/views/BWGViewThemes_bwg.php:533
+#: admin/views/BWGViewThemes_bwg.php:670 admin/views/BWGViewThemes_bwg.php:683
+#: admin/views/BWGViewThemes_bwg.php:826 admin/views/BWGViewThemes_bwg.php:981
+#: admin/views/BWGViewThemes_bwg.php:1067
 #: admin/views/BWGViewThemes_bwg.php:1120
 #: admin/views/BWGViewThemes_bwg.php:1189
 #: admin/views/BWGViewThemes_bwg.php:1302
@@ -1990,7 +2005,8 @@ msgstr ""
 msgid "Edit options"
 msgstr "Modifier les options"
 
-#: admin/views/BWGViewOptions_bwg.php:104 admin/views/BWGViewThemes_bwg.php:227
+#: admin/views/BWGViewOptions_bwg.php:104
+#: admin/views/BWGViewThemes_bwg.php:227
 msgid "Do you want to reset to default?"
 msgstr "Voulez-vous un retour aux r&eacute;glages par d&eacute;faut ?"
 
@@ -2010,7 +2026,8 @@ msgstr "Filigrane"
 msgid "Advertisement"
 msgstr "Publicit&eacute;"
 
-#: admin/views/BWGViewOptions_bwg.php:116 admin/views/BWGViewThemes_bwg.php:243
+#: admin/views/BWGViewOptions_bwg.php:116
+#: admin/views/BWGViewThemes_bwg.php:243
 msgid "Lightbox"
 msgstr "Lightbox"
 
@@ -2357,7 +2374,8 @@ msgid "Slideshow filmstrip size:"
 msgstr "Taille de la pellicule du diaporama :"
 
 #: admin/views/BWGViewOptions_bwg.php:1227
-#: admin/views/BWGViewThemes_bwg.php:400 admin/views/BWGViewThemes_bwg.php:1557
+#: admin/views/BWGViewThemes_bwg.php:400
+#: admin/views/BWGViewThemes_bwg.php:1557
 msgid "Title position:"
 msgstr "Position du titre :"
 
@@ -2683,7 +2701,8 @@ msgstr "Navigation dans les pages"
 msgid "Parameters"
 msgstr "Param&egrave;tres"
 
-#: admin/views/BWGViewThemes_bwg.php:264 admin/views/BWGViewThemes_bwg.php:1246
+#: admin/views/BWGViewThemes_bwg.php:264
+#: admin/views/BWGViewThemes_bwg.php:1246
 #: admin/views/BWGViewThemes_bwg.php:1428
 #: admin/views/BWGViewThemes_bwg.php:1851
 #: admin/views/BWGViewThemes_bwg.php:2421
@@ -2692,7 +2711,8 @@ msgid "Margin:"
 msgstr "Marge :"
 
 #: admin/views/BWGViewThemes_bwg.php:270 admin/views/BWGViewThemes_bwg.php:472
-#: admin/views/BWGViewThemes_bwg.php:622 admin/views/BWGViewThemes_bwg.php:1253
+#: admin/views/BWGViewThemes_bwg.php:622
+#: admin/views/BWGViewThemes_bwg.php:1253
 #: admin/views/BWGViewThemes_bwg.php:1421
 #: admin/views/BWGViewThemes_bwg.php:1858
 #: admin/views/BWGViewThemes_bwg.php:2428
@@ -2701,7 +2721,8 @@ msgid "Padding:"
 msgstr "Padding :"
 
 #: admin/views/BWGViewThemes_bwg.php:276 admin/views/BWGViewThemes_bwg.php:478
-#: admin/views/BWGViewThemes_bwg.php:628 admin/views/BWGViewThemes_bwg.php:1260
+#: admin/views/BWGViewThemes_bwg.php:628
+#: admin/views/BWGViewThemes_bwg.php:1260
 #: admin/views/BWGViewThemes_bwg.php:1435
 #: admin/views/BWGViewThemes_bwg.php:2182
 #: admin/views/BWGViewThemes_bwg.php:2474
@@ -2710,7 +2731,8 @@ msgid "Border width:"
 msgstr "Largeur de la bordure :"
 
 #: admin/views/BWGViewThemes_bwg.php:282 admin/views/BWGViewThemes_bwg.php:484
-#: admin/views/BWGViewThemes_bwg.php:634 admin/views/BWGViewThemes_bwg.php:1266
+#: admin/views/BWGViewThemes_bwg.php:634
+#: admin/views/BWGViewThemes_bwg.php:1266
 #: admin/views/BWGViewThemes_bwg.php:1441
 #: admin/views/BWGViewThemes_bwg.php:2188
 #: admin/views/BWGViewThemes_bwg.php:2480
@@ -2719,7 +2741,8 @@ msgid "Border style:"
 msgstr "Style de la bordure :"
 
 #: admin/views/BWGViewThemes_bwg.php:296 admin/views/BWGViewThemes_bwg.php:498
-#: admin/views/BWGViewThemes_bwg.php:648 admin/views/BWGViewThemes_bwg.php:1280
+#: admin/views/BWGViewThemes_bwg.php:648
+#: admin/views/BWGViewThemes_bwg.php:1280
 #: admin/views/BWGViewThemes_bwg.php:1455
 #: admin/views/BWGViewThemes_bwg.php:2202
 #: admin/views/BWGViewThemes_bwg.php:2494
@@ -2728,7 +2751,8 @@ msgid "Border color:"
 msgstr "Couleur de la bordure:"
 
 #: admin/views/BWGViewThemes_bwg.php:302 admin/views/BWGViewThemes_bwg.php:504
-#: admin/views/BWGViewThemes_bwg.php:654 admin/views/BWGViewThemes_bwg.php:1286
+#: admin/views/BWGViewThemes_bwg.php:654
+#: admin/views/BWGViewThemes_bwg.php:1286
 #: admin/views/BWGViewThemes_bwg.php:1461
 #: admin/views/BWGViewThemes_bwg.php:1877
 #: admin/views/BWGViewThemes_bwg.php:2208
@@ -2810,25 +2834,29 @@ msgstr "Rayon de la bordure :"
 msgid "Use CSS type values."
 msgstr "Utilisez des valeurs CSS."
 
-#: admin/views/BWGViewThemes_bwg.php:309 admin/views/BWGViewThemes_bwg.php:1468
+#: admin/views/BWGViewThemes_bwg.php:309
+#: admin/views/BWGViewThemes_bwg.php:1468
 msgid "Shadow:"
 msgstr "Ombre :"
 
 #: admin/views/BWGViewThemes_bwg.php:316 admin/views/BWGViewThemes_bwg.php:557
-#: admin/views/BWGViewThemes_bwg.php:707 admin/views/BWGViewThemes_bwg.php:1475
+#: admin/views/BWGViewThemes_bwg.php:707
+#: admin/views/BWGViewThemes_bwg.php:1475
 #: admin/views/BWGViewThemes_bwg.php:2215
 msgid "Hover effect:"
 msgstr "Effet au survol :"
 
 #: admin/views/BWGViewThemes_bwg.php:330 admin/views/BWGViewThemes_bwg.php:571
-#: admin/views/BWGViewThemes_bwg.php:721 admin/views/BWGViewThemes_bwg.php:1489
+#: admin/views/BWGViewThemes_bwg.php:721
+#: admin/views/BWGViewThemes_bwg.php:1489
 #: admin/views/BWGViewThemes_bwg.php:1772
 #: admin/views/BWGViewThemes_bwg.php:2229
 msgid "Hover effect value:"
 msgstr "Valeur effet au survol :"
 
 #: admin/views/BWGViewThemes_bwg.php:333 admin/views/BWGViewThemes_bwg.php:574
-#: admin/views/BWGViewThemes_bwg.php:724 admin/views/BWGViewThemes_bwg.php:1492
+#: admin/views/BWGViewThemes_bwg.php:724
+#: admin/views/BWGViewThemes_bwg.php:1492
 #: admin/views/BWGViewThemes_bwg.php:1775
 #: admin/views/BWGViewThemes_bwg.php:2232
 msgid "E.g. Rotate: 10deg, Scale: 1.5, Skew: 10deg."
@@ -2839,31 +2867,36 @@ msgstr "Ex. Tourner : 10deg, Echelle: 1.5, Inclinaison: 10deg."
 msgid "Transition:"
 msgstr "Transition :"
 
-#: admin/views/BWGViewThemes_bwg.php:353 admin/views/BWGViewThemes_bwg.php:1511
+#: admin/views/BWGViewThemes_bwg.php:353
+#: admin/views/BWGViewThemes_bwg.php:1511
 #: admin/views/BWGViewThemes_bwg.php:1779
 msgid "Thumbnail background color:"
 msgstr "Couleur arri&egrave;re-plan des miniatures :"
 
-#: admin/views/BWGViewThemes_bwg.php:360 admin/views/BWGViewThemes_bwg.php:1517
+#: admin/views/BWGViewThemes_bwg.php:360
+#: admin/views/BWGViewThemes_bwg.php:1517
 #: admin/views/BWGViewThemes_bwg.php:1751
 #: admin/views/BWGViewThemes_bwg.php:2251
 msgid "Thumbnail transparency:"
 msgstr "Transparence de la miniature :"
 
-#: admin/views/BWGViewThemes_bwg.php:367 admin/views/BWGViewThemes_bwg.php:1180
+#: admin/views/BWGViewThemes_bwg.php:367
+#: admin/views/BWGViewThemes_bwg.php:1180
 #: admin/views/BWGViewThemes_bwg.php:1524
 #: admin/views/BWGViewThemes_bwg.php:2258
 msgid "Full background color:"
 msgstr "Couleur de l&rsquo;arri&egrave;re-plan :"
 
-#: admin/views/BWGViewThemes_bwg.php:373 admin/views/BWGViewThemes_bwg.php:1186
+#: admin/views/BWGViewThemes_bwg.php:373
+#: admin/views/BWGViewThemes_bwg.php:1186
 #: admin/views/BWGViewThemes_bwg.php:1530
 #: admin/views/BWGViewThemes_bwg.php:2264
 msgid "Full background transparency:"
 msgstr "Transparence de l&rsquo;arri&egrave;re-plan :"
 
 #: admin/views/BWGViewThemes_bwg.php:380 admin/views/BWGViewThemes_bwg.php:537
-#: admin/views/BWGViewThemes_bwg.php:687 admin/views/BWGViewThemes_bwg.php:1232
+#: admin/views/BWGViewThemes_bwg.php:687
+#: admin/views/BWGViewThemes_bwg.php:1232
 #: admin/views/BWGViewThemes_bwg.php:1537
 #: admin/views/BWGViewThemes_bwg.php:2271
 #: admin/views/BWGViewThemes_bwg.php:2407
@@ -2946,7 +2979,8 @@ msgid "Transparency:"
 msgstr "Transparence :"
 
 #: admin/views/BWGViewThemes_bwg.php:524 admin/views/BWGViewThemes_bwg.php:674
-#: admin/views/BWGViewThemes_bwg.php:799 admin/views/BWGViewThemes_bwg.php:1293
+#: admin/views/BWGViewThemes_bwg.php:799
+#: admin/views/BWGViewThemes_bwg.php:1293
 #: admin/views/BWGViewThemes_bwg.php:1864
 #: admin/views/BWGViewThemes_bwg.php:2394
 #: admin/views/BWGViewThemes_bwg.php:3738
@@ -2960,86 +2994,103 @@ msgstr "Couleur d&rsquo;arri&egrave;re-plan :"
 msgid "Background transparency:"
 msgstr "Transparence de l&rsquo;arri&egrave;re-plan :"
 
-#: admin/views/BWGViewThemes_bwg.php:587 admin/views/BWGViewThemes_bwg.php:1138
+#: admin/views/BWGViewThemes_bwg.php:587
+#: admin/views/BWGViewThemes_bwg.php:1138
 #: admin/views/BWGViewThemes_bwg.php:2121
 #: admin/views/BWGViewThemes_bwg.php:3360
 msgid "Description font size:"
 msgstr "Taille de la description :"
 
-#: admin/views/BWGViewThemes_bwg.php:593 admin/views/BWGViewThemes_bwg.php:2127
+#: admin/views/BWGViewThemes_bwg.php:593
+#: admin/views/BWGViewThemes_bwg.php:2127
 #: admin/views/BWGViewThemes_bwg.php:3326
 msgid "Description font color:"
 msgstr "Couleur de la description :"
 
-#: admin/views/BWGViewThemes_bwg.php:599 admin/views/BWGViewThemes_bwg.php:1150
+#: admin/views/BWGViewThemes_bwg.php:599
+#: admin/views/BWGViewThemes_bwg.php:1150
 #: admin/views/BWGViewThemes_bwg.php:2133
 #: admin/views/BWGViewThemes_bwg.php:3332
 msgid "Description font family:"
 msgstr "Police de la description :"
 
-#: admin/views/BWGViewThemes_bwg.php:805 admin/views/BWGViewThemes_bwg.php:2865
+#: admin/views/BWGViewThemes_bwg.php:805
+#: admin/views/BWGViewThemes_bwg.php:2865
 #: admin/views/BWGViewThemes_bwg.php:3751
 msgid "Right, left buttons size:"
 msgstr "Taille des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:811 admin/views/BWGViewThemes_bwg.php:3757
+#: admin/views/BWGViewThemes_bwg.php:811
+#: admin/views/BWGViewThemes_bwg.php:3757
 msgid "Play, pause buttons size:"
 msgstr "Taille des boutons Play/Pause :"
 
-#: admin/views/BWGViewThemes_bwg.php:817 admin/views/BWGViewThemes_bwg.php:2526
+#: admin/views/BWGViewThemes_bwg.php:817
+#: admin/views/BWGViewThemes_bwg.php:2526
 #: admin/views/BWGViewThemes_bwg.php:3763
 msgid "Buttons color:"
 msgstr "Couleur des boutons :"
 
-#: admin/views/BWGViewThemes_bwg.php:823 admin/views/BWGViewThemes_bwg.php:3769
+#: admin/views/BWGViewThemes_bwg.php:823
+#: admin/views/BWGViewThemes_bwg.php:3769
 msgid "Buttons transparency:"
 msgstr "Transparence des boutons :"
 
-#: admin/views/BWGViewThemes_bwg.php:830 admin/views/BWGViewThemes_bwg.php:3776
+#: admin/views/BWGViewThemes_bwg.php:830
+#: admin/views/BWGViewThemes_bwg.php:3776
 msgid "Buttons hover color:"
 msgstr "Couleur survol des boutons :"
 
-#: admin/views/BWGViewThemes_bwg.php:836 admin/views/BWGViewThemes_bwg.php:2859
+#: admin/views/BWGViewThemes_bwg.php:836
+#: admin/views/BWGViewThemes_bwg.php:2859
 #: admin/views/BWGViewThemes_bwg.php:3782
 msgid "Right, left buttons width:"
 msgstr "Largeur des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:842 admin/views/BWGViewThemes_bwg.php:2853
+#: admin/views/BWGViewThemes_bwg.php:842
+#: admin/views/BWGViewThemes_bwg.php:2853
 #: admin/views/BWGViewThemes_bwg.php:3788
 msgid "Right, left buttons height:"
 msgstr "Hauteur des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:848 admin/views/BWGViewThemes_bwg.php:2834
+#: admin/views/BWGViewThemes_bwg.php:848
+#: admin/views/BWGViewThemes_bwg.php:2834
 #: admin/views/BWGViewThemes_bwg.php:3794
 msgid "Right, left buttons background color:"
 msgstr "Couleur d&rsquo;arri&egrave;re-plan des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:854 admin/views/BWGViewThemes_bwg.php:2890
+#: admin/views/BWGViewThemes_bwg.php:854
+#: admin/views/BWGViewThemes_bwg.php:2890
 #: admin/views/BWGViewThemes_bwg.php:3800
 msgid "Right, left buttons border width:"
 msgstr "Largeur de la bordure des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:860 admin/views/BWGViewThemes_bwg.php:2896
+#: admin/views/BWGViewThemes_bwg.php:860
+#: admin/views/BWGViewThemes_bwg.php:2896
 #: admin/views/BWGViewThemes_bwg.php:3806
 msgid "Right, left buttons border style:"
 msgstr "Style de bordure des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:874 admin/views/BWGViewThemes_bwg.php:2910
+#: admin/views/BWGViewThemes_bwg.php:874
+#: admin/views/BWGViewThemes_bwg.php:2910
 #: admin/views/BWGViewThemes_bwg.php:3820
 msgid "Right, left buttons border color:"
 msgstr "Couleur de la bordure des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:880 admin/views/BWGViewThemes_bwg.php:2883
+#: admin/views/BWGViewThemes_bwg.php:880
+#: admin/views/BWGViewThemes_bwg.php:2883
 #: admin/views/BWGViewThemes_bwg.php:3826
 msgid "Right, left buttons border radius:"
 msgstr "Rayon bordure des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:887 admin/views/BWGViewThemes_bwg.php:2820
+#: admin/views/BWGViewThemes_bwg.php:887
+#: admin/views/BWGViewThemes_bwg.php:2820
 #: admin/views/BWGViewThemes_bwg.php:3833
 msgid "Right, left buttons style:"
 msgstr "Style des boutons Droit/Gauche :"
 
-#: admin/views/BWGViewThemes_bwg.php:901 admin/views/BWGViewThemes_bwg.php:2846
+#: admin/views/BWGViewThemes_bwg.php:901
+#: admin/views/BWGViewThemes_bwg.php:2846
 msgid "Right, left buttons box shadow:"
 msgstr "Ombre des boutons Droit/Gauche :"
 
@@ -3083,11 +3134,13 @@ msgstr "D&eacute;sactiver la transparence du Filmstrip :"
 msgid "Filmstrip right, left buttons background color: "
 msgstr "Couleur arri&egrave;re-plan boutons Droit/Gauche du Filmstrip :"
 
-#: admin/views/BWGViewThemes_bwg.php:991 admin/views/BWGViewThemes_bwg.php:2992
+#: admin/views/BWGViewThemes_bwg.php:991
+#: admin/views/BWGViewThemes_bwg.php:2992
 msgid "Filmstrip right, left buttons color:"
 msgstr "Couleur boutons Droit/Gauche du Filmstrip :"
 
-#: admin/views/BWGViewThemes_bwg.php:997 admin/views/BWGViewThemes_bwg.php:2986
+#: admin/views/BWGViewThemes_bwg.php:997
+#: admin/views/BWGViewThemes_bwg.php:2986
 msgid "Filmstrip right, left buttons size:"
 msgstr "Taille boutons Droit/Gauche du Filmstrip :"
 
@@ -3987,7 +4040,8 @@ msgstr ""
 "Pour terminer la d&eacute;sinstallation, Photo Gallery sera automatiquement "
 "d&eacute;sactiv&eacute;."
 
-#: admin/views/BWGViewWidget.php:115 admin/views/BWGViewWidgetSlideshow.php:104
+#: admin/views/BWGViewWidget.php:115
+#: admin/views/BWGViewWidgetSlideshow.php:104
 #: admin/views/BWGViewWidgetTags.php:114
 msgid "Title:"
 msgstr "Titre :"
@@ -4008,7 +4062,8 @@ msgstr "Dernier"
 msgid "Count:"
 msgstr "Compteur :"
 
-#: admin/views/BWGViewWidget.php:161 admin/views/BWGViewWidgetSlideshow.php:120
+#: admin/views/BWGViewWidget.php:161
+#: admin/views/BWGViewWidgetSlideshow.php:120
 #: admin/views/BWGViewWidgetTags.php:139
 msgid "Dimensions:"
 msgstr "Dimensions :"

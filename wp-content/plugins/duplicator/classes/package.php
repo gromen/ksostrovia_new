@@ -79,6 +79,8 @@ class DUP_Package {
 	/**
 	 * Generates a scan report
 	 * @return array of scan results
+	 * 
+	 * @notes: Testing = /wp-admin/admin-ajax.php?action=duplicator_package_scan
 	 */
 	public function Scan() {
 		
@@ -140,8 +142,14 @@ class DUP_Package {
 						  $db['Status']['Rows'],
 						  $db['Status']['Case']);
 		
-		$warn_counts = array_count_values($warnings);	
-
+		//array_count_values will throw a warning message if it has null values, 
+		//so lets replace all nulls with empty string		
+		foreach ($warnings as $i => $value) {
+				if (is_null($value)) {
+					$warnings[$i] = '';
+				}
+		}
+		$warn_counts = is_array($warnings) ? array_count_values($warnings) : 0;
 		$report['RPT']['Warnings'] = $warn_counts['Warn'];
 		$report['RPT']['Success']  = $warn_counts['Good'];
 		$report['RPT']['ScanTime'] = DUP_Util::ElapsedTime(DUP_Util::GetMicrotime(), $timerStart);
@@ -177,7 +185,7 @@ class DUP_Package {
 		$php_max_memory = ($php_max_memory === false) ? "Unabled to set php memory_limit" :  DUPLICATOR_PHP_MAX_MEMORY . " ({$php_max_memory} default)";
 		
 		$info  = "********************************************************************************\n";
-		$info .= "PACKAGE-LOG: " . @date("Y-m-d H:i:s") . "\n";
+		$info .= "DUPLICATOR-LITE PACKAGE-LOG: " . @date("Y-m-d H:i:s") . "\n";
 		$info .= "NOTICE: Do NOT post to public sites or forums \n";
 		$info .= "********************************************************************************\n";
 		$info .= "VERSION:\t" . DUPLICATOR_VERSION . "\n";

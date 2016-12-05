@@ -36,6 +36,36 @@ function global_post_types() {
 
   register_post_type( 'aktualnosci', $news_args );
 
+  $news_args = array(
+    'labels' => array(
+      'name' => 'Drużyny',
+      'singular_name' => 'druzyna',
+      'all_items' => 'Wszystkie drużyny',
+      'add_new' => 'Dodaj nową drużynę',
+      'add_new_item' => 'Dodaj nową drużynę',
+      'edit_item' => 'Edytuj drużynę',
+      'new_item' => 'Nowa drużyna',
+      'view_item' => 'Zobacz drużynę',
+      'search_items' => 'Szukaj w drużynach',
+      'not_found_in_trash' => 'Brak drużyny w koszu',
+      'not_found' => 'Nie znaleziono drużyny',
+      'parent_item_colon' => ''
+    ),
+    'public' => true,
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-id-alt',
+    'capability_type' => array('page', 'pages'),
+    'rewrite' => true,
+    'hierarchical' => false,
+    'query_var' => true,
+    'supports' => array(
+      'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats'
+    ),
+    'has_archive' => true
+  );
+
+  register_post_type( 'druzyna', $news_args );
+
 }
 
 add_action('init', 'global_init_taxonomies');
@@ -46,18 +76,7 @@ function global_init_taxonomies() {
     array (
       'hierarchical' => false,
       'labels' => array (
-        'name' => 'Drużyny',
-        'singular_name' => 'Drużyny',
-        'search_items' => 'Wyszukaj drużyny',
-        'popular_items' => 'Popularne drużyny',
-        'all_items' => 'Wszystkie drużyny',
-        'edit_item' => 'Edytuj drużynę',
-        'update_item' => 'Aktualizuj drużynę',
-        'add_new_item' => 'Dodaj nową drużynę',
-        'new_item_name' => 'Nazwa nowej drużyny',
-        'separate_items_with_commas' => 'Oddziel drużyny przecinkiem',
-        'choose_from_most_used' => 'Wybierz sposród najczęciej używanych drużyn',
-        'menu_name' => 'Drużyny'
+        'name' => 'Druzyny'
         ),
       'show_ui' => true,
       'query_var' => true,

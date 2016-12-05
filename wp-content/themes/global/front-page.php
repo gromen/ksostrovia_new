@@ -36,12 +36,12 @@ $count++;
               <div class="small-12 medium-shrink column">
                 <!-- display image size 700x250px for first Post -->
                 <?php if ( has_post_thumbnail() && $count === 1 ) : ?>
-                    <figure class="news-post__image"> <?php the_post_thumbnail('img700x250'); ?>
+                    <figure class="news-post__image hide-for-small-only"> <?php the_post_thumbnail('img700x250'); ?>
                     </figure>
 
                 <!-- if is not first post, display 250x250px image size -->
                 <?php else : ?>
-                    <figure class="news-post__image"> <?php the_post_thumbnail('img250x250'); ?>
+                    <figure class="news-post__image hide-for-small-only"> <?php the_post_thumbnail('img250x250'); ?>
                     </figure>
                 <?php endif; ?>
               </div>

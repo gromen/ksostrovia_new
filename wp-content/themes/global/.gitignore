@@ -14,6 +14,7 @@ sitemap.xml.gz
 /wp-content/themes/*/node_modules
 style.css.map
 style.css.min.map
+.eslintrc.*
 
 
 
