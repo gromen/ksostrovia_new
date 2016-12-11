@@ -193,14 +193,14 @@ function cmb2_sample_metaboxes() {
 		$group_field_id = $cmb->add_field( array(
 		    'id'          => 'wiki_test_repeat_group',
 		    'type'        => 'group',
-		    'description' => __( 'Generates reusable form entries', 'cmb2' ),
+		    'description' => __( 'Dodawanie zawodników', 'cmb2' ),
 		    // 'repeatable'  => false, // use false if you want non-repeatable group
 		    'options'     => array(
-		        'group_title'   => __( 'Entry {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
-		        'add_button'    => __( 'Add Another Entry', 'cmb2' ),
-		        'remove_button' => __( 'Remove Entry', 'cmb2' ),
+		        'group_title'   => __( 'Zawodnik {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+		        'add_button'    => __( 'Dodaj <zawodnika>		</zawodnika>', 'cmb2' ),
+		        'remove_button' => __( 'Usuń zawodnika', 'cmb2' ),
 		        'sortable'      => true, // beta
-		        // 'closed'     => true, // true to have the groups closed by default
+		        'closed'     => true, // true to have the groups closed by default
 		    ),
 		) );
 
@@ -226,6 +226,15 @@ function cmb2_sample_metaboxes() {
     // Add other metaboxes as needed
 
 }
+
+/**
+* Turn off REST API
+*/
+add_filter('rest_authentication_errors', 'wpzen_disable_rest_api', 99);
+function wpzen_disable_rest_api() {
+	return new WP_Error('wpzen_rest_api_disabled', 'REST API disables', array('status' => 403));
+}
+
 /**
  * Implement the Custom Header feature.
  */

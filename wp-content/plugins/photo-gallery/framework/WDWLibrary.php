@@ -759,77 +759,34 @@ class WDWLibrary {
     $bwg_search_tags = (isset($_POST['bwg_tag_id_' . $cur_gal_id]) && $_POST['bwg_tag_id_' . $cur_gal_id] != '' )? $_POST['bwg_tag_id_' . $cur_gal_id] : array();	
     $album_gallery_id = (isset($_POST['album_gallery_id_' . $current_view]) ? esc_html($_POST['album_gallery_id_' . $current_view]) : 0);
     ?>
-    <style>
-      #bwg_tag_wrap{
-        background-color: #FFFFFF;
-        width: 100%;
-        font-family: inherit;
-        margin:0 -5px 20px 5px;
-        z-index:200;
-        position:relative
-      }
-      .bwg_search_loupe_container,.bwg_search_reset_container{
-        font-size: 18px;
-        color: #CCCCCC;
-        cursor: pointer;
-        position: relative;
-        top: -4px;
-      }
-      #bwg_tag_container p{
-        text-align:center
-      }
-      #bwg_tag_container {
-        border: 1px solid #CCCCCC;
-        box-shadow: 0 0 3px 1px #CCCCCC;
-        border-radius: 4px;
-        width:256px;
-        float:right
-      }
-      
-    </style>
-	  <div id="bwg_tag_wrap" >
+	  <div id="bwg_tag_wrap">
       <div id="bwg_tag_container">
-        <select class="search_tags" id="bwg_tag_id_<?php echo $cur_gal_id;  ?>" multiple="multiple" >		 
-        <?php                 
-          foreach($tags_rows as $tags_row){
-            $selected = (in_array($tags_row->term_id ? $tags_row->term_id : '' ,$bwg_search_tags))	? 'selected="selected"' : "";
-        ?>     
+        <select class="search_tags" id="bwg_tag_id_<?php echo $cur_gal_id; ?>" multiple="multiple">		 
+          <?php                
+          foreach($tags_rows as $tags_row) {
+            $selected = (in_array($tags_row->term_id ? $tags_row->term_id : '', $bwg_search_tags)) ? 'selected="selected"' : '';
+            ?>     
           <option value="<?php echo $tags_row->term_id ?>" <?php echo $selected;?>><?php echo $tags_row->name ?></option>
-        <?php
+            <?php
           }
-        ?>
+          ?>
         </select>
         <span class="bwg_search_loupe_container" >
-          <i title="<?php echo __('Search', 'bwg'); ?>" class="bwg_search fa fa-search" onclick="select_tag('<?php echo $current_view; ?>' ,'<?php echo $form_id; ?>', '<?php echo $cur_gal_id; ?>', <?php echo $album_gallery_id; ?>,'<?php echo $type; ?>');"></i>
+          <i title="<?php _e('Search', 'bwg'); ?>" class="bwg_search fa fa-search" onclick="bwg_select_tag('<?php echo $current_view; ?>' ,'<?php echo $form_id; ?>', '<?php echo $cur_gal_id; ?>', <?php echo $album_gallery_id; ?>, '<?php echo $type; ?>', false);"></i>
         </span>
         <span class="bwg_search_reset_container" >
-          <i title="<?php echo __('Reset', 'bwg'); ?>" class="bwg_reset fa fa-times" onclick="clear_input_<?php echo $cur_gal_id; ?>('<?php echo $cur_gal_id; ?>'),spider_frontend_ajax('<?php echo $form_id; ?>', '<?php echo $current_view; ?>', '<?php echo $cur_gal_id; ?>', <?php echo $album_gallery_id; ?>, '', '<?php echo $type; ?>', 1)"></i>
+          <i title="<?php _e('Reset', 'bwg'); ?>" class="bwg_reset fa fa-times" onclick="bwg_select_tag('<?php echo $current_view; ?>' ,'<?php echo $form_id; ?>', '<?php echo $cur_gal_id; ?>', <?php echo $album_gallery_id; ?>, '<?php echo $type; ?>', '<?php echo $cur_gal_id; ?>');"></i>
         </span>
-        <input type="hidden" id="bwg_tags_id_<?php echo $cur_gal_id;  ?>" value=""/>
+        <input type="hidden" id="bwg_tags_id_<?php echo $cur_gal_id;  ?>" value="" />
       </div>
       <div style="clear:both"></div>
     </div>
     <script>
-      jQuery(".search_tags").SumoSelect();
-      function select_tag( current_view, form_id, cur_gal_id, album_gallery_id, type ){
-        spider_frontend_ajax(form_id, current_view, cur_gal_id, album_gallery_id, '', type, 1);
-      };	  
-      function clear_input_<?php echo $cur_gal_id; ?> (cur_gal_id) {
-        jQuery("#bwg_tag_id_" + cur_gal_id).val('');
-      } 
-      function searchTags(obj){
-        var valthis = jQuery(obj).val().toLowerCase();
-        var num = 0;
-        jQuery('#bwg_tag_container .options li label').each(function () {
-          var text = jQuery(this).text().toLowerCase();
-          if(text.indexOf(valthis) != -1) { 
-          jQuery(this).closest("li").show();
-          } 
-          else{ 
-          jQuery(this).closest("li").hide();
-          }
-        });	 
-      }
+      jQuery(".search_tags").SumoSelect({
+        placeholder: bwg_objectsL10n.bwg_select_tag,
+        search: 1,
+        searchText: bwg_objectsL10n.bwg_search
+      });
     </script>
     <?php
   }

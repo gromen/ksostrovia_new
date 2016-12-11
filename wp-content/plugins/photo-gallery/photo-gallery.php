@@ -4,7 +4,7 @@
  * Plugin Name: Photo Gallery
  * Plugin URI: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
  * Description: This plugin is a fully responsive gallery plugin with advanced functionality.  It allows having different image galleries for your posts and pages. You can create unlimited number of galleries, combine them into albums, and provide descriptions and tags.
- * Version: 1.3.19
+ * Version: 1.3.21
  * Author: WebDorado
  * Author URI: https://web-dorado.com/
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -150,6 +150,9 @@ function bwg_addons() {
 }
 
 function bwg_ajax_frontend() {
+  if (function_exists('switch_to_locale') && function_exists('get_locale')) {
+    switch_to_locale(get_locale());
+  }
   require_once(WD_BWG_DIR . '/framework/WDWLibrary.php');
   $page = WDWLibrary::get('action');
   if (($page != '') && ($page == 'GalleryBox')) {
@@ -295,6 +298,9 @@ function photo_gallery($id) {
 }
 
 function bwg_shortcode($params) {
+  if ( is_admin() ) {
+    return;
+  }
   if (isset($params['id'])) {
     global $wpdb;
     $shortcode = $wpdb->get_var($wpdb->prepare("SELECT tagtext FROM " . $wpdb->prefix . "bwg_shortcode WHERE id='%d'", $params['id']));
@@ -1926,7 +1932,7 @@ function bwg_activate() {
     ));
   }
   $version = WD_BWG_VERSION;
-  $new_version = '1.3.19';
+  $new_version = '1.3.21';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -1978,7 +1984,7 @@ wp_oembed_add_provider( '#https://instagr(\.am|am\.com)/p/.*#i', 'https://api.in
 
 function bwg_update_hook() {
   $version = WD_BWG_VERSION;
-  $new_version = '1.3.19';
+  $new_version = '1.3.21';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -2215,8 +2221,8 @@ function bwg_front_end_scripts() {
 
   wp_enqueue_script('bwg_frontend', WD_BWG_FRONT_URL . '/js/bwg_frontend.js', array(), $version);
   wp_enqueue_style('bwg_frontend', WD_BWG_FRONT_URL . '/css/bwg_frontend.css', array(), $version);
-  wp_enqueue_script('bwg_sumoselect', WD_BWG_FRONT_URL . '/js/jquery.sumoselect.min.js', array(), $version);
-  wp_enqueue_style('bwg_sumoselect', WD_BWG_FRONT_URL . '/css/sumoselect.css', array(), $version);
+  wp_enqueue_script('bwg_sumoselect', WD_BWG_FRONT_URL . '/js/jquery.sumoselect.min.js', array(), '3.0.2');
+  wp_enqueue_style('bwg_sumoselect', WD_BWG_FRONT_URL . '/css/sumoselect.css', array(), '3.0.2');
   // Styles/Scripts for popup.
   wp_enqueue_style('bwg_font-awesome', WD_BWG_FRONT_URL . '/css/font-awesome/font-awesome.css', array(), '4.6.3');
   wp_enqueue_script('bwg_jquery_mobile', WD_BWG_FRONT_URL . '/js/jquery.mobile.js', array(), $version);
@@ -2230,7 +2236,8 @@ function bwg_front_end_scripts() {
     'bwg_search_result' => __('There are no images matching your search.', 'bwg'),
   ));
   wp_localize_script('bwg_sumoselect', 'bwg_objectsL10n', array(
-    'bwg_select_tag'  => __('Select Tag.', 'bwg'),
+    'bwg_select_tag'  => __('Select Tag', 'bwg'),
+    'bwg_search' => __('Search', 'bwg'),
   ));
 
   // Google fonts.

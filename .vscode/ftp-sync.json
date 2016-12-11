@@ -1,0 +1,19 @@
+{
+    "remotePath": "./",
+    "host": "cba.pl",
+    
+    "username": "ksostrovia-test",
+    
+    "password": "wsti2759",
+    "port": 21,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\wp-content\\themes\\global\\node_modules"
+    ]
+}

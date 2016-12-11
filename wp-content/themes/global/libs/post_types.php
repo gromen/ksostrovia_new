@@ -49,13 +49,14 @@ function global_post_types() {
       'search_items' => 'Szukaj w drużynach',
       'not_found_in_trash' => 'Brak drużyny w koszu',
       'not_found' => 'Nie znaleziono drużyny',
-      'parent_item_colon' => ''
+      'parent_item_colon' => '',
     ),
     'public' => true,
     'menu_position' => 6,
     'menu_icon' => 'dashicons-id-alt',
-    'capability_type' => array('page', 'pages'),
+    'capability_type' => 'post',
     'rewrite' => true,
+    'show_ui' => true,
     'hierarchical' => false,
     'query_var' => true,
     'supports' => array(
@@ -68,23 +69,23 @@ function global_post_types() {
 
 }
 
-add_action('init', 'global_init_taxonomies');
+// add_action('init', 'global_init_taxonomies');
 
-function global_init_taxonomies() {
+// function global_init_taxonomies() {
 
-  register_taxonomy( 'druzyny', array('aktualnosci'),
-    array (
-      'hierarchical' => false,
-      'labels' => array (
-        'name' => 'Druzyny'
-        ),
-      'show_ui' => true,
-      'query_var' => true,
-      'rewrite' => array ('slug' => 'druzyna'),
-    )
+//   register_taxonomy( 'druzyny', array('aktualnosci'),
+//     array (
+//       'hierarchical' => false,
+//       'labels' => array (
+//         'name' => 'Druzyny'
+//         ),
+//       'show_ui' => true,
+//       'query_var' => true,
+//       'rewrite' => array ('slug' => 'druzyna'),
+//     )
 
-   );
-}
+//    );
+// }
 
 
 

@@ -34,7 +34,7 @@ var customJSWatchFiles  = './src/js/custom/*.js'; // Path to all custom JS files
  * Load gulp plugins and assing them semantic names.
  */
 var gulp         = require('gulp'); // Gulp of-course
-//Format CSS coding style
+// Format CSS coding style
 var csscomb = require('gulp-csscomb');
 
 var browserSync = require('browser-sync');
@@ -53,7 +53,7 @@ var rename       = require('gulp-rename'); // Renames files E.g. style.css -> st
 var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
 var notify       = require('gulp-notify'); // Sends message notification to you
 var plumber      = require('gulp-plumber');
-//Prevent pipe breaking caused by errors from gulp plugins
+// Prevent pipe breaking caused by errors from gulp plugins
 /**
  * Task: styles
  *
@@ -69,20 +69,20 @@ var plumber      = require('gulp-plumber');
  */
 
 gulp.task('styles', function () {
-  gulp.src( styleSRC )
+  gulp.src(styleSRC)
     .pipe(plumber())
-    .pipe( sourcemaps.init() )
-    .pipe( sass( {
+    .pipe(sourcemaps.init())
+    .pipe(sass({
       errLogToConsole: true,
       outputStyle: 'compact',
-      //outputStyle: 'compressed',
+      // outputStyle: 'compressed',
       // outputStyle: 'nested',
       // outputStyle: 'expanded',
       precision: 10
-    } ) )
-    .pipe( sourcemaps.write( { includeContent: false } ) )
-    .pipe( sourcemaps.init( { loadMaps: true } ) )
-    .pipe( autoprefixer(
+    }))
+    .pipe(sourcemaps.write({ includeContent: false }))
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(autoprefixer(
       'last 2 version',
       '> 1%',
       'safari 5',
@@ -90,19 +90,19 @@ gulp.task('styles', function () {
       'ie 9',
       'opera 12.1',
       'ios 6',
-      'android 4' ) )
+      'android 4'))
 
-    .pipe( sourcemaps.write ( styleDestination ) )
+    .pipe(sourcemaps.write(styleDestination))
     .pipe(csscomb())
-    .pipe( gulp.dest( styleDestination ) )
+    .pipe(gulp.dest(styleDestination))
     .pipe(reload({stream: true}))
 
 //       .pipe( rename( { suffix: '.min' } ) )
 //      .pipe( minifycss( {
 //            maxLineLen: 10
 //        }))
-    .pipe( gulp.dest( styleDestination ) )
-});
+    .pipe(gulp.dest(styleDestination))
+})
 /**
  * Task: vendorJS
  *
@@ -114,12 +114,11 @@ gulp.task('styles', function () {
  *      3. Renames the JS file with suffix .min.js
  *      4. Uglifes/Minifies the JS file and generates vendors.min.js
  */
-gulp.task( 'vendorsJs', function() {
-  gulp.src( jsVendorSRC )
-    .pipe( concat( jsVendorFile + '.js' ) )
-    .pipe( gulp.dest( jsVendorDestination ) )
-
-});
+gulp.task('vendorsJs', function () {
+  gulp.src(jsVendorSRC)
+    .pipe(concat(jsVendorFile + '.js'))
+    .pipe(gulp.dest(jsVendorDestination))
+})
 /**
  * Task: customJS
  *
@@ -131,48 +130,43 @@ gulp.task( 'vendorsJs', function() {
  *      3. Renames the JS file with suffix .min.js
  *      4. Uglifes/Minifies the JS file and generates custom.min.js
  */
-gulp.task( 'js', function() {
+gulp.task('js', function () {
   gulp.src([
     jsCustomSRC,
     './js/navigation.js',
     './js/skip-link-focus-fix.js'
-    ])
-    .pipe( concat( jsCustomFile + '.js' ) )
-    .pipe( gulp.dest( jsCustomDestination ) )
-    //.pipe( rename( {
-      //basename: jsCustomFile,
-      //suffix: '.min'
+  ])
+    .pipe(concat(jsCustomFile + '.js'))
+    .pipe(gulp.dest(jsCustomDestination))
+    // .pipe( rename( {
+      // basename: jsCustomFile,
+      // suffix: '.min'
    // }))
-    //.pipe( uglify() )
-    //.pipe( gulp.dest( jsCustomDestination ) )
-
-});
+    // .pipe( uglify() )
+    // .pipe( gulp.dest( jsCustomDestination ) )
+})
 // Static Server + watching scss/html files
-gulp.task('serve', ['styles'], function() {
-
-  //initialize browsersync
+gulp.task('serve', ['styles'], function () {
+  // initialize browsersync
   browserSync.init({
-  //browsersync with a php server
-  proxy: "localhost:8080/ksostrovia",
-  notify: false
-  });
-
-
-
-});
+  // browsersync with a php server
+    proxy: 'localhost:8080/ksostrovia',
+    notify: false
+  })
+})
 /**
   * Watch Tasks.
   *
   * Watches for file changes and runs specific tasks.
   */
 
- gulp.task( 'default', [ 'vendorsJs', 'js', 'serve' ], function () {
+gulp.task('default', [ 'vendorsJs', 'js', 'serve' ], function () {
   gulp.watch([
     './src/css/**/*.scss',
     './*.php',
     './**/*.php'
-    ],['styles']);
-  //gulp.watch().on('change', reload);
-  //gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
-  //gulp.watch( './src/js/custom/*.js', [ 'js' ] );
- });
+  ], ['styles'])
+  // gulp.watch().on('change', reload);
+  // gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
+  // gulp.watch( './src/js/custom/*.js', [ 'js' ] );
+})

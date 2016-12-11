@@ -661,9 +661,19 @@ class BWGViewSlideshow {
                         <span class="bwg_slideshow_image_spun2_<?php echo $bwg; ?>">
                           <?php 
                             if (!$is_embed) {
+                              if ($options_row->thumb_click_action == 'redirect_to_url' && $image_row->redirect_url) {
+                            ?>
+                            <a href="<?php echo $image_row->redirect_url; ?>" target="<?php echo $options_row->thumb_link_target ? '_blank' : '';?>">
+                            <?php
+                              }
                             ?>
                             <img id="bwg_slideshow_image_<?php echo $bwg; ?>" class="bwg_slideshow_image_<?php echo $bwg; ?>" src="<?php echo site_url() . '/' . $WD_BWG_UPLOAD_DIR . $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" alt="<?php echo $image_row->alt; ?>"/>
+                            <?php
+                              if ($options_row->thumb_click_action == 'redirect_to_url' && $image_row->redirect_url) {
+                            ?>
+                            </a>
                             <?php 
+                              }
                             }
                             else{  /*$is_embed*/?>
                             <span id="bwg_slideshow_image_<?php echo $bwg; ?>" class="bwg_slideshow_embed_<?php echo $bwg; ?>" image_id="<?php echo $image_row->id; ?>">
@@ -709,10 +719,20 @@ class BWGViewSlideshow {
                       <span class="bwg_slideshow_image_spun1_<?php echo $bwg; ?>">
                         <span class="bwg_slideshow_image_spun2_<?php echo $bwg; ?>">
                           <?php 
-                            if (! $is_embed) {
+                            if (!$is_embed) {
+                              if ($options_row->thumb_click_action == 'redirect_to_url' && $image_row->redirect_url) {
+                            ?>
+                            <a href='<?php echo $image_row->redirect_url; ?>' target="<?php echo $options_row->thumb_link_target ? '_blank' : '';?>">
+                            <?php
+                            }
                             ?>
                             <img class="bwg_slideshow_image_<?php echo $bwg; ?>" src="<?php echo site_url() . '/' . $WD_BWG_UPLOAD_DIR . $image_row->image_url; ?>" alt="<?php echo $image_row->alt; ?>"/>
+                            <?php 
+                            if ($options_row->thumb_click_action == 'redirect_to_url' && $image_row->redirect_url) {
+                            ?>
+                            </a>
                           <?php 
+                            }
                             }
                             else {   /*$is_embed*/ ?>
                             <span class="bwg_slideshow_embed_<?php echo $bwg; ?>">
@@ -1341,6 +1361,7 @@ class BWGViewSlideshow {
           jQuery(".bwg_slideshow_watermark_text_<?php echo $bwg; ?>, .bwg_slideshow_watermark_text_<?php echo $bwg; ?>:hover").css({fontSize: ((parent_width) * <?php echo $watermark_font_size / $image_width; ?>)});
           jQuery(".bwg_slideshow_title_text_<?php echo $bwg; ?>").css({fontSize: ((parent_width) * <?php echo 2 * $theme_row->slideshow_title_font_size / $image_width; ?>)});
           jQuery(".bwg_slideshow_description_text_<?php echo $bwg; ?>").css({fontSize: ((parent_width) * <?php echo 2 * $theme_row->slideshow_description_font_size / $image_width; ?>)});
+          jQuery(".bwg_slideshow_image_<?php echo $bwg; ?>").css({'display':'inline-block'});
         }
       }
       jQuery(window).resize(function() {

@@ -3,8 +3,8 @@ Contributors: webdorado
 Donate link: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
 Tags: album, image gallery, gallery, image, images, lightbox, photo, photo gallery, photos, responsive, thumbnail, widget
 Requires at least: 3.4
-Tested up to: 4.6 
-Stable tag: 1.3.19    
+Tested up to: 4.7 
+Stable tag: 1.3.21    
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -172,6 +172,16 @@ We recommend to use images with the width of 1200px to 1600px. In order to speed
 To enable the feature of adding Media Library images, go to Photo Gallery > Options > Global Options and set Import from Media Library option to Yes. After that you will be able to import photos from Media Library to Photo Gallery.     
 
 == Changelog ==
+
+= 1.3.21 =
+* Fixed: Frontend content language in AJAX response on Wordpress 4.7.   
+* Fixed: Images check all in backend on Wordpress 4.7.   
+* Fixed: Item price with parameter.   
+
+= 1.3.20 =
+* Fixed: Redirect to url for masonry view.     
+* Added: Redirect to url for slideshow and carousel views.       
+* Updated: Sumoselect.     
 
 = 1.3.19 =
 * Added: Image title position in image browser view (optional).    
