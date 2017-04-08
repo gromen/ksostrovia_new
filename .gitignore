@@ -16,3 +16,4 @@ sitemap.xml.gz
 .DS_Store
 wp-content/themes/global/node_modules/
 wp-snapshots/
+.vscode
