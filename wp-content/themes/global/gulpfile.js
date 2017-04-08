@@ -166,7 +166,7 @@ gulp.task('default', [ 'vendorsJs', 'js', 'serve' ], function () {
     './*.php',
     './**/*.php'
   ], ['styles'])
-  // gulp.watch().on('change', reload);
-  // gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
-  // gulp.watch( './src/js/custom/*.js', [ 'js' ] );
+  gulp.watch().on('change', reload);
+  gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
+  gulp.watch( './src/js/custom/*.js', [ 'js' ] );
 })

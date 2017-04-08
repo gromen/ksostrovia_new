@@ -77,7 +77,6 @@
       self = self.parentElement
     }
   }
-console.log('asas');
 
 /**
  * Toggles `focus` class to allow submenu access on tablets.

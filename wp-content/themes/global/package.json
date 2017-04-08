@@ -6,6 +6,8 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.13.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-node": "^4.2.2",
     "gulp": "*",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",

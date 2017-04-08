@@ -82,24 +82,26 @@
 					</div>
 
 				</div>
+
+				<!-- Slider main container -->
+				<div class="swiper-container hide-for-small-only">
+				    <!-- Additional required wrapper -->
+				    <div class="swiper-wrapper">
+				        <!-- Slides -->
+				        <div class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/src/images/banner1.jpg" alt=""></div>
+				        <div class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/src/images/banner1.jpg" alt=""></div>
+				        <div class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/src/images/banner1.jpg" alt=""></div>
+				        ...
+				    </div>
+
+				    <!-- If we need navigation buttons -->
+				    <div class="swiper-button-prev"></div>
+				    <div class="swiper-button-next"></div>
+
+				</div>
+
 			</header>
 
-			<!-- Slider main container -->
-			<div class="swiper-container hide-for-small-only">
-			    <!-- Additional required wrapper -->
-			    <div class="swiper-wrapper">
-			        <!-- Slides -->
-			        <div class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/src/images/banner1.jpg" alt=""></div>
-			        <div class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/src/images/banner1.jpg" alt=""></div>
-			        <div class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/src/images/banner1.jpg" alt=""></div>
-			        ...
-			    </div>
-
-			    <!-- If we need navigation buttons -->
-			    <div class="swiper-button-prev"></div>
-			    <div class="swiper-button-next"></div>
-
-			</div>
 
 			<main id="content" class="site-content">
 				<div class="row">
