@@ -150,7 +150,7 @@ gulp.task('serve', ['styles'], function () {
   // initialize browsersync
   browserSync.init({
   // browsersync with a php server
-    proxy: 'localhost:8080/ksostrovia',
+    proxy: 'localhost/ksostrovia',
     notify: false
   })
 })
