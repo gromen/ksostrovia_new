@@ -271,7 +271,7 @@ class BWGViewAlbums_bwg {
         <tbody>
           <tr>
             <td class="spider_label"><label for="name"><?php _e("Name:", 'bwg_back'); ?> <span style="color:#FF0000;">*</span> </label></td>
-            <td><input type="text" id="name" name="name" value="<?php echo $row->name; ?>" size="39" /></td>
+            <td><input type="text" id="name" name="name" value="<?php echo $row->name; ?>" size="39" class="bwg_requried"/></td>
           </tr>
           <tr>
             <td class="spider_label"><label for="slug"><?php _e("Slug:", 'bwg_back'); ?> </label></td>

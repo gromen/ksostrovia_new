@@ -1,10 +1,10 @@
 === Photo Gallery by WD – Responsive Photo Gallery for WordPress ===
 Contributors: webdorado,wdsupport
 Donate link: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
-Tags: gallery, photo, photo gallery, image gallery, responsive gallery, video gallery,galleries,  wordpress gallery plugin, images gallery, album, photo albums, simple gallery, best gallery plugin, free photo gallery, wp gallery, wordpress gallery, website gallery, gallery shortcode, best gallery, picture, pictures, gallery slider, photo album, photogallery, widget gallery, image, images, photos,  gallery lightbox, photoset, wordpress photo gallery plugin, wp gallery plugins, responsive wordpress photo gallery, media, image album, filterable gallery, banner rotator, fullscreen gallery,  add album,  add gallery, add pictures, fotoalbum, foto, gallery decription, multiple pictures, photoalbum, upload images, upload photos, view images, view pictures, admin,comments, gallery image, image lightbox, image rotate, image slideshow, image slider, jquery, jquery gallery, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, responsive, watermarking, watermarks,fullscreen slider, lightbox, photography, sidebar, slide, youtube, vimeo, videos, instagram, facebook, mosaic gallery, facebook integration, instagram feed, widget, youtube gallery, gallery slideshow, ecommerce, gallery widget, grid gallery, masonry gallery, portfolio gallery, post gallery, thumbnail gallery, watermark
+Tags: gallery, photo gallery, image gallery, responsive gallery, wordpress gallery plugin, photo albums, gallery slider, gallery lightbox, wordpress photo gallery plugin, fullscreen gallery, watermarking, video gallery
 Requires at least: 3.4
 Tested up to: 4.7 
-Stable tag: 1.3.36    
+Stable tag: 1.3.37    
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Photo Gallery is an advanced plugin with a list of tools and options for adding 
 
 == Description ==
 
-https://www.youtube.com/watch?v=4Mxg0FsFZZE&index=5&list=PLnxWPiY5tLFUsFI67acGEPAqoDMZqss5F
+https://www.youtube.com/watch?v=3u0O9ZdVsGc
   
 Gallery is a fully responsive WordPress gallery plugin with advanced functionality.
 Create 100% responsive FREE WordPress photo gallery in minutes. Easy to customize and various views.
@@ -29,7 +29,7 @@ Create 100% responsive FREE WordPress photo gallery in minutes. Easy to customiz
 [Facebook Integration Add-on](https://web-dorado.com/products/wordpress-photo-gallery-plugin/add-ons/facebook.html)  -  Display Facebook photos and videos within Photo Gallery Pro without additional efforts.      
 [Export/Import Add-on](https://web-dorado.com/products/wordpress-photo-gallery-plugin/add-ons/export-import.html)  Export/import galleries, albums and all related data from one WordPress site to another.      
 
-Photo Gallery is an advanced plugin with a list of tools and options for adding and editing images for different views. This is a fully responsive gallery plugin. The product includes plugin for adding image galleries and albums to posts and pages, as well as multiple widgets. You can add images, providing detailed descriptions and tags, organize the galleries into different photo albums.
+Photo Gallery is an advanced plugin with a list of tools and options for adding and editing images for different views. This is a fully responsive gallery plugin. The product includes plugin for adding image galleries and albums to posts and pages, as well as multiple widgets. You can add images, providing detailed gallery descriptions and tags, organize the galleries into different photo albums.
 
 The responsive photo gallery allows to upload unlimited number of pictures and create as many photo albums as you need. Want to include videos? The plugin comes with audio and video support, that will enable you to create a YouTube gallery or a Vimeo video gallery quick and easy.
 
@@ -64,6 +64,8 @@ Photo Gallery product in addition to the main plugin includes 4 specific widgets
 *   Photo Gallery Slideshow 
 *   Photo Gallery (similar to the main plugin option)
 
+The responsive WordPress photo gallery is one of the best gallery plugins available. So don’t hesitate to download the free plugin and try it today!
+
 ###IMPORTANT:    
 If you think you found a bug in Photo Gallery or have any problem/question concerning the plugin, please check out [Photo Gallery Support Forum](https://web-dorado.com/forum/photo-gallery.html) in our website. If you do not find a solution here, do not hesitate to [click here to contact us](https://web-dorado.com/support/contact-us.html).
 
@@ -71,7 +73,7 @@ If you think you found a bug in Photo Gallery or have any problem/question conce
 ### The list of the features:
 
 *   100% Responsive   
-*   Multiple gallery views to choose from: Thumbnails, Image Browser, Slideshow  for galleries and Compact Album, Extended Album views for albums   
+*   Multiple gallery views to choose from: Thumbnails, Image Browser, Slide show  for galleries and Compact Album, Extended Album views for albums   
 *   Supports the following types of image files:  JPG, JPEG, PNG and GIF   
 *   Unlimited quantity of photos in gallery    
 *   Possibility of adding unlimited quantity of galleries/albums   
@@ -119,7 +121,7 @@ Upgrade to [WordPress Photo Gallery Pro](https://web-dorado.com/products/wordpre
 *   Commenting possibility with Captcha protection possibility.   
 *   Social sharing possibility (Facebook, Google+, Twitter, Pinterest and Tumblr).    
 *   Dynamic Photo Gallery Tag Cloud widget  with image tag cloud and text tag cloud options.   
-*   Possibility to include both videos and images within a single gallery.     
+*   Possibility to include both videos and images within a single simple gallery.     
 *   Add ons support.      
 
 
@@ -149,9 +151,11 @@ After downloading the ZIP file,
 == Screenshots ==
 1.  Photo Gallery - Popup View   
 2.  Photo Gallery - Thumbnails View   
-3.  Photo Gallery - Create Shortcode   
-4.  Photo Gallery - Edit Global Options   
-5.  Photo Gallery - Edit Watermark   
+3.  Photo Gallery - Image Browser View 
+4.  Photo Gallery - Mansory View   
+5.  Photo Gallery - Mosaic View   
+6.  Photo Gallery - Edit Global Options   
+7.  Photo Gallery - Edit Watermark   
 
 == Frequently Asked Questions ==
 
@@ -183,6 +187,14 @@ We recommend to use images with the width of 1200px to 1600px. In order to speed
 To enable the feature of adding Media Library images, go to Photo Gallery > Options > Global Options and set Import from Media Library option to Yes. After that you will be able to import photos from Media Library to Photo Gallery.     
 
 == Changelog ==
+
+= 1.3.37 =
+* Added: Show gallery title (optional from shortcode).   
+* Added: Show gallery description (optional).   
+* Added: Show image description in blog style view (optional).   
+* Fixed: Required field validation.   
+* Fixed: Filemanager.   
+* Changed: Removed support forum link.  
 
 = 1.3.36 =
 * Added: Gallery download  button.    
@@ -914,14 +926,14 @@ If any problem occurs with installation of Photo Gallery, please let us know usi
   
   
 = Step 2:  Creating/Editing Galleries for the Photo Gallery. =   
-2.1 On the left menu select Photo Gallery>Add Galleries/Images> Add new.  
+2.1 To add gallery/album, on the left menu select Photo Gallery>Add Galleries/Images> Add new.  
 2.2 Name. Specify the name of the gallery.  
 2.3 Slug. Specify the alias in your website for the gallery.  
-2.4 Description. Fill in the information you would like to share with the gallery. The description will be visible with some of the gallery views.  
+2.4 Description. Fill in the information you would like to share with the website gallery. The description will be visible with some of the gallery views.  
 2.5 Author. This indicates the author of the gallery. It automatically includes the name of the logged in user, who has added the gallery.  
 2.6 Published. Choose whether to publish the gallery or to leave it for the further publication.  
 2.7 Preview image. Indicate the gallery image which will be used to preview the gallery. If you leave it blank, it will automatically pick the first gallery image among the uploaded files.  
-2.8 Images. You can add photos to the gallery by clicking Add Images button.  
+2.8 Images. You can add pictures to the gallery by clicking Add Images button.  
  
 The Photo Gallery plugin is not using standard WordPress Media Manager, instead here you will be redirected to Photo Gallery File Manager. After uploading images you should mark them and press Add button.  
 Photo Gallery File Manager  
@@ -987,7 +999,7 @@ Here you can change default options for different views of Photo Gallery, as wel
 5.1.4 Image role. Choose whether only author can make changes in the gallery images or not.  
 5.1.5 Show Search box. Choose whether to display a search box for the image search in galleries or not.  
 5.1.6 Search box width. Set the width for the search box displayed with the gallery.  
-5.1.7. Preload images. Choose whether to have a preload for specific number of gallery images first or have them all loaded and only then displayed in the slideshow of the gallery.
+5.1.7. Preload images. Choose whether to have a preload for specific number of gallery images first or have them all loaded and only then displayed in the slide show of the gallery.
 5.1.8. Count of images. Specify the number of gallery images which will be loaded before opening the slideshow. The rest of the images will be loaded during the processing of the slideshow.  
  
 5.2 Watermark. You can use this option to add different types of watermarks on your gallery images.  
@@ -1045,11 +1057,11 @@ Advertisement position. Choose the positioning of the advertisement from the ava
 5.5 Album Options  
 5.5.1 Number of album columns. Provide the maximum number of columns to be displayed within a single album.  
 5.5.2 Albums per page. Provide the maximum number of albums available in a single page.  
-5.5.3 Enable pagination. Choose whether to provide pagination for the albums or not.  
+5.5.3 Enable pagination. Choose whether to provide pagination for the image albums or not.  
 5.5.4 Show album title. Choose whether to display the album title or have it displayed only when hovered.  
 5.5.5 Enable extended album description. Choose whether to have extended album view option or not.  
 5.5.6 Album thumbnail dimensions. Define the width and height of the album thumbnails.  
-5.5.7 Extended album height. Define the height of the album in extended album view.  
+5.5.7 Extended album height. Define the height of the image album in extended album view.  
  
 5.6 Slideshow
 5.6.1 Slideshow effect. Select the slideshow effect to be applied to the galleries.   
@@ -1103,7 +1115,7 @@ Use one of the default Photo Gallery themes or click Add new button to create a 
 6.1.11 Full background color. Choose the background color for the overall thumbnail view box.  
 6.1.12 Full background transparency. Specify the level of the transparency you want to apply to the overall thumbnail view box.  
 6.1.13 Alignment. Select the alignment of the thumbnail box.  
-6.1.14 Title position. Choose the position for the gallery title.  
+6.1.14 Title position. Choose the position for the website gallery title.  
 6.1.15 Title font size. Define the font size for the gallery image title.  
 6.1.16 Title font color. Choose the gallery image title font color.  
 6.1.17 Title font family. Choose the font family for the gallery image title.  
@@ -1169,11 +1181,11 @@ Use one of the default Photo Gallery themes or click Add new button to create a 
 6.3.40 Description font size. Define the font size for the slideshow image description.  
 6.3.41 Description color. Choose the color for the slideshow image description.  
 6.3.42 Description font family. Choose the font family for the slideshow image description.  
-6.3.43 Slider bullet width. Set the slider bullet width for the slideshow.  
+6.3.43 Slider bullet width. Set the image slider bullet width for the slideshow.  
 6.3.44 Slider bullet height. Set the slider bullet height for the slideshow.  
 6.3.45 Slider bullet border radius. Set the border radius for the slider bullet using CSS type values.  
 6.3.46 Slider bullet background color. Choose the background color for the slider bullet.  
-6.3.47 Slider bullet margin. Set the slider bullet margin using CSS type values.  
+6.3.47 Slider bullet margin. Set the image slider bullet margin using CSS type values.  
 6.3.48 Slider bullet active background color. Select the background color for the active slider bullet.  
 6.3.49 Slider bullet active border width. Set the border width for the active slider bullet.  
 6.3.50 Slider bullet active border color. Choose the border color for the active slider bullet.  
@@ -1590,7 +1602,7 @@ Advertisement opacity. Define the level of opacity for the advertisement, provid
 Advertisement position. Choose the positioning of the advertisement from the available 9 options.    
   
 = Step 9: Publishing Photo Gallery widgets. =  
-Go to Appearance>Widgets. Here select the widget option you want to add to a custom location. Afterwards drag and drop the selected widget into the custom location, fill in the options and press Save button.  
+Go to Appearance>Widgets. Here select the widget gallery option you want to add to a custom location. Afterwards drag and drop the selected widget into the custom location, fill in the options and press Save button.  
 9.1 Tag Cloud. This widget is included as a hosted widget for the WordPress standard Tag Cloud. It will display the tags added to the albums and images. After the click, the images using the tags will be displayed in Thumbnails view.  
 9.1.1 Title. Provide a title for the tag cloud.  
 9.1.2 Taxonomy. Select Photo Gallery from the provided options.  

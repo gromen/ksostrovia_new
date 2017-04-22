@@ -4,7 +4,7 @@
  * Plugin Name: Photo Gallery
  * Plugin URI: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
  * Description: This plugin is a fully responsive gallery plugin with advanced functionality.  It allows having different image galleries for your posts and pages. You can create unlimited number of galleries, combine them into albums, and provide descriptions and tags.
- * Version: 1.3.36
+ * Version: 1.3.37
  * Author: WebDorado
  * Author URI: https://web-dorado.com/
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -325,7 +325,8 @@ function bwg_shortcode($params) {
         'enable_image_google' => 1,
         'watermark_type' => 'none',
         'load_more_image_count' => 15,
-        'show_tag_box' => 0
+        'show_tag_box' => 0,
+        'show_gallery_description' => 0
       ), $params);
       break;
 
@@ -353,6 +354,7 @@ function bwg_shortcode($params) {
         'enable_slideshow_music' => 0,
         'slideshow_music_url' => '',
         'slideshow_effect_duration' => 1,
+        'show_gallery_description' => 0
       ), $params);
       break;
 
@@ -367,7 +369,8 @@ function bwg_shortcode($params) {
         'image_browser_width' => 800,
         'image_browser_title_enable' => 1,
         'image_browser_description_enable' => 1,
-        'watermark_type' => 'none'
+        'watermark_type' => 'none',
+        'show_gallery_description' => 0
       ), $params);
       break;
 
@@ -392,7 +395,8 @@ function bwg_shortcode($params) {
         'compuct_album_enable_page' => 1,
         'watermark_type' => 'none',
         'compuct_album_load_more_image_count' => 15,
-        'compuct_albums_per_page_load_more' => 15
+        'compuct_albums_per_page_load_more' => 15,
+        'show_gallery_description' => 0
       ), $params);
       break;
 
@@ -417,7 +421,8 @@ function bwg_shortcode($params) {
         'extended_album_enable_page' => 1,
         'watermark_type' => 'none',
         'extended_album_load_more_image_count' => 15,
-        'extended_albums_per_page_load_more' => 15
+        'extended_albums_per_page_load_more' => 15,
+        'show_gallery_description' => 0
       ), $params);
       break;
 
@@ -1588,7 +1593,7 @@ function bwg_activate() {
     ));
   }
   $version = get_option('wd_bwg_version');
-  $new_version = '1.3.36';
+  $new_version = '1.3.37';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -1640,7 +1645,7 @@ wp_oembed_add_provider( '#https://instagr(\.am|am\.com)/p/.*#i', 'https://api.in
 
 function bwg_update_hook() {
   $version = get_option('wd_bwg_version');
-  $new_version = '1.3.36';
+  $new_version = '1.3.37';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -2087,6 +2092,7 @@ function bwg_topic() {
   $user_guide_link = 'https://web-dorado.com/wordpress-gallery/';
   $support_forum_link = 'https://wordpress.org/support/plugin/photo-gallery';
   $pro_link = 'https://web-dorado.com/files/fromPhotoGallery.php';
+  $pro_icon = WD_BWG_URL . '/images/wd_logo.png';
   $support_icon = WD_BWG_URL . '/images/support.png';
   $prefix = 'bwg_back';
   $is_free = TRUE;
@@ -2147,8 +2153,8 @@ function bwg_topic() {
       color: #6e7990;
       font-size: 14px;
       font-weight: bold;
-      line-height: 30px;
-      padding: 10px 15px;
+      line-height: 44px;
+      padding: 0 0 0 15px;
       vertical-align: middle;
       width: 98%;
     }
@@ -2174,14 +2180,29 @@ function bwg_topic() {
     }
     .wd_topic .wd_pro {
       float: right;
-      background-color: #45A6B7;
-      padding: 0 10px;
+      padding: 0;
     }
     .wd_topic .wd_pro a {
       border: none;
       box-shadow: none !important;
-      color: #FFFFFF;
       text-decoration: none;
+    }
+    .wd_topic .wd_pro img {
+      border: none;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .wd_topic .wd_pro a,
+    .wd_topic .wd_pro a:active,
+    .wd_topic .wd_pro a:visited,
+    .wd_topic .wd_pro a:hover {
+      background-color: #D8D8D8;
+      color: #175c8b;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 0 10px;
+      vertical-align: middle;
     }
   </style>
   <div class="update-nag wd_topic">
@@ -2199,20 +2220,25 @@ function bwg_topic() {
     if ($is_free) {
       $text = strtoupper(__('Upgrade to paid version', $prefix));
       ?>
-      <span class="wd_pro">
-      <a target="_blank" href="<?php echo $pro_link; ?>">
-        <span><?php echo $text; ?></span>
-      </a>
-    </span>
+      <div class="wd_pro">
+        <a target="_blank" href="<?php echo $pro_link; ?>">
+          <img alt="web-dorado.com" title="<?php echo $text; ?>" src="<?php echo $pro_icon; ?>" />
+          <span><?php echo $text; ?></span>
+        </a>
+      </div>
       <?php
     }
-    ?>
-    <span class="wd_support">
+    if (FALSE) {
+      ?>
+      <span class="wd_support">
       <a target="_blank" href="<?php echo $support_forum_link; ?>">
         <img src="<?php echo $support_icon; ?>" />
         <?php _e('Support Forum', $prefix); ?>
       </a>
     </span>
+      <?php
+    }
+    ?>
   </div>
   <?php
   echo ob_get_clean();

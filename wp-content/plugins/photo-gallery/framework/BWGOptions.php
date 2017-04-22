@@ -18,6 +18,7 @@ class WD_BWG_Options {
   public $image_enable_page = 1;
   public $image_title_show_hover = 'none';
   public $ecommerce_icon_show_hover = 'none';
+  public $show_gallery_description = 0;
 
   public $album_column_number = 5;
   public $albums_per_page = 30;

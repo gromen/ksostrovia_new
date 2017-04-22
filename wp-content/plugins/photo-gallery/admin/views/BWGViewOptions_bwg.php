@@ -208,6 +208,22 @@ class BWGViewOptions_bwg {
                     <div class="spider_description"></div>
                   </td>
                 </tr>
+                <tr id="tr_thumb_show_name">
+                  <td class="spider_label_options"><label><?php _e("Show gallery name:", 'bwg_back'); ?> </label></td>
+                  <td>
+                    <input type="radio" name="showthumbs_name" id="thumb_name_yes" value="1" <?php if ($row->showthumbs_name) echo 'checked="checked"'; ?> /><label for="thumb_name_yes"><?php _e("Yes", 'bwg_back'); ?></label>
+                    <input type="radio" name="showthumbs_name" id="thumb_name_no" value="0"  <?php if (!$row->showthumbs_name) echo 'checked="checked"'; ?> /><label for="thumb_name_no"><?php _e("No", 'bwg_back'); ?></label>
+                    <div class="spider_description"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="spider_label_options"><label><?php echo __('Show Gallery description:', 'bwg_back'); ?> </label></td>
+                  <td>
+                    <input type="radio" name="show_gallery_description" id="show_gallery_description_1" value="1" <?php if ($row->show_gallery_description) echo 'checked="checked"'; ?> /><label for="show_gallery_description_1"><?php echo __('Yes', 'bwg_back'); ?></label>
+                    <input type="radio" name="show_gallery_description" id="show_gallery_description_0" value="0" <?php if (!$row->show_gallery_description) echo 'checked="checked"'; ?> /><label for="show_gallery_description_0"><?php echo __('No', 'bwg_back'); ?></label>
+                    <div class="spider_description"></div>
+                  </td>
+                </tr>
                 <tr>
                   <td class="spider_label_options"><label><?php _e("Image click action:", 'bwg_back'); ?> </label></td>
                   <td>
@@ -718,6 +734,16 @@ class BWGViewOptions_bwg {
           <div class="spider_div_options" id="div_content_11">        
             <table>
               <tbody>
+               <tr>
+                  <td class="spider_label_options">
+                    <label><?php _e('Show album/gallery name:', 'bwg_back'); ?></label>
+                  </td>
+                  <td>
+                    <input type="radio" name="show_album_name" id="show_album_name_enable_1" value="1" <?php if ($row->show_album_name) echo 'checked="checked"'; ?> /><label for="show_album_name_enable_1"><?php _e('Yes', 'bwg_back'); ?></label>
+                    <input type="radio" name="show_album_name" id="show_album_name_enable_0" value="0" <?php if (!$row->show_album_name) echo 'checked="checked"'; ?> /><label for="show_album_name_enable_0"><?php _e('No', 'bwg_back'); ?></label>
+                    <div class="spider_description"></div>
+                  </td>
+                </tr>
                 <tr>
                   <td class="spider_label_options">
                     <label for="album_column_number"><?php _e("Number of album columns:", 'bwg_back'); ?> </label>
@@ -1419,14 +1445,6 @@ class BWGViewOptions_bwg {
                     <div class="spider_description"><?php _e("The maximum size of the generated thumbnail. Its dimensions should be larger than the ones of the frontend thumbnail.", 'bwg_back'); ?></div>
                   </td>
                 </tr>
-                <tr id="tr_thumb_show_name">
-                  <td class="spider_label_options"><label><?php _e("Show gallery name:", 'bwg_back'); ?> </label></td>
-                  <td>
-                    <input type="radio" name="showthumbs_name" id="thumb_name_yes" value="1" <?php if ($row->showthumbs_name) echo 'checked="checked"'; ?> /><label for="thumb_name_yes"><?php _e("Yes", 'bwg_back'); ?></label>
-                    <input type="radio" name="showthumbs_name" id="thumb_name_no" value="0"  <?php if (!$row->showthumbs_name) echo 'checked="checked"'; ?> /><label for="thumb_name_no"><?php _e("No", 'bwg_back'); ?></label>
-                    <div class="spider_description"></div>
-                  </td>
-                </tr>
                 <tr>
                   <td class="spider_label_options spider_free_version_label">
                     <label><?php _e("Show description in Vertical Masonry view:", 'bwg_back'); ?> </label>
@@ -1570,16 +1588,6 @@ class BWGViewOptions_bwg {
           <div class="spider_div_options" id="div_content_5">        
             <table>
               <tbody>
-                <tr>
-                  <td class="spider_label_options">
-                    <label><?php _e('Show album/gallery name:', 'bwg_back'); ?></label>
-                  </td>
-                  <td>
-                    <input type="radio" name="show_album_name" id="show_album_name_enable_1" value="1" <?php if ($row->show_album_name) echo 'checked="checked"'; ?> /><label for="show_album_name_enable_1"><?php _e('Yes', 'bwg_back'); ?></label>
-                    <input type="radio" name="show_album_name" id="show_album_name_enable_0" value="0" <?php if (!$row->show_album_name) echo 'checked="checked"'; ?> /><label for="show_album_name_enable_0"><?php _e('No', 'bwg_back'); ?></label>
-                    <div class="spider_description"></div>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
