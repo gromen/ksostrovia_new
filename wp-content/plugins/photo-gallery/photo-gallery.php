@@ -4,8 +4,8 @@
  * Plugin Name: Photo Gallery
  * Plugin URI: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
  * Description: This plugin is a fully responsive gallery plugin with advanced functionality.  It allows having different image galleries for your posts and pages. You can create unlimited number of galleries, combine them into albums, and provide descriptions and tags.
- * Version: 1.3.37
- * Author: WebDorado
+ * Version: 1.3.38
+ * Author: Photo Gallery Team
  * Author URI: https://web-dorado.com/
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -504,12 +504,24 @@ add_shortcode('Best_Wordpress_Gallery', 'bwg_shortcode');
 
 $bwg = 0;
 function bwg_front_end($params) {
+  // Disable Jetpack’s Photon module.
+  $photon_removed = FALSE;
+  if ( class_exists("Jetpack_Photon") && method_exists(Jetpack_Photon, "instance") ) {
+    $photon_removed = remove_filter('image_downsize', array( Jetpack_Photon::instance(), 'filter_image_downsize' ));
+  }
+
   require_once(WD_BWG_DIR . '/frontend/controllers/BWGController' . ucfirst($params['gallery_type']) . '.php');
   $controller_class = 'BWGController' . ucfirst($params['gallery_type']) . '';
   $controller = new $controller_class();
   global $bwg;
   $controller->execute($params, 1, $bwg);
   $bwg++;
+
+  // Enable Jetpack’s Photon module.
+  if ( $photon_removed ) {
+    add_filter( 'image_downsize', array( Jetpack_Photon::instance(), 'filter_image_downsize' ), 10, 3 );
+  }
+
   return;
 }
 
@@ -1593,7 +1605,7 @@ function bwg_activate() {
     ));
   }
   $version = get_option('wd_bwg_version');
-  $new_version = '1.3.37';
+  $new_version = '1.3.38';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -1645,7 +1657,7 @@ wp_oembed_add_provider( '#https://instagr(\.am|am\.com)/p/.*#i', 'https://api.in
 
 function bwg_update_hook() {
   $version = get_option('wd_bwg_version');
-  $new_version = '1.3.37';
+  $new_version = '1.3.38';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);

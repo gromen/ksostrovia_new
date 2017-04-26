@@ -2,6 +2,7 @@
 class BWGViewImage_browser {
   public function display($params, $from_shortcode = 0, $bwg = 0) {
     global $WD_BWG_UPLOAD_DIR;
+    global $wd_bwg_options;
     require_once(WD_BWG_DIR . '/framework/WDWLibrary.php');
     require_once(WD_BWG_DIR . '/framework/WDWLibraryEmbed.php');
     $theme_row = WDWLibrary::get_theme_row_data($params['theme_id']);
@@ -51,7 +52,7 @@ class BWGViewImage_browser {
       $params['show_gallery_description'] = 0;
     }
     if (!isset($params['showthumbs_name'])) {
-      $params['showthumbs_name'] = 0;
+      $params['showthumbs_name'] = $wd_bwg_options->showthumbs_name;
     }
     if (!$theme_row) {
       echo WDWLibrary::message(__('There is no theme selected or the theme was deleted.', 'bwg'), 'wd_error');
@@ -76,7 +77,6 @@ class BWGViewImage_browser {
     }
     $image_title = $params['image_browser_title_enable'];
     $enable_image_description = $params['image_browser_description_enable'];
-    global $wd_bwg_options;
     $placeholder = isset($wd_bwg_options->placeholder) ? $wd_bwg_options->placeholder : '';
     $image_right_click = $wd_bwg_options->image_right_click;
     if (!isset($params['popup_fullscreen'])) {

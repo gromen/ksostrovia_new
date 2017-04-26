@@ -1197,8 +1197,6 @@ class BWGViewOptions_bwg {
             <div class="bwg_line_option">|</div>
             <div id="div_4" class="gallery_type" onclick="bwg_change_option_type('4')"><?php _e('Slideshow', 'bwg_back'); ?></div>
             <div class="bwg_line_option">|</div>
-            <div id="div_5" class="gallery_type" onclick="bwg_change_option_type('5')"><?php _e('Album options', 'bwg_back'); ?></div>
-            <div class="bwg_line_option">|</div>
             <div id="div_6" class="gallery_type" onclick="bwg_change_option_type('6')"><?php _e('Social options', 'bwg_back'); ?></div>
             <div class="bwg_line_option">|</div>
             <div id="div_7" class="gallery_type" onclick="bwg_change_option_type('7')"><?php _e('Watermark', 'bwg_back'); ?></div>
@@ -1582,13 +1580,6 @@ class BWGViewOptions_bwg {
                   </table>
                 </td>
               </tr>
-            </table>
-          </div>
-          <!--Album options-->
-          <div class="spider_div_options" id="div_content_5">        
-            <table>
-              <tbody>
-              </tbody>
             </table>
           </div>
           <!--Embed options-->

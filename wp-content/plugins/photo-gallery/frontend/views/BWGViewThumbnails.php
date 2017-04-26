@@ -2,6 +2,7 @@
 class BWGViewThumbnails {
   public function display($params, $from_shortcode = 0, $bwg = 0) {
     global $WD_BWG_UPLOAD_DIR;
+    global $wd_bwg_options;
     require_once(WD_BWG_DIR . '/framework/WDWLibrary.php');
 
     if (!isset($params['image_title'])) {
@@ -65,11 +66,10 @@ class BWGViewThumbnails {
       $params['show_gallery_description'] = 0;
     }
     if (!isset($params['showthumbs_name'])) {
-      $params['showthumbs_name'] = 0;
+      $params['showthumbs_name'] = $wd_bwg_options->showthumbs_name;
     }
     $from = (isset($params['from']) ? esc_html($params['from']) : 0);
     $sort_direction = $params['order_by'];
-    global $wd_bwg_options;
     $placeholder = isset($wd_bwg_options->placeholder) ? $wd_bwg_options->placeholder : '';
     $play_icon = $wd_bwg_options->play_icon;
     if ($from) {
