@@ -17,3 +17,4 @@ sitemap.xml.gz
 wp-content/themes/global/node_modules/
 wp-snapshots/
 .vscode
+node_modules/
