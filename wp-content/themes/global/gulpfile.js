@@ -53,6 +53,7 @@ var rename       = require('gulp-rename'); // Renames files E.g. style.css -> st
 var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
 var notify       = require('gulp-notify'); // Sends message notification to you
 var plumber      = require('gulp-plumber');
+var clean      = require('gulp-clean');
 // Prevent pipe breaking caused by errors from gulp plugins
 /**
  * Task: styles
@@ -130,11 +131,9 @@ gulp.task('vendorsJs', function () {
  *      3. Renames the JS file with suffix .min.js
  *      4. Uglifes/Minifies the JS file and generates custom.min.js
  */
-gulp.task('js', function () {
+gulp.task('js', ['cleanJs'], function () {
   gulp.src([
-    jsCustomSRC,
-    './js/navigation.js',
-    './js/skip-link-focus-fix.js'
+    jsCustomSRC
   ])
     .pipe(concat(jsCustomFile + '.js'))
     .pipe(gulp.dest(jsCustomDestination))
@@ -145,6 +144,24 @@ gulp.task('js', function () {
     // .pipe( uglify() )
     // .pipe( gulp.dest( jsCustomDestination ) )
 })
+/**
+ * Task: cleanJs
+ *
+ * Concatenate and uglify custom JS scripts.
+ *
+ * This task does the following:
+ *      1. Gets the source folder for JS custom files
+ *      2. Concatenates all the files and generates custom.js
+ *      3. Renames the JS file with suffix .min.js
+ *      4. Uglifes/Minifies the JS file and generates custom.min.js
+ */
+gulp.task('cleanJs', function () {
+  return gulp.src(jsCustomSRC, {
+    force: true
+  })
+    .pipe(clean())
+})
+
 // Static Server + watching scss/html files
 gulp.task('serve', ['styles'], function () {
   // initialize browsersync
@@ -160,13 +177,17 @@ gulp.task('serve', ['styles'], function () {
   * Watches for file changes and runs specific tasks.
   */
 
-gulp.task('default', [ 'vendorsJs', 'js', 'serve' ], function () {
+gulp.task('default', [
+  'vendorsJs',
+  'js',
+  'serve'
+], function () {
   gulp.watch([
     './src/css/**/*.scss',
     './*.php',
     './**/*.php'
   ], ['styles'])
-  gulp.watch().on('change', reload);
-  gulp.watch( './src/js/vendors/*.js', [ 'vendorsJs' ] );
-  gulp.watch( './src/js/custom/*.js', [ 'js' ] );
+  gulp.watch().on('change', reload)
+  gulp.watch('./src/js/vendors/*.js', ['vendorsJs'])
+  gulp.watch('./src/js/custom/*.js', ['js'])
 })
