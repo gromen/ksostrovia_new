@@ -4,7 +4,7 @@
  * Plugin Name: Photo Gallery
  * Plugin URI: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
  * Description: This plugin is a fully responsive gallery plugin with advanced functionality.  It allows having different image galleries for your posts and pages. You can create unlimited number of galleries, combine them into albums, and provide descriptions and tags.
- * Version: 1.3.38
+ * Version: 1.3.39
  * Author: Photo Gallery Team
  * Author URI: https://web-dorado.com/
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -344,7 +344,7 @@ function bwg_shortcode($params) {
         'enable_slideshow_autoplay' => 0,
         'enable_slideshow_shuffle' => 0,
         'enable_slideshow_ctrl' => 1,
-        'enable_slideshow_filmstrip' => 1,
+        'enable_slideshow_filmstrip' => 0,
         'slideshow_filmstrip_height' => 70,
         'slideshow_enable_title' => 0,
         'slideshow_title_full_width' => 0,
@@ -497,8 +497,8 @@ function bwg_shortcode($params) {
   }
   ob_start();
   bwg_front_end($params);
-  return str_replace(array("\r\n", "\n", "\r"), '', ob_get_clean());
-  //  return ob_get_clean();
+  // return str_replace(array("\r\n", "\n", "\r"), '', ob_get_clean());
+   return ob_get_clean();
 }
 add_shortcode('Best_Wordpress_Gallery', 'bwg_shortcode');
 
@@ -1605,7 +1605,7 @@ function bwg_activate() {
     ));
   }
   $version = get_option('wd_bwg_version');
-  $new_version = '1.3.38';
+  $new_version = '1.3.39';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -1657,7 +1657,7 @@ wp_oembed_add_provider( '#https://instagr(\.am|am\.com)/p/.*#i', 'https://api.in
 
 function bwg_update_hook() {
   $version = get_option('wd_bwg_version');
-  $new_version = '1.3.38';
+  $new_version = '1.3.39';
   if ($version && version_compare($version, $new_version, '<')) {
     require_once WD_BWG_DIR . "/update/bwg_update.php";
     bwg_update($version);
@@ -2023,6 +2023,7 @@ add_filter('widget_tag_cloud_args', 'bwg_widget_tag_cloud_args');
 
 // Captcha.
 function bwg_captcha() {
+  global $wd_bwg_options;
   if (isset($_GET['action']) && esc_html($_GET['action']) == 'bwg_captcha') {
     $i = (isset($_GET["i"]) ? esc_html($_GET["i"]) : '');
     $r2 = (isset($_GET["r2"]) ? (int) $_GET["r2"] : 0);
@@ -2031,7 +2032,6 @@ function bwg_captcha() {
     $digit = (isset($_GET["digit"]) ? (int) $_GET["digit"] : 0);
     $cap_width = $digit * 10 + 15;
     $cap_height = 26;
-    $cap_quality = 100;
     $cap_length_min = $digit;
     $cap_length_max = $digit;
     $cap_digital = 1;
@@ -2074,7 +2074,7 @@ function bwg_captcha() {
     header('Cache-Control: post-check=0, pre-check=0', FALSE);
     header('Pragma: no-cache');
     header('Content-Type: image/jpeg');
-    imagejpeg($canvas, NULL, $cap_quality);
+    imagejpeg($canvas, NULL, $wd_bwg_options->jpeg_quality);
     die('');
   }
 }

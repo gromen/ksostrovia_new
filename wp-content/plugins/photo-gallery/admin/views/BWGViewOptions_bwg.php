@@ -1228,6 +1228,15 @@ class BWGViewOptions_bwg {
                 </tr>
                 <tr>
                   <td class="spider_label_options">
+                    <label for="image_quality"><?php _e('Image quality:', 'bwg_back'); ?></label>
+                  </td>
+                  <td>
+                    <input type="text" name="image_quality" id="image_quality" value="<?php echo $row->image_quality; ?>" class="spider_int_input" /> %
+                    <div class="spider_description"><?php _e('Set the quality of gallery images. Provide a value from 0 to 100%.', 'bwg_back'); ?></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="spider_label_options">
                     <label><?php _e("Right click protection:", 'bwg_back'); ?></label>
                   </td>
                   <td>

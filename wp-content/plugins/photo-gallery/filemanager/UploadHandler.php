@@ -104,32 +104,23 @@ class bwg_UploadHandler {
         $this->options['max_width'] = NULL;
         $this->options['max_height'] = NULL;
       }
+      global $wd_bwg_options;
       $this->options += array(
         'image_versions' => array(
-          // Uncomment the following to create medium sized images:
-          /*
-          'medium' => array(
-            'max_width' => 800,
-            'max_height' => 600,
-            'jpeg_quality' => 80
-          ),
-          */
           '.original' => array(
             'max_width' => NULL,
             'max_height' => NULL,
-            'jpeg_quality' => 100
+            'jpeg_quality' => $wd_bwg_options->jpeg_quality
           ),
-          
           '' => array(
             'max_width' => $this->options['max_width'],
             'max_height' => $this->options['max_height'],
-            'jpeg_quality' => 100
+            'jpeg_quality' => $wd_bwg_options->jpeg_quality
           ),
-          
           'thumb' => array(
             'max_width' => ((isset($_REQUEST['file_namesML']) && esc_html($_REQUEST['file_namesML'])) ? (isset($_REQUEST['importer_thumb_width']) ? (int) $_REQUEST['importer_thumb_width'] : 300) : ((isset($_POST['upload_thumb_width']) && (int) $_POST['upload_thumb_width']) ? (int) $_POST['upload_thumb_width'] : 300)),
             'max_height' => ((isset($_REQUEST['file_namesML']) && esc_html($_REQUEST['file_namesML'])) ? (isset($_REQUEST['importer_thumb_height']) ? (int) $_REQUEST['importer_thumb_height'] : 300) : ((isset($_POST['upload_thumb_height']) && (int) $_POST['upload_thumb_height']) ? (int) $_POST['upload_thumb_height'] : 300)),
-            'jpeg_quality' => 90
+            'jpeg_quality' => $wd_bwg_options->jpeg_quality
           ),
         )
       );
@@ -295,6 +286,7 @@ class bwg_UploadHandler {
     }
 
     protected function create_scaled_image($file_name, $version, $options) {
+      global $wd_bwg_options;
       $file_path = $this->get_upload_path($file_name);
       if (!empty($version) && ($version != 'main')) {
         $version_dir = $this->get_upload_path(null, $version);
@@ -354,7 +346,7 @@ class bwg_UploadHandler {
         case 2:
           $src_img = @imagecreatefromjpeg($file_path);
           $write_image = 'imagejpeg';
-          $image_quality = isset($options['jpeg_quality']) ? $options['jpeg_quality'] : 75;
+          $image_quality = $wd_bwg_options->jpeg_quality;
             break;
         case 1:
           @imagecolortransparent($new_img, @imagecolorallocate($new_img, 0, 0, 0));
@@ -368,7 +360,7 @@ class bwg_UploadHandler {
           @imagesavealpha($new_img, true);
           $src_img = @imagecreatefrompng($file_path);
           $write_image = 'imagepng';
-          $image_quality = isset($options['png_quality']) ? $options['png_quality'] : 9;
+          $image_quality = $wd_bwg_options->png_quality;
           break;
         default:
           $src_img = null;

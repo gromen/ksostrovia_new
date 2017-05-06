@@ -923,8 +923,14 @@ class WDWLibrary {
       }
     }
     else {
-      $row = new stdClass();
-      $row->name = '';
+      $row_count = $wpdb->get_var('SELECT COUNT(*) FROM ' . $wpdb->prefix . 'bwg_gallery');
+      if (!$row_count) {
+        return false;
+      }
+      else {
+        $row = new stdClass();
+        $row->name = '';
+      }
     }
     return $row;
   }
@@ -1109,6 +1115,7 @@ class WDWLibrary {
   }
 
   public static function set_text_watermark($original_filename, $dest_filename, $watermark_text, $watermark_font, $watermark_font_size, $watermark_color, $watermark_transparency, $watermark_position) {
+    global $wd_bwg_options;
     $original_filename = htmlspecialchars_decode($original_filename, ENT_COMPAT | ENT_QUOTES);
     $dest_filename = htmlspecialchars_decode($dest_filename, ENT_COMPAT | ENT_QUOTES);
 
@@ -1145,7 +1152,7 @@ class WDWLibrary {
     if ($type == 2) {
       $image = imagecreatefromjpeg($original_filename);
       imagettftext($image, $watermark_font_size, 0, $left, $top, $watermark_color, $watermark_font, $watermark_text);
-      imagejpeg ($image, $dest_filename, 100);
+      imagejpeg ($image, $dest_filename, $wd_bwg_options->jpeg_quality);
       imagedestroy($image);  
     }
     elseif ($type == 3) {
@@ -1154,7 +1161,7 @@ class WDWLibrary {
       imageColorAllocateAlpha($image, 0, 0, 0, 127);
       imagealphablending($image, FALSE);
       imagesavealpha($image, TRUE);
-      imagepng($image, $dest_filename, 9);
+      imagepng($image, $dest_filename, $wd_bwg_options->png_quality);
       imagedestroy($image);
     }
     elseif ($type == 1) {
@@ -1172,6 +1179,7 @@ class WDWLibrary {
   }
 
   public static function set_image_watermark($original_filename, $dest_filename, $watermark_url, $watermark_height, $watermark_width, $watermark_position) {
+    global $wd_bwg_options;
     $original_filename = htmlspecialchars_decode($original_filename, ENT_COMPAT | ENT_QUOTES);
     $dest_filename = htmlspecialchars_decode($dest_filename, ENT_COMPAT | ENT_QUOTES);
     $watermark_url = htmlspecialchars_decode($watermark_url, ENT_COMPAT | ENT_QUOTES);
@@ -1225,10 +1233,10 @@ class WDWLibrary {
       $image = imagecreatefromjpeg($original_filename);
       imagecopy($image, $watermark_image_resized, $left, $top, 0, 0, $watermark_width, $watermark_height);
       if ($dest_filename <> '') {
-        imagejpeg ($image, $dest_filename, 100); 
+        imagejpeg ($image, $dest_filename, $wd_bwg_options->jpeg_quality); 
       } else {
         header('Content-Type: image/jpeg');
-        imagejpeg($image, null, 100);
+        imagejpeg($image, null, $wd_bwg_options->jpeg_quality);
       };
       imagedestroy($image);  
     }
@@ -1237,7 +1245,7 @@ class WDWLibrary {
       imagecopy($image, $watermark_image_resized, $left, $top, 0, 0, $watermark_width, $watermark_height);
       imagealphablending($image, FALSE);
       imagesavealpha($image, TRUE);
-      imagepng($image, $dest_filename, 9);
+      imagepng($image, $dest_filename, $wd_bwg_options->png_quality);
       imagedestroy($image);
     }
     elseif ($type == 1) {
@@ -1298,6 +1306,7 @@ class WDWLibrary {
   }
 
   public static function recover_image_size($width_orig, $height_orig, $width, $original_filename, $filename, $type_orig) {
+      global $wd_bwg_options;
       $percent = $width_orig / $width;
       $height = $height_orig / $percent;
       @ini_set('memory_limit', '-1');
@@ -1305,7 +1314,7 @@ class WDWLibrary {
         $img_r = imagecreatefromjpeg($original_filename);
         $dst_r = ImageCreateTrueColor($width, $height);
         imagecopyresampled($dst_r, $img_r, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
-        imagejpeg($dst_r, $filename, 100);
+        imagejpeg($dst_r, $filename, $wd_bwg_options->jpeg_quality);
         imagedestroy($img_r);
         imagedestroy($dst_r);
       }
@@ -1318,7 +1327,7 @@ class WDWLibrary {
         imagecopyresampled($dst_r, $img_r, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
         imagealphablending($dst_r, FALSE);
         imagesavealpha($dst_r, TRUE);
-        imagepng($dst_r, $filename, 9);
+        imagepng($dst_r, $filename, $wd_bwg_options->png_quality);
         imagedestroy($img_r);
         imagedestroy($dst_r);
       }
