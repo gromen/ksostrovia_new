@@ -56,8 +56,17 @@ function spider_frontend_ajax(form_id, current_view, id, album_gallery_id, cur_a
       if (load_more) {
         var strr = jQuery(data).find('#' + id).html();
         jQuery('#' + id).append(strr);
-        var str = jQuery(data).find('.bwg_nav_cont_'+ current_view).html();
-        jQuery('.bwg_nav_cont_'+ current_view).html(str);
+
+        jQuery("div[id^='bwg_container1_'] form").each(function () {
+          if (jQuery(this).data("current") == current_view) {
+            var str = jQuery(data).find('.bwg_nav_cont_' + current_view).html();
+            jQuery('.bwg_nav_cont_' + current_view).html(str);
+          }
+          else {
+            var str = jQuery(this).find('span[class^="bwg_nav_cont_"]').html();
+            jQuery(this).find('span[class^="bwg_nav_cont_"]').html(str);
+          }
+        });
       }
       else {
         var str = jQuery(data).find('#' + form_id).html();

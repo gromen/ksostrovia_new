@@ -4,7 +4,7 @@ Donate link: https://web-dorado.com/products/wordpress-photo-gallery-plugin.html
 Tags: gallery, photo gallery, image gallery, responsive gallery, wordpress gallery plugin, photo albums, gallery slider, gallery lightbox, wordpress photo gallery plugin, fullscreen gallery, watermarking, video gallery
 Requires at least: 3.4
 Tested up to: 4.7 
-Stable tag: 1.3.39    
+Stable tag: 1.3.42    
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ Create 100% responsive FREE WordPress photo gallery in minutes. Easy to customiz
 
 
 = Photo Gallery Add-ons: =
-[Ecommerce Add-on](https://web-dorado.com/products/wordpress-photo-gallery-plugin/add-ons/gallery-ecommerce.html)- - Display your digital content and sell it directly from your website.      
+[Ecommerce Add-on](https://web-dorado.com/products/wordpress-photo-gallery-plugin/add-ons/gallery-ecommerce.html) - Display your digital content and sell it directly from your website.      
 [Facebook Integration Add-on](https://web-dorado.com/products/wordpress-photo-gallery-plugin/add-ons/facebook.html)  -  Display Facebook photos and videos within Photo Gallery Pro without additional efforts.      
 [Export/Import Add-on](https://web-dorado.com/products/wordpress-photo-gallery-plugin/add-ons/export-import.html)  Export/import galleries, albums and all related data from one WordPress site to another.      
 
@@ -187,6 +187,17 @@ We recommend to use images with the width of 1200px to 1600px. In order to speed
 To enable the feature of adding Media Library images, go to Photo Gallery > Options > Global Options and set Import from Media Library option to Yes. After that you will be able to import photos from Media Library to Photo Gallery.     
 
 == Changelog ==
+
+= 1.3.42 =
+* Fixed: Scroll load with more than one gallery in a page.     
+  
+= 1.3.41 =
+* Added: Possibility to add images from Wordpress Media Library.     
+* Fixed: Image info in lightbox with small effect duration.    
+* Changed: Effect duration now can be float.   
+
+= 1.3.40 =
+* Fixed: Images in a column      
 
 = 1.3.39 =
 * Fixed: Removed empty "filter_search_name" from lightbox URL.   

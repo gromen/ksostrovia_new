@@ -37,6 +37,7 @@ class WD_BWG_Options {
   public $blog_style_title_enable = 1;
   public $blog_style_images_per_page = 5;
   public $blog_style_enable_page = 1;
+  public $blog_style_description_enable = 0;
 
   public $slideshow_type = 'fade';
   public $slideshow_interval = 5;
@@ -116,7 +117,6 @@ class WD_BWG_Options {
   public $comment_moderation = 0;
   public $popup_info_always_show = 0;
   public $popup_hit_counter = 0;
-  public $enable_ML_import = 0;
   public $showthumbs_name = 0;
   public $show_album_name = 0;
   public $show_image_counts = 0;
@@ -191,7 +191,7 @@ class WD_BWG_Options {
     if ($this->permissions != 'moderate_comments' && $this->permissions != 'publish_posts' && $this->permissions != 'edit_posts') {
       $this->permissions = 'manage_options';
     }
-    $this->jpeg_quality = $this->image_quality; 
+    $this->jpeg_quality = $this->image_quality;
     $this->png_quality = 9 - round(9 * $this->image_quality / 100);
   }
 

@@ -1,7 +1,6 @@
 <?php
 
 class BWGViewOptions_bwg {
-
   private $model;
 
   public function __construct($model) {
@@ -1340,16 +1339,6 @@ class BWGViewOptions_bwg {
                   <td>
                     <input type="text" name="preload_images_count" id="preload_images_count" value="<?php echo $row->preload_images_count; ?>" class="spider_int_input" />
                     <div class="spider_description"><?php _e('Count of images to preload (0 for all).', 'bwg_back'); ?></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="spider_label_options">
-                    <label><?php _e('Import from Media Library:', 'bwg_back'); ?></label>
-                  </td>
-                  <td>
-                    <input type="radio" name="enable_ML_import" id="enable_ML_import_1" value="1" <?php if ($row->enable_ML_import) echo 'checked="checked"'; ?> /><label for="enable_ML_import_1"><?php _e('Yes', 'bwg_back'); ?></label>
-                    <input type="radio" name="enable_ML_import" id="enable_ML_import_0" value="0" <?php if (!$row->enable_ML_import) echo 'checked="checked"'; ?> /><label for="enable_ML_import_0"><?php _e('No', 'bwg_back'); ?></label>
-                   <div class="spider_description"><?php _e('Enable import from Media Library in file manager.', 'bwg_back'); ?></div>
                   </td>
                 </tr>
                 <tr>
