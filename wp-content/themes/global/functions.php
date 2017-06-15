@@ -82,7 +82,19 @@ function custom_image_sizes_choose( $sizes ) {
     );
     return array_merge( $sizes, $custom_sizes );
 }
-
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return sprintf( ' <a class="read-more" href="%1$s">%2$s</a>',
+        get_permalink( get_the_ID() ),
+        __( 'Czytaj więcej', 'textdomain' )
+    );
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -141,11 +153,11 @@ add_action( 'widgets_init', 'global_widgets_init' );
 function global_scripts() {
 	wp_enqueue_style( 'global-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/src/css/swiper.min.css' );
+	wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/src/css/vendor/swiper.min.css' );
 
-	wp_enqueue_script( 'vendor-scripts', get_template_directory_uri() . '/src/js/vendors/vendors.js', array(), '20160907', true );
+	wp_enqueue_script( 'vendor-scripts', get_template_directory_uri() . '/src/js/vendors/vendors.min.js', array(), '20160907', true );
 
-	wp_enqueue_script( 'global-scripts', get_template_directory_uri() . '/src/js/custom.js', array(), '20160907', true );
+	wp_enqueue_script( 'global-scripts', get_template_directory_uri() . '/src/js/custom/custom.min.js', array(), '20160907', true );
 
 	wp_enqueue_script( 'global-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20161016', true );
 
@@ -226,6 +238,8 @@ function cmb2_sample_metaboxes() {
     // Add other metaboxes as needed
 
 }
+
+
 
 /**
 * Turn off REST API
