@@ -6,54 +6,32 @@
 * Edit the variables as per your project requirements.
 */
 
-var project             = 'KsostroviaTheme'; // Name
-
-var styleSRC            = './src/css/style.scss'; // Path to main .scss file
-var styleDestination    = './'; // Path to place the compiled CSS file
-// Defualt set to root folder
-
-
-var jsVendorSRC         = './src/js/vendors/*.js'; // Path to JS vendors folder
-var jsVendorDestination = './src/js/vendors/'; // Path to place the compiled JS vendors file
-var jsVendorFile        = 'vendors'; // Compiled JS vendors file name
-// Default set to vendors i.e. vendors.js
-
-
-var jsCustomSRC         = './src/js/custom/*.js'; // Path to JS custom scripts folder
-var jsCustomDestination = './src/js/custom/'; // Path to place the compiled JS custom scripts file
-var jsCustomFile        = 'custom'; // Compiled JS custom file name
-// Default set to custom i.e. custom.js
-
-var styleWatchFiles     = './src/css/**/*.scss'; // Path to all *.scss files inside css folder and inside them
-var vendorJSWatchFiles  = './src/js/vendors/*.js'; // Path to all vendors JS files
-var customJSWatchFiles  = './src/js/custom/*.js'; // Path to all custom JS files
-
 /**
  * Load Plugins.
  *
  * Load gulp plugins and assing them semantic names.
  */
-var gulp         = require('gulp'); // Gulp of-course
+var gulp         = require('gulp'), // Gulp of-course
 // Format CSS coding style
-var csscomb = require('gulp-csscomb');
+    csscomb = require('gulp-csscomb'),
 
-var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
+    browserSync  = require('browser-sync'),
+    reload       = browserSync.reload,
 // CSS related plugins.
-var sass         = require('gulp-sass'); // Gulp pluign for Sass compilation
-var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic
-var minifycss    = require('gulp-uglifycss'); // Minifies CSS files
+    sass         = require('gulp-sass'), // Gulp pluign for Sass compilation
+    autoprefixer = require('gulp-autoprefixer'), // Autoprefixing magic
+    minifycss    = require('gulp-uglifycss'), // Minifies CSS files
 
 // JS related plugins.
-var concat       = require('gulp-concat'); // Concatenates JS files
-var uglify       = require('gulp-uglify'); // Minifies JS files
+    concat       = require('gulp-concat'), // Concatenates JS files
+    uglify       = require('gulp-uglify'), // Minifies JS files
 
 // Utility related plugins.
-var rename       = require('gulp-rename'); // Renames files E.g. style.css -> style.min.css
-var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
-var notify       = require('gulp-notify'); // Sends message notification to you
-var plumber      = require('gulp-plumber');
-var clean      = require('gulp-clean');
+    rename       = require('gulp-rename'), // Renames files E.g. style.css -> style.min.css
+    sourcemaps   = require('gulp-sourcemaps'), // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
+    notify       = require('gulp-notify'), // Sends message notification to you
+    plumber      = require('gulp-plumber'),
+    clean        = require('gulp-clean')
 // Prevent pipe breaking caused by errors from gulp plugins
 /**
  * Task: styles
@@ -70,7 +48,7 @@ var clean      = require('gulp-clean');
  */
 
 gulp.task('styles', function () {
-  gulp.src(styleSRC)
+  gulp.src('./src/css/style.scss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -87,22 +65,16 @@ gulp.task('styles', function () {
       'last 2 version',
       '> 1%',
       'safari 5',
-      'ie 8',
-      'ie 9',
+      'ie 11',
       'opera 12.1',
       'ios 6',
       'android 4'))
 
-    .pipe(sourcemaps.write(styleDestination))
+    .pipe(sourcemaps.write('./'))
     .pipe(csscomb())
-    .pipe(gulp.dest(styleDestination))
+    .pipe(gulp.dest('./'))
     .pipe(reload({stream: true}))
-
-//       .pipe( rename( { suffix: '.min' } ) )
-//      .pipe( minifycss( {
-//            maxLineLen: 10
-//        }))
-    .pipe(gulp.dest(styleDestination))
+    .pipe(gulp.dest('./'))
 })
 /**
  * Task: vendorJS
@@ -116,9 +88,15 @@ gulp.task('styles', function () {
  *      4. Uglifes/Minifies the JS file and generates vendors.min.js
  */
 gulp.task('vendorsJs', function () {
-  gulp.src(jsVendorSRC)
-    .pipe(concat(jsVendorFile + '.js'))
-    .pipe(gulp.dest(jsVendorDestination))
+  gulp.src('./src/js/vendors/*.js')
+    .pipe(concat('vendors.js'))
+    .pipe(rename({
+      basename: 'vendors',
+      suffix: '.min'
+    }))
+    .pipe(uglify())
+
+    .pipe(gulp.dest('./src/js/vendors/'))
 })
 /**
  * Task: customJS
@@ -131,32 +109,25 @@ gulp.task('vendorsJs', function () {
  *      3. Renames the JS file with suffix .min.js
  *      4. Uglifes/Minifies the JS file and generates custom.min.js
  */
-gulp.task('js', ['cleanJs'], function () {
+gulp.task('js', function () {
   gulp.src([
-    jsCustomSRC
+    'src/js/*.js'
   ])
-    .pipe(concat(jsCustomFile + '.js'))
-    .pipe(gulp.dest(jsCustomDestination))
-    // .pipe( rename( {
-      // basename: jsCustomFile,
-      // suffix: '.min'
-   // }))
-    // .pipe( uglify() )
-    // .pipe( gulp.dest( jsCustomDestination ) )
+    .pipe(concat('custom.js'))
+    .pipe(rename({
+      basename: 'custom',
+      suffix: '.min'
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('./src/js/custom/'))
 })
 /**
+ *
  * Task: cleanJs
  *
- * Concatenate and uglify custom JS scripts.
- *
- * This task does the following:
- *      1. Gets the source folder for JS custom files
- *      2. Concatenates all the files and generates custom.js
- *      3. Renames the JS file with suffix .min.js
- *      4. Uglifes/Minifies the JS file and generates custom.min.js
  */
 gulp.task('cleanJs', function () {
-  return gulp.src(jsCustomSRC, {
+  return gulp.src('src/js/custom/custom.js', {
     force: true
   })
     .pipe(clean())
@@ -178,7 +149,8 @@ gulp.task('serve', ['styles'], function () {
   */
 
 gulp.task('default', [
-  'vendorsJs',
+  'cleanJs',
+  // 'vendorsJs',
   'js',
   'serve'
 ], function () {
@@ -189,5 +161,5 @@ gulp.task('default', [
   ], ['styles'])
   gulp.watch().on('change', reload)
   gulp.watch('./src/js/vendors/*.js', ['vendorsJs'])
-  gulp.watch('./src/js/custom/*.js', ['js'])
+  gulp.watch('./src/js/*.js', ['js'])
 })
