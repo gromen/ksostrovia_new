@@ -20,26 +20,26 @@
                     transform: scale(1);
                 }
 
-               .bwg_title_spun1_0 {
-                   background: transparentize($black, .5);
-               }      
+                .bwg_title_spun1_0 {
+                    background: transparentize($black, .5);
+                }
             }
 
             &:hover {
-               .bwg_title_spun1_0 {
-                   background: transparentize($black, .5)
-               }      
+                .bwg_title_spun1_0 {
+                    background: transparentize($black, .5);
+                }
             }
 
             .bwg_title_spun1_0 {
                 @include breakpoint(medium down) {
-                    opacity: 1;                
+                    opacity: 1;
                     left: 0;
 
                     &:hover {
                         .bwg_title_spun1_0 {
-                            background: transparentize($black, .5)
-                        }      
+                            background: transparentize($black, .5);
+                        }
                     }
                 }
                 transition: opacity .2s linear;
@@ -47,8 +47,8 @@
         }
 
         .bwg_title_spun2_0 {
-           color: $white; 
-           padding: initial;
+            color: $white;
+            padding: initial;
         }
-    } 
+    }
 }

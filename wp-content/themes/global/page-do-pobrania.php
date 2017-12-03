@@ -11,20 +11,29 @@ get_header(); ?>
 	<table class="row">
 		<thead class="small-12 column">
 			<tr class="row text-center">
-				<th class="small-2 text-center column">Typ</th>
 				<th class="small-10 column">Plik</th>
 			</tr>
 		</thead>
 		<tbody class="small-12 column">
-			<tr class="row align-middle">
-				<td class="small-2 text-center column">
-					<span class="icon-file-<?php echo strtolower( pathinfo( get_field('file_1_file'), PATHINFO_EXTENSION ) )?> icon-2x" aria-hidden="true"></span>
-				</td>
-				<td class="small-10 column">
-					<a href="<?php the_field('file_1_file'); ?>" download="<?php echo basename(get_field('file_1_file') ); ?>"><?php the_field('file_1_name'); ?></a>
-				</td>
-			</tr>
-			<tr><a href=""></a></tr>
+
+			<?php if(have_rows('file_to_download')): ?>
+				<tr class="row align-middle">
+					<?php while(have_rows('file_to_download')): the_row(); ?>
+
+						<td class="text-center column">
+							<?php 
+								$file = get_sub_field('download_file');
+							?>
+													
+							<?php if( $file ): ?>
+								<a href="<?php echo $file['url']; ?>" download="<?php echo basename($file['url']); ?>">Download file</a>
+							<?php endif; ?>	
+						</td>
+					
+					<?php endwhile; ?>
+				</tr>
+			<?php endif; ?>
+
 		</tbody>
 	</table>
 </div>

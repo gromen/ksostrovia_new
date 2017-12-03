@@ -1,255 +1,247 @@
 .main-navigation {
-  height: 54px;
-  padding: 20px 10px;
+    height: 54px;
+    padding: 20px 10px;
 
-  @media #{$medium-up} {
-    height: auto;
-    padding: 0;
-  }
-
-  .nav-menu {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-
-    .sub-menu {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      opacity: 0;
-      z-index: 99999;
-      transition: opacity .3s $transition-bezier;
-
-      a {
-        font-family: $roboto-light;
-        text-transform: capitalize;
-        width: 250px;
-      }
-
-      li {
-        &:hover > ul,
-        &.focus > ul {
-          left: 100%;
-        }
-      }
-    }
-
-    li > ul {
-      top: -300px;
-
-    }
-
-    li:hover > ul,
-    li.focus > ul {
-      opacity: 1;
-      top: 38px;
-    }
-  }
-
-  li {
-    float: left;
-    position: relative;
-
-    &.focus > a {
-      color: $yellow_base;
-    }
-  }
-
-  a {
-    color: $white;
-    display: block;
-    font-family: $roboto-medium;
-    padding: 5px 0;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    #{$actions-types} {
-      color: $yellow_base;
-    }
-  }
-
-  .current_page_item > a,
-  .current-menu-item > a,
-  .current_page_ancestor > a,
-  .current-menu-ancestor > a {
-    color: $yellow_base;
-  }
-
-  .menu {
-    .menu-item {
-      .sub-menu {
-        background-color: $green_base;
-
-        @media #{$medium-up} {
-          margin-left: 0;
-        }
-      }
-    }
-    > ul {
-      @include breakpoint(medium up) {
-        @include flex-grid-row;
-
-        flex-direction: row-reverse;
-      }
-
-
-      .page_item {
-        @include flex-grid-column(12);
-
+    @media #{$medium-up} {
+        height: auto;
         padding: 0;
-
-        @include breakpoint(medium up) {
-          @include flex-grid-column(shrink);
-        }
-      }
     }
-    > .menu-item {
-      &.menu-item-has-children {
-        > a {
-          position: relative;
 
-          &:after{
-            font-family: $font-awesome;
-            content: '\f0dd';
+    .nav-menu {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+
+        .sub-menu {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
+            float: left;
             position: absolute;
-            top: 8px;
-            right: 0;
-            width: 10px;
-            height: 10px;
+            opacity: 0;
+            z-index: 99999;
+            transition: opacity .3s $transition-bezier;
+
+            a {
+                font-family: $roboto-light;
+                text-transform: capitalize;
+                width: 250px;
             }
-          }
-        // 2nd menu level
-        > .sub-menu {
 
-            .menu-item {
-              list-style-type: none;
-              padding-left: 15px;
-              &.menu-item-has-children {
-                position: relative;
-
-              > a {
-
-                &:after {
-                  font-family: $font-awesome;
-                  content: '\f0da';
-                  position: absolute;
-                  top: 5px;
-                  right: 0;
-                  width: 10px;
-                  height: 10px;
+            li {
+                &:hover > ul,
+                &.focus > ul {
+                    left: 100%;
                 }
-              }
             }
-          }
-          // 3rd menu level
-          .sub-menu {
-            top: 0;
-          }
         }
+
+        li > ul {
+            top: -300px;
         }
-      }
-  }
+
+        li:hover > ul,
+        li.focus > ul {
+            opacity: 1;
+            top: 38px;
+        }
+    }
+
+    li {
+        float: left;
+        position: relative;
+
+        &.focus > a {
+            color: $yellow_base;
+        }
+    }
+
+    a {
+        color: $white;
+        display: block;
+        font-family: $roboto-medium;
+        padding: 5px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        #{$actions-types} {
+            color: $yellow_base;
+        }
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a,
+    .current-menu-ancestor > a {
+        color: $yellow_base;
+    }
+
+    .menu {
+        .menu-item {
+            .sub-menu {
+                background-color: $green_base;
+
+                @media #{$medium-up} {
+                    margin-left: 0;
+                }
+            }
+        }
+        > ul {
+            @include breakpoint(medium up) {
+                @include flex-grid-row;
+                flex-direction: row-reverse;
+            }
+
+
+            .page_item {
+                @include flex-grid-column(12);
+                padding: 0;
+
+                @include breakpoint(medium up) {
+                    @include flex-grid-column(shrink);
+                }
+            }
+        }
+        > .menu-item {
+            &.menu-item-has-children {
+                > a {
+                    position: relative;
+
+                    &:after {
+                        font-family: $font-awesome;
+                        content: '\f0dd';
+                        position: absolute;
+                        top: 8px;
+                        right: 0;
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+                // 2nd menu level
+                > .sub-menu {
+                    .menu-item {
+                        list-style-type: none;
+                        padding-left: 15px;
+                        &.menu-item-has-children {
+                            position: relative;
+
+                            > a {
+                                &:after {
+                                    font-family: $font-awesome;
+                                    content: '\f0da';
+                                    position: absolute;
+                                    top: 5px;
+                                    right: 0;
+                                    width: 10px;
+                                    height: 10px;
+                                }
+                            }
+                        }
+                    }
+                    // 3rd menu level
+                    .sub-menu {
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Small menu.
 .menu-toggle,
 .main-navigation.toggled ul {
-  display: block;
-  float: right;
-
-  li {
     display: block;
-    float: none;
+    float: right;
 
-    a {
-      display: block;
-      text-align: center;
+    li {
+        display: block;
+        float: none;
+
+        a {
+            display: block;
+            text-align: center;
+        }
     }
-  }
 }
 
 .menu-toggle {
-  @include hamburger($yellow_base, $yellow_base, 30px);
-  border: 0;
+    @include hamburger($yellow_base, $yellow_base, 30px);
+    border: 0;
 }
 
 @media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
+    .menu-toggle {
+        display: none;
+    }
 
-  .main-navigation .nav-menu {
-    display: block;
-  }
+    .main-navigation .nav-menu {
+        display: block;
+    }
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-  .site-main & {
-    margin: 0 0 1.5em;
-    overflow: hidden;
-  }
+    .site-main & {
+        margin: 0 0 1.5em;
+        overflow: hidden;
+    }
 
-  .nav-previous {
-    float: left;
-    width: 50%;
-  }
+    .nav-previous {
+        float: left;
+        width: 50%;
+    }
 
-  .nav-next {
-    float: right;
-    text-align: right;
-    width: 50%;
-  }
+    .nav-next {
+        float: right;
+        text-align: right;
+        width: 50%;
+    }
 }
 
 //--------------------
 //---- #footer menu ----
 //---------------------
 .site-footer {
+    background-color: $footer_bg;
+    width: 100%;
 
-  background-color: $footer_bg;
-  width: 100%;
+    nav {
+        margin: 0;
+        padding: 10px 0;
 
-  nav {
-    margin: 0;
-    padding: 10px 0;
+        ul {
+            @include flex-grid-row;
 
-    ul {
-      @include flex-grid-row;
+            @include flex-align(left, middle);
 
-      @include flex-align(left, middle);
-
-      @include flex-grid-layout(2, li);
-
-      list-style-type: none;
-      margin-bottom: 0;
+            @include flex-grid-layout(2, li);
+            list-style-type: none;
+            margin-bottom: 0;
 
 
 
-      @media #{$medium-up} {
-        @include flex-grid-layout(6, li);
-      }
-    }
-
-    .menu-item {
-
-      a {
-        color: $white;
-
-        #{$actions-types} {
-          text-decoration: underline;
+            @media #{$medium-up} {
+                @include flex-grid-layout(6, li);
+            }
         }
-      }
 
-      @media #{$medium-up} {
-        @include flex-grid-column(shrink);
+        .menu-item {
+            a {
+                color: $white;
 
-        &:first-child {
-          padding-left: 0;
+                #{$actions-types} {
+                    text-decoration: underline;
+                }
+            }
+
+            @media #{$medium-up} {
+                @include flex-grid-column(shrink);
+
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
         }
-      }
     }
-  }
 }

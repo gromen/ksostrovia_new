@@ -1,35 +1,34 @@
 .menu-item {
-  a {
-    &:focus {
-      outline-color: $yellow_base;
+    a {
+        &:focus {
+            outline-color: $yellow_base;
+        }
     }
-  }
 }
 
 .footer-menu {
-  a {
-    &:focus {
-      outline-color: $white;
+    a {
+        &:focus {
+            outline-color: $white;
+        }
     }
-  }
 }
 
 a {
-  color: $green_base;
+    color: $green_base;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color__link-hover;
-  }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color__link-hover;
+    }
 
-  &:focus {
-    outline: $green_base medium solid;
-  }
+    &:focus {
+        outline: $green_base medium solid;
+    }
 
-  &:hover,
-  &:active {
-    outline: 0;
-  }
+    &:hover,
+    &:active {
+        outline: 0;
+    }
 }
-

@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?>>
 	<header class="entry-header">
 		<div class="row">
 			<div class="column"><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></div>
@@ -18,41 +18,34 @@
 
 	<div class="row small-up-1 medium-up-3 large-up-6" data-equalizer data-equalize-by-row="true">
 
-		<?php
-			$entries = get_post_meta( get_the_ID(), 'wiki_test_repeat_group', true );
+		<?php if( have_rows('player_add') ): ?>
+			<?php while( have_rows('player_add') ): the_row(); 
 
-			foreach ( (array) $entries as $key => $entry ) :
+				// vars
+				$image = get_sub_field('player_photo');
+				$name = get_sub_field('player_name');
+				$position = get_sub_field('player_position');
 
-			    $img = $title = $position = '';
+				?>
 
-			    if ( isset( $entry['title'] ) ) {
-			        $title = esc_html( $entry['title'] );
-			    }
+			<div class="column" data-equalizer-watch>
+				<figure class="players text-center">
+					<?php if($image): ?>
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+					<?php endif; ?>
 
-			    if ( isset( $entry['wiki_test_textsmall'] ) ) {
-			        $position = $entry['wiki_test_textsmall'];
-			    }
-
-
-			    if ( isset( $entry['image_id'] ) ) {
-			        $img = wp_get_attachment_image( $entry['image_id'], 'thumbnail', null, array(
-			        		            'class' => 'thumb',
-			        		        ) );
-			    }
-		?>
-		<div class="column">
-			<figure class="players text-center">
-				<?php echo $img; ?>
-		    <figcaption class="players__desc text-center">
-			    <?php echo $title . '<br>'; ?>
-		    	<?php echo $position; ?>
-		    </figcaption>
-	    </figure>
-
-		</div>
-
-		<?php endforeach; ?>
-
+					<figcaption class="players__desc text-center">
+						<?php if( $name ): ?>
+							<span><?php echo $name . '<br>'; ?></span>
+						<?php endif; ?>
+						<?php if( $position ): ?>
+							<span><?php echo $position; ?></span>
+						<?php endif; ?>
+					</figcaption>
+				</figure>
+			</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
 		<?php
 			the_content();

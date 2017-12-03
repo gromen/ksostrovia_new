@@ -4,12 +4,10 @@
  * global functionality for Ks Ostrovia theme
  *
  */
-( function( $ ) {
+(function ($) {
+    $(document).ready(function () {
 
-
-    $(document).ready(function(){
-
-      var mySwiper = new Swiper ('.swiper-container', {
+      var mySwiper = new Swiper('.swiper-container', {
         // Optional parameters
         loop: true,
         autoplay: 6000,
@@ -20,10 +18,7 @@
 
         // Navigation arrows
         nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-      })
-
-    })
-
-
-} )( jQuery );
+        prevButton: '.swiper-button-prev'
+      });
+    });
+})(jQuery);

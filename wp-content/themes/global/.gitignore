@@ -15,6 +15,7 @@ sitemap.xml.gz
 style.css.map
 style.css.min.map
 .eslintrc.*
+.csscomb.*
 
 
 
