@@ -2,6 +2,8 @@
 .htaccess
 wp-config.php
 wp-content/uploads/
+wp-content/plugins/
+wp-content/themes/noo-landmark/
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
